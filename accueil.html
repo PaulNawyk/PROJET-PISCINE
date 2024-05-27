@@ -3,28 +3,72 @@
 
 <head>
     <title>Medicare</title>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="base.css" rel="stylesheet" type="text/css" />
+    <script src="carrousel.js"></script>
+
+
 </head>
 
-     <body>
-        <div class="container-fluid bg-dark pt-2 pb-2">
-            
-         <div class="container-fluid bg-dark pt-2 pb-2">
-           <p class="text-white border border-white">.border .border-white</p>
-         </div>
-         <div class="container-fluid bg-dark pt-2 pb-2">
-            <p class="text-white border border-white">.border .border-white</p>
-          </div>
-          <div class="container-fluid bg-dark pt-2 pb-2">
-            <p class="text-white border border-white">.border .border-white</p>
-          </div>
-          <div class="container-fluid bg-dark pt-2 pb-2">
-            <p class="text-white border border-white">.border .border-white</p>
-          </div>
-          zizi hdhgcrhgrghrhr
+<body>
+    <div id="wrapper">
+
+        <div id="header">
+            Medicare : Services Médicaux
         </div>
 
-    </body>
+        <div id="navigation">
+            <button class="button"> ACCUEIL </button>
+            <button> PARCOURIR </button>
+            <button> RENDEZ-VOUS </button>
+            <button> PROFIL </button>
+            <input id="searchbar" type="text" name="search" placeholder="RECHERCHE...">
+            <img src="img/loupe.jpg" alt="LOGO" width="25" height="25">
+        </div>
+
+        <div id="section">
+            Bienvenue sur Medicare,<br> Votre nouvelle plateforme de santé en ligne ! <br><br>
+
+            Nous sommes ravis de vous accueillir sur Medicare, votre partenaire de confiance pour toutes vos
+            consultations médicales et services de santé en ligne. Chez Medicare, notre mission est de rendre l'accès
+            aux soins plus simple, rapide et efficace pour tous. Grâce à notre interface intuitive et notre vaste réseau
+            de professionnels de santé qualifiés, vous pouvez désormais prendre rendez-vous, consulter vos résultats
+            médicaux et obtenir des conseils de santé personnalisés en quelques clics.<br><br>
+
+            Explorez dès maintenant les nombreuses fonctionnalités de Medicare et découvrez comment nous pouvons vous
+            aider à mieux gérer votre santé au quotidien. Merci de nous faire confiance pour vos besoins médicaux. Nous
+            sommes ici pour vous accompagner à chaque étape de votre parcours de santé.<br><br>
+
+            Bienvenue chez Medicare, où votre bien-être est notre priorité. <br>
+            <div id="carrousel">
+                <ul>
+                    <li><img src="img/carrousel1.jpg" width="120" height="100"></li>
+                    <li><img src="img/carrousel2.jpg" width="120" height="100"></li>
+                    <li><img src="img/carrousel3.jpg" width="120" height="100"></li>
+                    <li><img src="img/carrousel4.jpg" width="120" height="100"></li>
+                    <li><img src="img/carrousel5.jpg" width="120" height="100"></li>
+                    <li><img src="img/carrousel6.jpg" width="120" height="100"></li>
+                    <li><img src="img/carrousel7.jpg" width="120" height="100"></li>
+                    <li><img src="img/carrousel8.jpg" width="120" height="100"></li>
+                    <li><img src="img/carrousel9.jpg" width="120" height="100"></li>
+                    <li><img src="img/carrousel10.jpg" width="120" height="100"></li>
+                    <li><img src="img/carrousel11.jpg" width="120" height="100"></li>
+                    <li><img src="img/carrousel12.jpg" width="120" height="100"></li>
+                </ul>
+            </div>
+            <div id="buttons">
+                <input type="button" value="<" class="prev">
+                <input type="button" value=">" class="next">
+            </div>
+        </div>
+
+        <div id="footer">
+        </div>
+
+    </div>
+
+</body>
+
 </html>
