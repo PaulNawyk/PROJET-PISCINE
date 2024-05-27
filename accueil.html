@@ -5,11 +5,10 @@
     <title>Medicare</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link href="base.css" rel="stylesheet" type="text/css" />
     <script src="carrousel.js"></script>
-
-
 </head>
 
 <body>
@@ -27,40 +26,70 @@
             <input id="searchbar" type="text" name="search" placeholder="RECHERCHE...">
             <img src="img/loupe.jpg" alt="LOGO" width="25" height="25">
         </div>
+        
 
         <div id="section">
             Bienvenue sur Medicare,<br> Votre nouvelle plateforme de santé en ligne ! <br><br>
-
-            Nous sommes ravis de vous accueillir sur Medicare, votre partenaire de confiance pour toutes vos
-            consultations médicales et services de santé en ligne. Chez Medicare, notre mission est de rendre l'accès
-            aux soins plus simple, rapide et efficace pour tous. Grâce à notre interface intuitive et notre vaste réseau
-            de professionnels de santé qualifiés, vous pouvez désormais prendre rendez-vous, consulter vos résultats
-            médicaux et obtenir des conseils de santé personnalisés en quelques clics.<br><br>
-
-            Explorez dès maintenant les nombreuses fonctionnalités de Medicare et découvrez comment nous pouvons vous
-            aider à mieux gérer votre santé au quotidien. Merci de nous faire confiance pour vos besoins médicaux. Nous
-            sommes ici pour vous accompagner à chaque étape de votre parcours de santé.<br><br>
-
-            Bienvenue chez Medicare, où votre bien-être est notre priorité. <br>
-            <div id="carrousel">
-                <ul>
-                    <li><img src="img/carrousel1.jpg" width="120" height="100"></li>
-                    <li><img src="img/carrousel2.jpg" width="120" height="100"></li>
-                    <li><img src="img/carrousel3.jpg" width="120" height="100"></li>
-                    <li><img src="img/carrousel4.jpg" width="120" height="100"></li>
-                    <li><img src="img/carrousel5.jpg" width="120" height="100"></li>
-                    <li><img src="img/carrousel6.jpg" width="120" height="100"></li>
-                    <li><img src="img/carrousel7.jpg" width="120" height="100"></li>
-                    <li><img src="img/carrousel8.jpg" width="120" height="100"></li>
-                    <li><img src="img/carrousel9.jpg" width="120" height="100"></li>
-                    <li><img src="img/carrousel10.jpg" width="120" height="100"></li>
-                    <li><img src="img/carrousel11.jpg" width="120" height="100"></li>
-                    <li><img src="img/carrousel12.jpg" width="120" height="100"></li>
-                </ul>
-            </div>
-            <div id="buttons">
-                <input type="button" value="<" class="prev">
-                <input type="button" value=">" class="next">
+            
+    
+                Nous sommes ravis de vous accueillir sur Medicare, votre partenaire de confiance pour toutes vos
+                consultations médicales et services de santé en ligne. Chez Medicare, notre mission est de rendre l'accès
+                aux soins plus simple, rapide et efficace pour tous. Grâce à notre interface intuitive et notre vaste réseau
+                de professionnels de santé qualifiés, vous pouvez désormais prendre rendez-vous, consulter vos résultats
+                médicaux et obtenir des conseils de santé personnalisés en quelques clics.<br><br>
+    
+                Explorez dès maintenant les nombreuses fonctionnalités de Medicare et découvrez comment nous pouvons vous
+                aider à mieux gérer votre santé au quotidien. Merci de nous faire confiance pour vos besoins médicaux. Nous
+                sommes ici pour vous accompagner à chaque étape de votre parcours de santé.<br><br>
+    
+                Bienvenue chez Medicare, où votre bien-être est notre priorité. <br>
+            <div id="carrousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/carrousel1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/carrousel2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/carrousel3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/carrousel4.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/carrousel5.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/carrousel6.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/carrousel7.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/carrousel8.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/carrousel9.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/carrousel10.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/carrousel11.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/carrousel12.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carrousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carrousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
         </div>
 

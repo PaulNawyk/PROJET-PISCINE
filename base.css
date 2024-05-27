@@ -1,35 +1,45 @@
-   #header {
-    background-color: rgb(20, 22, 93);
-    color: white;
-    text-align: center;
-    margin-top: 1%;
-    margin-left:2%;
-    margin-right:2%;
-    height : 8%;
+#header {
+  background-color: rgb(20, 22, 93);
+  color: white;
+  text-align: center;
+  margin-top: 1%;
+  margin-left: 2%;
+  margin-right: 2%;
+  height: 8%;
+}
 
-    }
-    #wrapper{
-    position:absolute;
-    width : 100%;
-    height : 100%;
-    background-color : rgb(18, 37, 125);
-    } 
-    #navigation {
-    background-color: rgb(103, 104, 176);
-    color: white;
-    text-align: center;
-    margin-left:2%;
-    margin-right:2%;
-    height : 10%;
+#wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(18, 37, 125);
+}
 
-    }
-    #section {
-      background-color: rgb(255, 255, 255);
-      color: rgb(70, 5, 5);
-      text-align: center;
-      margin-left:2%;
-      margin-right:2%;
-      height : 76%;
+#navigation {
+  background-color: rgb(103, 104, 176);
+  color: white;
+  text-align: center;
+  margin-left: 2%;
+  margin-right: 2%;
+  height: 10%;
+}
 
-  }
-  
+#section {
+  background-color: rgb(255, 255, 255);
+  color: rgb(70, 5, 5);
+  text-align: center;
+  margin-left: 2%;
+  margin-right: 2%;
+  height: 76%;
+}
+
+#carrousel {
+  width: 20%; /* Adjust as needed */
+  margin-left: 40%;
+}
+
+.carousel-item img {
+  width: 30%;
+  height: auto;
+  display: block;
+}
