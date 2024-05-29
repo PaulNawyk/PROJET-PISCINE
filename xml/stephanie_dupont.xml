@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CV>
+    <PersonalInformation>
+        <FirstName>Stéphanie</FirstName>
+        <LastName>Dupont</LastName>
+        <Title>Médecin Généraliste</Title>
+        <ContactInfo>
+            <Email>stephanie.dupont@example.com</Email>
+            <Phone>+33 1 23 45 67 89</Phone>
+            <Address>
+                <Street>10 Rue de la Santé</Street>
+                <City>Paris</City>
+                <PostalCode>75001</PostalCode>
+                <Country>France</Country>
+            </Address>
+        </ContactInfo>
+    </PersonalInformation>
+
+    <ProfessionalExperience>
+        <Experience>
+            <Title>Médecin Généraliste</Title>
+            <Organization>Clinique de la Santé</Organization>
+            <Location>Paris, France</Location>
+            <StartDate>2015-01-01</StartDate>
+            <EndDate>Present</EndDate>
+            <Responsibilities>
+                <Responsibility>Consultations et suivi des patients</Responsibility>
+                <Responsibility>Diagnostic et traitement des maladies courantes</Responsibility>
+                <Responsibility>Gestion des dossiers médicaux</Responsibility>
+                <Responsibility>Collaboration avec des spécialistes pour des cas complexes</Responsibility>
+            </Responsibilities>
+        </Experience>
+        <Experience>
+            <Title>Interne en Médecine Générale</Title>
+            <Organization>Hôpital Saint-Louis</Organization>
+            <Location>Paris, France</Location>
+            <StartDate>2012-07-01</StartDate>
+            <EndDate>2014-12-31</EndDate>
+            <Responsibilities>
+                <Responsibility>Assistance aux consultations</Responsibility>
+                <Responsibility>Prise en charge des urgences</Responsibility>
+                <Responsibility>Participation aux réunions cliniques</Responsibility>
+                <Responsibility>Formation continue et mise à jour des connaissances</Responsibility>
+            </Responsibilities>
+        </Experience>
+    </ProfessionalExperience>
+
+    <Education>
+        <Degree>
+            <Title>Diplôme d'État de Docteur en Médecine</Title>
+            <Institution>Université Pierre et Marie Curie (UPMC)</Institution>
+            <Location>Paris, France</Location>
+            <StartDate>2006-09-01</StartDate>
+            <EndDate>2012-06-30</EndDate>
+        </Degree>
+        <Degree>
+            <Title>Baccalauréat Scientifique</Title>
+            <Institution>Lycée Louis-le-Grand</Institution>
+            <Location>Paris, France</Location>
+            <StartDate>2003-09-01</StartDate>
+            <EndDate>2006-06-30</EndDate>
+        </Degree>
+    </Education>
+
+    <Skills>
+        <Skill>Consultation et diagnostic</Skill>
+        <Skill>Prise en charge des patients</Skill>
+        <Skill>Gestion des dossiers médicaux électroniques</Skill>
+        <Skill>Connaissance des protocoles médicaux</Skill>
+        <Skill>Communication interpersonnelle</Skill>
+    </Skills>
+
+    <Languages>
+        <Language>
+            <Name>Français</Name>
+            <Proficiency>Langue Maternelle</Proficiency>
+        </Language>
+        <Language>
+            <Name>Anglais</Name>
+            <Proficiency>Courant</Proficiency>
+        </Language>
+    </Languages>
+</CV>
