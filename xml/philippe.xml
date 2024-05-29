@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CV>
+    <InformationPersonnelle>
+        <Nom>Cohen</Nom>
+        <Prenom>Philippe</Prenom>
+        <Email>philippe.cohen@example.com</Email>
+        <Telephone>0123456789</Telephone>
+        <Adresse>
+            <Ligne1>123 Rue Exemple</Ligne1>
+            <Ligne2>Appartement 4B</Ligne2>
+            <Ville>Paris</Ville>
+            <CodePostal>75000</CodePostal>
+            <Pays>France</Pays>
+        </Adresse>
+    </InformationPersonnelle>
+    
+    <Profil> 
+        <Description>Médecin spécialiste en cardiologie avec plus de 10 ans d'expérience dans le traitement des maladies cardiovasculaires.</Description> 
+    </Profil>
+
+    <ExperienceProfessionnelle>
+        <Experience>
+            <Poste>Cardiologue</Poste>
+            <Entreprise>Hôpital Saint-Louis</Entreprise>
+            <Lieu>Paris, France</Lieu>
+            <DateDebut>2015-01-01</DateDebut>
+            <DateFin>Present</DateFin>
+            <Description>Responsable du service de cardiologie. Spécialisé dans le diagnostic et le traitement des maladies cardiaques.</Description>
+        </Experience>
+        <Experience>
+            <Poste>Interne en cardiologie</Poste>
+            <Entreprise>Hôpital de la Pitié-Salpêtrière</Entreprise>
+            <Lieu>Paris, France</Lieu>
+            <DateDebut>2010-01-01</DateDebut>
+            <DateFin>2014-12-31</DateFin>
+            <Description>Formation en cardiologie, avec une rotation dans différents départements.</Description>
+        </Experience>
+    </ExperienceProfessionnelle>
+    
+    <Education>
+        <Diplome>
+            <Titre>Doctorat en Médecine</Titre>
+            <Etablissement>Université de Paris</Etablissement>
+            <Lieu>Paris, France</Lieu>
+            <DateObtention>2009-06-15</DateObtention>
+        </Diplome>
+        <Diplome>
+            <Titre>Master en Cardiologie</Titre>
+            <Etablissement>Université de Paris</Etablissement>
+            <Lieu>Paris, France</Lieu>
+            <DateObtention>2014-06-15</DateObtention>
+        </Diplome>
+    </Education>
+    
+    <Competences>
+        <Competence>Diagnostic et traitement des maladies cardiovasculaires</Competence>
+        <Competence>Échocardiographie</Competence>
+        <Competence>Soins intensifs cardiologiques</Competence>
+        <Competence>Recherche clinique</Competence>
+    </Competences>
+    
+    <Publications>
+        <Publication>
+            <Titre>Étude des effets des statines sur la réduction des risques cardiovasculaires</Titre>
+            <Revue>Journal de Cardiologie</Revue>
+            <DatePublication>2018-03-01</DatePublication>
+        </Publication>
+    </Publications>
+    
+    <Langues>
+        <Langue>
+            <Nom>Français</Nom>
+            <Niveau>Langue Maternelle</Niveau>
+        </Langue>
+        <Langue>
+            <Nom>Anglais</Nom>
+            <Niveau>Courant</Niveau>
+        </Langue>
+    </Langues>
+</CV>
