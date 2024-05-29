@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CV>
+    <InformationPersonnelle>
+        <Nom>Leroy</Nom>
+        <Prenom>Céline</Prenom>
+        <Email>celine.leroy@example.com</Email>
+        <Telephone>0987654321</Telephone>
+        <Adresse>
+            <Ligne1>456 Rue de l'Exemple</Ligne1>
+            <Ligne2>Appartement 2A</Ligne2>
+            <Ville>Marseille</Ville>
+            <CodePostal>13000</CodePostal>
+            <Pays>France</Pays>
+        </Adresse>
+    </InformationPersonnelle>
+    
+    <Profil> 
+        <Description>Andrologue expérimentée avec une expertise dans les troubles reproductifs masculins et les soins de santé sexuelle.</Description> 
+    </Profil>
+
+    <ExperienceProfessionnelle>
+        <Experience>
+            <Poste>Andrologue</Poste>
+            <Entreprise>Clinique du Parc</Entreprise>
+            <Lieu>Marseille, France</Lieu>
+            <DateDebut>2016-05-01</DateDebut>
+            <DateFin>Present</DateFin>
+            <Description>Spécialisée dans le diagnostic et le traitement des troubles andrologiques, y compris les problèmes de fertilité et de dysfonction érectile.</Description>
+        </Experience>
+        <Experience>
+            <Poste>Résidente en Andrologie</Poste>
+            <Entreprise>Centre Hospitalier Universitaire de Marseille</Entreprise>
+            <Lieu>Marseille, France</Lieu>
+            <DateDebut>2012-07-01</DateDebut>
+            <DateFin>2016-04-30</DateFin>
+            <Description>Formation intensive en andrologie avec rotations dans diverses unités spécialisées.</Description>
+        </Experience>
+    </ExperienceProfessionnelle>
+    
+    <Education>
+        <Diplome>
+            <Titre>Doctorat en Médecine</Titre>
+            <Etablissement>Université d'Aix-Marseille</Etablissement>
+            <Lieu>Marseille, France</Lieu>
+            <DateObtention>2011-06-15</DateObtention>
+        </Diplome>
+        <Diplome>
+            <Titre>Master en Andrologie</Titre>
+            <Etablissement>Université d'Aix-Marseille</Etablissement>
+            <Lieu>Marseille, France</Lieu>
+            <DateObtention>2015-06-15</DateObtention>
+        </Diplome>
+    </Education>
+    
+    <Competences>
+        <Competence>Diagnostic des troubles reproductifs masculins</Competence>
+        <Competence>Traitement de la dysfonction érectile</Competence>
+        <Competence>Thérapies hormonales</Competence>
+        <Competence>Conseil en santé sexuelle</Competence>
+    </Competences>
+    
+    <Publications>
+        <Publication>
+            <Titre>Impact des interventions hormonales sur la fertilité masculine</Titre>
+            <Revue>Revue Internationale d'Andrologie</Revue>
+            <DatePublication>2019-07-15</DatePublication>
+        </Publication>
+    </Publications>
+    
+    <Langues>
+        <Langue>
+            <Nom>Français</Nom>
+            <Niveau>Langue Maternelle</Niveau>
+        </Langue>
+        <Langue>
+            <Nom>Anglais</Nom>
+            <Niveau>Courant</Niveau>
+        </Langue>
+    </Langues>
+</CV>
