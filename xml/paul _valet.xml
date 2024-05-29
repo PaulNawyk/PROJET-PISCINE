@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CV>
+    <PersonalInformation>
+        <FirstName>Paul</FirstName>
+        <LastName>Valet</LastName>
+        <Title>Médecin Généraliste</Title>
+        <ContactInfo>
+            <Email>paul.valet@example.com</Email>
+            <Phone>+33 3 12 34 56 78</Phone>
+            <Address>
+                <Street>20 Rue des Médecins</Street>
+                <City>Marseille</City>
+                <PostalCode>13001</PostalCode>
+                <Country>France</Country>
+            </Address>
+        </ContactInfo>
+    </PersonalInformation>
+
+    <ProfessionalExperience>
+        <Experience>
+            <Title>Médecin Généraliste</Title>
+            <Organization>Cabinet Médical Valet</Organization>
+            <Location>Marseille, France</Location>
+            <StartDate>2017-05-01</StartDate>
+            <EndDate>Present</EndDate>
+            <Responsibilities>
+                <Responsibility>Consultations médicales générales</Responsibility>
+                <Responsibility>Suivi des patients chroniques</Responsibility>
+                <Responsibility>Conseil en prévention et santé publique</Responsibility>
+                <Responsibility>Coordination avec les spécialistes et les hôpitaux</Responsibility>
+            </Responsibilities>
+        </Experience>
+        <Experience>
+            <Title>Interne en Médecine Générale</Title>
+            <Organization>Hôpital de la Timone</Organization>
+            <Location>Marseille, France</Location>
+            <StartDate>2014-06-01</StartDate>
+            <EndDate>2017-04-30</EndDate>
+            <Responsibilities>
+                <Responsibility>Assistance aux consultations</Responsibility>
+                <Responsibility>Prise en charge des urgences</Responsibility>
+                <Responsibility>Participation aux visites à domicile</Responsibility>
+                <Responsibility>Formation et supervision des nouveaux internes</Responsibility>
+            </Responsibilities>
+        </Experience>
+        <Experience>
+            <Title>Externe en Médecine</Title>
+            <Organization>Hôpital Nord</Organization>
+            <Location>Marseille, France</Location>
+            <StartDate>2011-06-01</StartDate>
+            <EndDate>2014-05-31</EndDate>
+            <Responsibilities>
+                <Responsibility>Assistance aux soins quotidiens</Responsibility>
+                <Responsibility>Suivi des patients hospitalisés</Responsibility>
+                <Responsibility>Participation aux consultations spécialisées</Responsibility>
+                <Responsibility>Rédaction de comptes-rendus médicaux</Responsibility>
+            </Responsibilities>
+        </Experience>
+    </ProfessionalExperience>
+
+    <Education>
+        <Degree>
+            <Title>Diplôme d'État de Docteur en Médecine</Title>
+            <Institution>Université d'Aix-Marseille</Institution>
+            <Location>Marseille, France</Location>
+            <StartDate>2007-09-01</StartDate>
+            <EndDate>2014-06-30</EndDate>
+        </Degree>
+        <Degree>
+            <Title>Baccalauréat Scientifique</Title>
+            <Institution>Lycée Thiers</Institution>
+            <Location>Marseille, France</Location>
+            <StartDate>2004-09-01</StartDate>
+            <EndDate>2007-06-30</EndDate>
+        </Degree>
+    </Education>
+
+    <Skills>
+        <Skill>Consultation médicale</Skill>
+        <Skill>Suivi des maladies chroniques</Skill>
+        <Skill>Conseils en prévention</Skill>
+        <Skill>Utilisation des outils de gestion des dossiers médicaux</Skill>
+        <Skill>Communication avec les patients</Skill>
+    </Skills>
+
+    <Languages>
+        <Language>
+            <Name>Français</Name>
+            <Proficiency>Langue Maternelle</Proficiency>
+        </Language>
+        <Language>
+            <Name>Anglais</Name>
+            <Proficiency>Courant</Proficiency>
+        </Language>
+    </Languages>
+</CV>

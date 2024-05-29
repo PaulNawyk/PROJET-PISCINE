@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CV>
+    <PersonalInformation>
+        <FirstName>Aurélie</FirstName>
+        <LastName>Rembry</LastName>
+        <Title>Médecin Spécialiste en Addictologie</Title>
+        <ContactInfo>
+            <Email>aurelie.rembry@example.com</Email>
+            <Phone>+33 6 12 34 56 78</Phone>
+            <Address>
+                <Street>10 Rue des Soins</Street>
+                <City>Paris</City>
+                <PostalCode>75001</PostalCode>
+                <Country>France</Country>
+            </Address>
+        </ContactInfo>
+    </PersonalInformation>
+
+    <ProfessionalExperience>
+        <Experience>
+            <Title>Médecin Spécialiste en Addictologie</Title>
+            <Organization>Centre de Traitement des Addictions de Paris</Organization>
+            <Location>Paris, France</Location>
+            <StartDate>2014-01-01</StartDate>
+            <EndDate>Present</EndDate>
+            <Responsibilities>
+                <Responsibility>Prise en charge des patients souffrant de diverses addictions</Responsibility>
+                <Responsibility>Élaboration et suivi de programmes de désintoxication</Responsibility>
+                <Responsibility>Conseil et soutien psychologique</Responsibility>
+                <Responsibility>Coordination avec les équipes pluridisciplinaires</Responsibility>
+            </Responsibilities>
+        </Experience>
+        <Experience>
+            <Title>Interne en Addictologie</Title>
+            <Organization>Hôpital Saint-Louis</Organization>
+            <Location>Paris, France</Location>
+            <StartDate>2011-01-01</StartDate>
+            <EndDate>2013-12-31</EndDate>
+            <Responsibilities>
+                <Responsibility>Suivi des patients en consultation</Responsibility>
+                <Responsibility>Participation aux programmes de traitement</Responsibility>
+                <Responsibility>Assistance aux groupes de soutien</Responsibility>
+                <Responsibility>Rédaction des rapports médicaux</Responsibility>
+            </Responsibilities>
+        </Experience>
+        <Experience>
+            <Title>Externe en Médecine</Title>
+            <Organization>Centre Hospitalier Universitaire (CHU) de Paris</Organization>
+            <Location>Paris, France</Location>
+            <StartDate>2008-06-01</StartDate>
+            <EndDate>2010-12-31</EndDate>
+            <Responsibilities>
+                <Responsibility>Assistance aux consultations médicales</Responsibility>
+                <Responsibility>Suivi des patients hospitalisés</Responsibility>
+                <Responsibility>Participation aux réunions cliniques</Responsibility>
+                <Responsibility>Rédaction des comptes-rendus médicaux</Responsibility>
+            </Responsibilities>
+        </Experience>
+    </ProfessionalExperience>
+
+    <Education>
+        <Degree>
+            <Title>Diplôme d'État de Docteur en Médecine</Title>
+            <Institution>Université de Paris</Institution>
+            <Location>Paris, France</Location>
+            <StartDate>2003-09-01</StartDate>
+            <EndDate>2008-06-30</EndDate>
+        </Degree>
+        <Degree>
+            <Title>Diplôme Universitaire d'Addictologie</Title>
+            <Institution>Université de Paris</Institution>
+            <Location>Paris, France</Location>
+            <StartDate>2008-09-01</StartDate>
+            <EndDate>2010-06-30</EndDate>
+        </Degree>
+    </Education>
+
+    <Skills>
+        <Skill>Traitement des addictions</Skill>
+        <Skill>Conseil et soutien psychologique</Skill>
+        <Skill>Élaboration de programmes de désintoxication</Skill>
+        <Skill>Coordination avec des équipes pluridisciplinaires</Skill>
+        <Skill>Recherche clinique en addictologie</Skill>
+        <Skill>Communication avec les patients</Skill>
+    </Skills>
+
+    <Languages>
+        <Language>
+            <Name>Français</Name>
+            <Proficiency>Langue Maternelle</Proficiency>
+        </Language>
+        <Language>
+            <Name>Anglais</Name>
+            <Proficiency>Courant</Proficiency>
+        </Language>
+    </Languages>
+</CV>
