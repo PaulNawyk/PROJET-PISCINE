@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CV>
+    <InformationPersonnelle>
+        <Nom>Tillon</Nom>
+        <Prenom>Laurent</Prenom>
+        <Email>laurent.tillon@example.com</Email>
+        <Telephone>0167894321</Telephone>
+        <Adresse>
+            <Ligne1>123 Boulevard de la Santé</Ligne1>
+            <Ligne2>Appartement 7B</Ligne2>
+            <Ville>Paris</Ville>
+            <CodePostal>75010</CodePostal>
+            <Pays>France</Pays>
+        </Adresse>
+    </InformationPersonnelle>
+    
+    <Profil> 
+        <Description>Spécialiste expérimenté en infections sexuellement transmissibles (IST) avec une expertise dans la prévention, le diagnostic et le traitement des IST.</Description> 
+    </Profil>
+
+    <ExperienceProfessionnelle>
+        <Experience>
+            <Poste>Spécialiste en IST</Poste>
+            <Entreprise>Hôpital Saint-Louis</Entreprise>
+            <Lieu>Paris, France</Lieu>
+            <DateDebut>2010-01-15</DateDebut>
+            <DateFin>Present</DateFin>
+            <Description>Responsable du service des maladies sexuellement transmissibles, avec un focus sur la recherche et le traitement des IST.</Description>
+        </Experience>
+        <Experience>
+            <Poste>Résident en Infectiologie</Poste>
+            <Entreprise>Hôpital de la Pitié-Salpêtrière</Entreprise>
+            <Lieu>Paris, France</Lieu>
+            <DateDebut>2006-07-01</DateDebut>
+            <DateFin>2009-12-31</DateFin>
+            <Description>Formation spécialisée en infectiologie, avec une rotation dans le service des maladies sexuellement transmissibles.</Description>
+        </Experience>
+    </ExperienceProfessionnelle>
+    
+    <Education>
+        <Diplome>
+            <Titre>Doctorat en Médecine</Titre>
+            <Etablissement>Université Pierre et Marie Curie</Etablissement>
+            <Lieu>Paris, France</Lieu>
+            <DateObtention>2006-06-15</DateObtention>
+        </Diplome>
+        <Diplome>
+            <Titre>Master en Infectiologie</Titre>
+            <Etablissement>Université Pierre et Marie Curie</Etablissement>
+            <Lieu>Paris, France</Lieu>
+            <DateObtention>2009-06-15</DateObtention>
+        </Diplome>
+    </Education>
+    
+    <Competences>
+        <Competence>Prévention des IST</Competence>
+        <Competence>Diagnostic des IST</Competence>
+        <Competence>Traitement des IST</Competence>
+        <Competence>Conseil en santé sexuelle</Competence>
+    </Competences>
+    
+    <Publications>
+        <Publication>
+            <Titre>Étude sur les nouvelles méthodes de prévention des infections sexuellement transmissibles</Titre>
+            <Revue>Revue Française de Santé Sexuelle</Revue>
+            <DatePublication>2022-03-10</DatePublication>
+        </Publication>
+    </Publications>
+    
+    <Langues>
+        <Langue>
+            <Nom>Français</Nom>
+            <Niveau>Langue Maternelle</Niveau>
+        </Langue>
+        <Langue>
+            <Nom>Anglais</Nom>
+            <Niveau>Courant</Niveau>
+        </Langue>
+    </Langues>
+</CV>
