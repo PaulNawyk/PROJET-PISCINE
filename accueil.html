@@ -1,74 +1,136 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Medicare</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link href="base.css" rel="stylesheet" type="text/css" />
-    <script src="carrousel.js"></script>
-
-
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="base.css" rel="stylesheet" type="text/css"/>
 </head>
-
 <body>
     <div id="wrapper">
+        <div id="header">Medicare : Services Médicaux</div>
+        <div id="navigation" class="d-flex align-items-center">
+            <button class="btn btn-default mx-3">ACCUEIL</button>
 
-        <div id="header">
-            Medicare : Services Médicaux
-        </div>
-
-        <div id="navigation">
-            <button class="button"> ACCUEIL </button>
-            <button> PARCOURIR </button>
-            <button> RENDEZ-VOUS </button>
-            <button> PROFIL </button>
-            <input id="searchbar" type="text" name="search" placeholder="RECHERCHE...">
-            <img src="img/loupe.jpg" alt="LOGO" width="25" height="25">
-        </div>
-
-        <div id="section">
-            Bienvenue sur Medicare,<br> Votre nouvelle plateforme de santé en ligne ! <br><br>
-
-            Nous sommes ravis de vous accueillir sur Medicare, votre partenaire de confiance pour toutes vos
-            consultations médicales et services de santé en ligne. Chez Medicare, notre mission est de rendre l'accès
-            aux soins plus simple, rapide et efficace pour tous. Grâce à notre interface intuitive et notre vaste réseau
-            de professionnels de santé qualifiés, vous pouvez désormais prendre rendez-vous, consulter vos résultats
-            médicaux et obtenir des conseils de santé personnalisés en quelques clics.<br><br>
-
-            Explorez dès maintenant les nombreuses fonctionnalités de Medicare et découvrez comment nous pouvons vous
-            aider à mieux gérer votre santé au quotidien. Merci de nous faire confiance pour vos besoins médicaux. Nous
-            sommes ici pour vous accompagner à chaque étape de votre parcours de santé.<br><br>
-
-            Bienvenue chez Medicare, où votre bien-être est notre priorité. <br>
-            <div id="carrousel">
-                <ul>
-                    <li><img src="img/carrousel1.jpg" width="120" height="100"></li>
-                    <li><img src="img/carrousel2.jpg" width="120" height="100"></li>
-                    <li><img src="img/carrousel3.jpg" width="120" height="100"></li>
-                    <li><img src="img/carrousel4.jpg" width="120" height="100"></li>
-                    <li><img src="img/carrousel5.jpg" width="120" height="100"></li>
-                    <li><img src="img/carrousel6.jpg" width="120" height="100"></li>
-                    <li><img src="img/carrousel7.jpg" width="120" height="100"></li>
-                    <li><img src="img/carrousel8.jpg" width="120" height="100"></li>
-                    <li><img src="img/carrousel9.jpg" width="120" height="100"></li>
-                    <li><img src="img/carrousel10.jpg" width="120" height="100"></li>
-                    <li><img src="img/carrousel11.jpg" width="120" height="100"></li>
-                    <li><img src="img/carrousel12.jpg" width="120" height="100"></li>
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                    PARCOURIR
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#">Medecin</a>
+                        <ul class="dropdown-menu">
+                            <li>Cardiologues</a></li>
+                            <li>Dermatologues</a></li>
+                            <li>Pédiatres</a></li>
+                        </ul>
+                    <li><li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#">Généralistes</a>
+                        <ul class="dropdown-menu">
+                            <li>aa</a></li>
+                            <li>bb</a></li>
+                            <li>cc</a></li>
+                        </ul>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#">Spécialistes</a>
+                        <ul class="dropdown-menu">
+                            <li>dd</a></li>
+                            <li>ee</a></li>
+                            <li>ff</a></li>
+                        </ul>
+                    </li>
+                    <li><li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#">Laboratoire</a>
+                        <ul class="dropdown-menu">
+                            <li>gg</a></li>
+                            <li>hh</a></li>
+                            <li>ii</a></li>
+                        </ul>
                 </ul>
             </div>
-            <div id="buttons">
-                <input type="button" value="<" class="prev">
-                <input type="button" value=">" class="next">
+
+            <button class="btn btn-default ml-3">RENDEZ-VOUS</button>
+            <button class="btn btn-default ml-3">PROFIL</button>
+            <input id="searchbar" class="form-control mx-3" type="text" name="search" placeholder="RECHERCHE..." style="width: 15%;">
+            <img src="img/loupe.jpg" alt="LOGO" width="30" height="30">
+        </div>
+        <div id="section">
+            Bienvenue sur Medicare,<br> Votre nouvelle plateforme de santé en ligne ! <br><br>
+            Nous sommes ravis de vous accueillir sur Medicare, votre partenaire de confiance pour toutes vos consultations médicales et services de santé en ligne. Chez Medicare, notre mission est de rendre l'accès aux soins plus simple, rapide et efficace pour tous. Grâce à notre interface intuitive et notre vaste réseau de professionnels de santé qualifiés, vous pouvez désormais prendre rendez-vous, consulter vos résultats médicaux et obtenir des conseils de santé personnalisés en quelques clics.<br><br>
+            Explorez dès maintenant les nombreuses fonctionnalités de Medicare et découvrez comment nous pouvons vous aider à mieux gérer votre santé au quotidien. Merci de nous faire confiance pour vos besoins médicaux. Nous sommes ici pour vous accompagner à chaque étape de votre parcours de santé.<br><br>
+            Bienvenue chez Medicare, où votre bien-être est notre priorité. <br>
+            
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row no-gutters">
+                            <div class="col-4">
+                                <img class="rounded mx-auto d-block" src="img/carrousel1.jpg">
+                            </div>
+                            <div class="col-4">
+                                <img class="rounded mx-auto d-block" src="img/carrousel2.jpg">
+                            </div>
+                            <div class="col-4">
+                                <img class="rounded mx-auto d-block" src="img/carrousel3.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row no-gutters">
+                            <div class="col-4">
+                                <img class="rounded mx-auto d-block" src="img/carrousel4.jpg">
+                            </div>
+                            <div class="col-4">
+                                <img class="rounded mx-auto d-block" src="img/carrousel5.jpg">
+                            </div>
+                            <div class="col-4">
+                                <img class="rounded mx-auto d-block" src="img/carrousel6.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row no-gutters">
+                            <div class="col-4">
+                                <img class="rounded mx-auto d-block" src="img/carrousel11.jpg">
+                            </div>
+                            <div class="col-4">
+                                <img class="rounded mx-auto d-block" src="img/carrousel8.jpg">
+                            </div>
+                            <div class="col-4">
+                                <img class="rounded mx-auto d-block" src="img/carrousel10.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         </div>
-
-        <div id="footer">
-        </div>
-
+        <div id="footer"></div>
     </div>
-
+    <script>
+        $(document).ready(function(){
+            $('.dropdown-submenu a.dropdown-toggle').on("click", function(e){
+                if(!$(this).next('ul').hasClass('show')){
+                    $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+                }
+                var $subMenu = $(this).next('ul');
+                $subMenu.toggleClass('show');
+                $(this).parent('li').toggleClass('show');
+                $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e){
+                    $('.dropdown-submenu .show').removeClass("show");
+                });
+                return false;
+            });
+        });
+    </script>
 </body>
-
 </html>
