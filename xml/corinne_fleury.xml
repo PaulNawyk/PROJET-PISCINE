@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CV>
+    <InformationPersonnelle>
+        <Nom>Fleury</Nom>
+        <Prenom>Corinne</Prenom>
+        <Email>corinne.fleury@example.com</Email>
+        <Telephone>0123456789</Telephone>
+        <Adresse>
+            <Ligne1>789 Rue de l'Exemple</Ligne1>
+            <Ligne2>Appartement 5C</Ligne2>
+            <Ville>Lyon</Ville>
+            <CodePostal>69000</CodePostal>
+            <Pays>France</Pays>
+        </Adresse>
+    </InformationPersonnelle>
+    
+    <Profil> 
+        <Description>Médecin spécialiste en Gastro-Hépato-Entérologie avec plus de 12 ans d'expérience dans le traitement des maladies digestives et hépatiques.</Description> 
+    </Profil>
+
+    <ExperienceProfessionnelle>
+        <Experience>
+            <Poste>Gastro-Hépato-Entérologue</Poste>
+            <Entreprise>Centre Hospitalier Lyon-Sud</Entreprise>
+            <Lieu>Lyon, France</Lieu>
+            <DateDebut>2012-03-01</DateDebut>
+            <DateFin>Present</DateFin>
+            <Description>Responsable du service de gastro-entérologie. Spécialisée dans le diagnostic et le traitement des maladies du système digestif et du foie.</Description>
+        </Experience>
+        <Experience>
+            <Poste>Résidente en Gastro-Entérologie</Poste>
+            <Entreprise>Hôpital Édouard Herriot</Entreprise>
+            <Lieu>Lyon, France</Lieu>
+            <DateDebut>2008-07-01</DateDebut>
+            <DateFin>2012-02-28</DateFin>
+            <Description>Formation spécialisée en gastro-entérologie et hépatologie avec rotations dans diverses unités.</Description>
+        </Experience>
+    </ExperienceProfessionnelle>
+    
+    <Education>
+        <Diplome>
+            <Titre>Doctorat en Médecine</Titre>
+            <Etablissement>Université Claude Bernard Lyon 1</Etablissement>
+            <Lieu>Lyon, France</Lieu>
+            <DateObtention>2008-06-15</DateObtention>
+        </Diplome>
+        <Diplome>
+            <Titre>Master en Gastro-Entérologie</Titre>
+            <Etablissement>Université Claude Bernard Lyon 1</Etablissement>
+            <Lieu>Lyon, France</Lieu>
+            <DateObtention>2012-06-15</DateObtention>
+        </Diplome>
+    </Education>
+    
+    <Competences>
+        <Competence>Diagnostic des maladies digestives</Competence>
+        <Competence>Traitement des maladies hépatiques</Competence>
+        <Competence>Endoscopie digestive</Competence>
+        <Competence>Soins intensifs gastro-entérologiques</Competence>
+    </Competences>
+    
+    <Publications>
+        <Publication>
+            <Titre>Étude sur l'efficacité des nouveaux traitements pour l'hépatite C</Titre>
+            <Revue>Journal de Gastro-Hépato-Entérologie</Revue>
+            <DatePublication>2020-05-01</DatePublication>
+        </Publication>
+    </Publications>
+    
+    <Langues>
+        <Langue>
+            <Nom>Français</Nom>
+            <Niveau>Langue Maternelle</Niveau>
+        </Langue>
+        <Langue>
+            <Nom>Anglais</Nom>
+            <Niveau>Courant</Niveau>
+        </Langue>
+    </Langues>
+</CV>
