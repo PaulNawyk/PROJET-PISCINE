@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CV>
+    <InformationPersonnelle>
+        <Nom>Bouchet</Nom>
+        <Prenom>Marianne</Prenom>
+        <Email>marianne.bouchet@example.com</Email>
+        <Telephone>0145678910</Telephone>
+        <Adresse>
+            <Ligne1>321 Avenue de la République</Ligne1>
+            <Ligne2>Appartement 8D</Ligne2>
+            <Ville>Bordeaux</Ville>
+            <CodePostal>33000</CodePostal>
+            <Pays>France</Pays>
+        </Adresse>
+    </InformationPersonnelle>
+    
+    <Profil> 
+        <Description>Gynécologue expérimentée avec plus de 15 ans d'expérience dans le traitement des problèmes de santé féminine, y compris la grossesse et les troubles gynécologiques.</Description> 
+    </Profil>
+
+    <ExperienceProfessionnelle>
+        <Experience>
+            <Poste>Gynécologue</Poste>
+            <Entreprise>Clinique Saint-Augustin</Entreprise>
+            <Lieu>Bordeaux, France</Lieu>
+            <DateDebut>2009-09-01</DateDebut>
+            <DateFin>Present</DateFin>
+            <Description>Spécialisée dans les soins prénataux, la gestion des troubles gynécologiques et les interventions chirurgicales.</Description>
+        </Experience>
+        <Experience>
+            <Poste>Résidente en Gynécologie</Poste>
+            <Entreprise>Hôpital Pellegrin</Entreprise>
+            <Lieu>Bordeaux, France</Lieu>
+            <DateDebut>2005-07-01</DateDebut>
+            <DateFin>2009-08-31</DateFin>
+            <Description>Formation spécialisée en gynécologie avec rotations dans diverses unités spécialisées.</Description>
+        </Experience>
+    </ExperienceProfessionnelle>
+    
+    <Education>
+        <Diplome>
+            <Titre>Doctorat en Médecine</Titre>
+            <Etablissement>Université de Bordeaux</Etablissement>
+            <Lieu>Bordeaux, France</Lieu>
+            <DateObtention>2005-06-15</DateObtention>
+        </Diplome>
+        <Diplome>
+            <Titre>Master en Gynécologie</Titre>
+            <Etablissement>Université de Bordeaux</Etablissement>
+            <Lieu>Bordeaux, France</Lieu>
+            <DateObtention>2009-06-15</DateObtention>
+        </Diplome>
+    </Education>
+    
+    <Competences>
+        <Competence>Soins prénataux</Competence>
+        <Competence>Gestion des troubles gynécologiques</Competence>
+        <Competence>Chirurgie gynécologique</Competence>
+        <Competence>Conseil en santé reproductive</Competence>
+    </Competences>
+    
+    <Publications>
+        <Publication>
+            <Titre>Impact des techniques de FIV sur les taux de succès de grossesse</Titre>
+            <Revue>Journal de Gynécologie</Revue>
+            <DatePublication>2021-09-01</DatePublication>
+        </Publication>
+    </Publications>
+    
+    <Langues>
+        <Langue>
+            <Nom>Français</Nom>
+            <Niveau>Langue Maternelle</Niveau>
+        </Langue>
+        <Langue>
+            <Nom>Anglais</Nom>
+            <Niveau>Courant</Niveau>
+        </Langue>
+    </Langues>
+</CV>
