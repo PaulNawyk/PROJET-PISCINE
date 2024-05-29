@@ -2,7 +2,6 @@
       background-color: rgb(20, 22, 93);
       color: white;
       text-align: center;
-      margin-top: 1%;
       margin-left:2%;
       margin-right:2%;
       height : 8%;
@@ -21,7 +20,6 @@
       margin-left:2%;
       margin-right:2%;
       height : 10%;
-
       }
       #section {
         background-color: rgb(255, 255, 255);
@@ -30,8 +28,16 @@
         margin-left:2%;
         margin-right:2%;
         height : 76%;
-
     }
+    #footer {
+      background-color: rgb(103, 104, 176);
+      color: white;
+      text-align: center;
+      margin-left:2%;
+      margin-right:2%;
+      height : 5%;
+      }
+    
     .carousel-inner img {
       width: 55%;
       height: auto;
