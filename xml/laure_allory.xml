@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CV>
+    <InformationPersonnelle>
+        <Nom>Allory</Nom>
+        <Prenom>Laure</Prenom>
+        <Email>laure.allory@example.com</Email>
+        <Telephone>0176543210</Telephone>
+        <Adresse>
+            <Ligne1>456 Rue de la Santé</Ligne1>
+            <Ligne2>Appartement 9A</Ligne2>
+            <Ville>Marseille</Ville>
+            <CodePostal>13001</CodePostal>
+            <Pays>France</Pays>
+        </Adresse>
+    </InformationPersonnelle>
+    
+    <Profil> 
+        <Description>Ostéopathe expérimentée avec plus de 10 ans d'expérience dans le traitement des douleurs musculo-squelettiques et des troubles fonctionnels.</Description> 
+    </Profil>
+
+    <ExperienceProfessionnelle>
+        <Experience>
+            <Poste>Ostéopathe</Poste>
+            <Entreprise>Cabinet Ostéopathique de Marseille</Entreprise>
+            <Lieu>Marseille, France</Lieu>
+            <DateDebut>2013-04-01</DateDebut>
+            <DateFin>Present</DateFin>
+            <Description>Prise en charge des patients souffrant de troubles musculo-squelettiques et réalisation de thérapies manuelles pour soulager la douleur et améliorer la mobilité.</Description>
+        </Experience>
+        <Experience>
+            <Poste>Résidente en Ostéopathie</Poste>
+            <Entreprise>Institut de Formation en Ostéopathie du Sud</Entreprise>
+            <Lieu>Marseille, France</Lieu>
+            <DateDebut>2009-09-01</DateDebut>
+            <DateFin>2013-03-31</DateFin>
+            <Description>Formation spécialisée en ostéopathie avec une pratique clinique intensive et supervision par des professionnels expérimentés.</Description>
+        </Experience>
+    </ExperienceProfessionnelle>
+    
+    <Education>
+        <Diplome>
+            <Titre>Diplôme en Ostéopathie</Titre>
+            <Etablissement>Institut de Formation en Ostéopathie du Sud</Etablissement>
+            <Lieu>Marseille, France</Lieu>
+            <DateObtention>2013-06-15</DateObtention>
+        </Diplome>
+    </Education>
+    
+    <Competences>
+        <Competence>Thérapies manuelles</Competence>
+        <Competence>Gestion des douleurs musculo-squelettiques</Competence>
+        <Competence>Amélioration de la mobilité</Competence>
+        <Competence>Conseil en ergonomie et posture</Competence>
+    </Competences>
+    
+    <Publications>
+        <Publication>
+            <Titre>Étude sur l'efficacité des techniques ostéopathiques dans le traitement des lombalgies chroniques</Titre>
+            <Revue>Revue Française d'Ostéopathie</Revue>
+            <DatePublication>2021-11-01</DatePublication>
+        </Publication>
+    </Publications>
+    
+    <Langues>
+        <Langue>
+            <Nom>Français</Nom>
+            <Niveau>Langue Maternelle</Niveau>
+        </Langue>
+        <Langue>
+            <Nom>Anglais</Nom>
+            <Niveau>Courant</Niveau>
+        </Langue>
+    </Langues>
+</CV>
