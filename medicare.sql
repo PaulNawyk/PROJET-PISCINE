@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 30, 2024 at 11:46 AM
+-- Generation Time: May 30, 2024 at 01:36 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -75,18 +75,23 @@ CREATE TABLE `medecin` (
   `user_id` int(11) NOT NULL,
   `photo` varchar(255) CHARACTER SET latin1 NOT NULL,
   `bureau` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `cv` text CHARACTER SET latin1 NOT NULL
+  `cv` text CHARACTER SET latin1 NOT NULL,
+  `specialite_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `medecin_spe`
+-- Table structure for table `paiement`
 --
 
-CREATE TABLE `medecin_spe` (
-  `medecin_id` int(11) NOT NULL,
-  `specialite_id` int(11) NOT NULL
+CREATE TABLE `paiement` (
+  `id` int(11) NOT NULL,
+  `type_carte` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `numero_carte` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `nom_carte` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `date_expi` date NOT NULL,
+  `code_carte` varchar(255) CHARACTER SET latin1 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -156,6 +161,21 @@ CREATE TABLE `specialites` (
   `nom` varchar(255) CHARACTER SET latin1 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `specialites`
+--
+
+INSERT INTO `specialites` (`id`, `nom`) VALUES
+(1, 'généraliste'),
+(2, 'Addictologue\r\n'),
+(3, 'Andrologue\r\n'),
+(4, 'Cardiologue\r\n'),
+(5, 'Dermatologue\r\n'),
+(6, 'Gastro- Hépato-Entérologue\r\n'),
+(7, 'Gynécologue\r\n'),
+(8, 'spécialiste des I.S.T.\r\n'),
+(9, 'Ostéopathe\r\n');
+
 -- --------------------------------------------------------
 
 --
@@ -175,20 +195,15 @@ CREATE TABLE `users` (
   `ville` varchar(255) CHARACTER SET latin1 NOT NULL,
   `codePost` varchar(255) CHARACTER SET latin1 NOT NULL,
   `pays` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `carte_vitale` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `type_carte` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `numero_carte` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `nom_carte` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `date_expi` date NOT NULL,
-  `code_carte` varchar(255) CHARACTER SET latin1 NOT NULL
+  `carte_vitale` varchar(255) CHARACTER SET latin1 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `nom`, `prenom`, `email`, `mdp`, `type`, `telephone`, `adresse_ligne1`, `adresse_ligne2`, `ville`, `codePost`, `pays`, `carte_vitale`, `type_carte`, `numero_carte`, `nom_carte`, `date_expi`, `code_carte`) VALUES
-(1, 'Gerin', 'Paul', 'paul.gerin@edu.ece.fr', '$2y$10$qefsfKak0mSxHPdcI4eiou1LArkngINaSLUz3Au7kr7sb93Y8J/fy', 'client', '0638752665', '13 avenue maurice hauriou', '', 'Toulouse', '31000', 'France', '1021020192012', '', '', '', '9999-12-31', '');
+INSERT INTO `users` (`id`, `nom`, `prenom`, `email`, `mdp`, `type`, `telephone`, `adresse_ligne1`, `adresse_ligne2`, `ville`, `codePost`, `pays`, `carte_vitale`) VALUES
+(1, 'Gerin', 'Paul', 'paul.gerin@edu.ece.fr', '$2y$10$l56WTMqY6N2Wp1mO3lAetes4D5UVaKwAJJtcZ7HQ6602n..GUUzwO', 'client', '0638752665', '13 avenue maurice hauriou', '', 'Toulouse', '31000', 'France', '1021020192012');
 
 --
 -- Indexes for dumped tables
@@ -198,13 +213,16 @@ INSERT INTO `users` (`id`, `nom`, `prenom`, `email`, `mdp`, `type`, `telephone`,
 -- Indexes for table `disponibilites`
 --
 ALTER TABLE `disponibilites`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_disponibilites_medecin` (`medecin_id`);
 
 --
 -- Indexes for table `historique_consult`
 --
 ALTER TABLE `historique_consult`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_historique_consult_medecin` (`medecin_id`),
+  ADD KEY `fk_historique_consult_patient` (`patient_id`);
 
 --
 -- Indexes for table `laboratoire`
@@ -216,31 +234,46 @@ ALTER TABLE `laboratoire`
 -- Indexes for table `medecin`
 --
 ALTER TABLE `medecin`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_medecin_user` (`user_id`),
+  ADD KEY `fk_medecin_specialite` (`specialite_id`);
+
+--
+-- Indexes for table `paiement`
+--
+ALTER TABLE `paiement`
   ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `patient`
 --
 ALTER TABLE `patient`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_patient_user` (`user_id`);
 
 --
 -- Indexes for table `rdv`
 --
 ALTER TABLE `rdv`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_rdv_medecin` (`medecin_id`),
+  ADD KEY `fk_rdv_patient` (`patient_id`),
+  ADD KEY `fk_rdv_laboratoire` (`laboratoire_id`),
+  ADD KEY `fk_rdv_service` (`service_id`);
 
 --
 -- Indexes for table `services`
 --
 ALTER TABLE `services`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_services` (`laboratoire_id`);
 
 --
 -- Indexes for table `services_creneaux`
 --
 ALTER TABLE `services_creneaux`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_services_creneaux` (`services_id`);
 
 --
 -- Indexes for table `specialites`
@@ -284,6 +317,12 @@ ALTER TABLE `medecin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `paiement`
+--
+ALTER TABLE `paiement`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `patient`
 --
 ALTER TABLE `patient`
@@ -311,13 +350,64 @@ ALTER TABLE `services_creneaux`
 -- AUTO_INCREMENT for table `specialites`
 --
 ALTER TABLE `specialites`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `disponibilites`
+--
+ALTER TABLE `disponibilites`
+  ADD CONSTRAINT `fk_disponibilites_medecin` FOREIGN KEY (`medecin_id`) REFERENCES `medecin` (`id`);
+
+--
+-- Constraints for table `historique_consult`
+--
+ALTER TABLE `historique_consult`
+  ADD CONSTRAINT `fk_historique_consult_medecin` FOREIGN KEY (`medecin_id`) REFERENCES `medecin` (`id`),
+  ADD CONSTRAINT `fk_historique_consult_patient` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`);
+
+--
+-- Constraints for table `medecin`
+--
+ALTER TABLE `medecin`
+  ADD CONSTRAINT `fk_medecin_specialite` FOREIGN KEY (`specialite_id`) REFERENCES `specialites` (`id`),
+  ADD CONSTRAINT `fk_medecin_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `patient`
+--
+ALTER TABLE `patient`
+  ADD CONSTRAINT `fk_patient_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `rdv`
+--
+ALTER TABLE `rdv`
+  ADD CONSTRAINT `fk_rdv_laboratoire` FOREIGN KEY (`laboratoire_id`) REFERENCES `laboratoire` (`id`),
+  ADD CONSTRAINT `fk_rdv_medecin` FOREIGN KEY (`medecin_id`) REFERENCES `medecin` (`id`),
+  ADD CONSTRAINT `fk_rdv_patient` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`),
+  ADD CONSTRAINT `fk_rdv_service` FOREIGN KEY (`service_id`) REFERENCES `services` (`id`);
+
+--
+-- Constraints for table `services`
+--
+ALTER TABLE `services`
+  ADD CONSTRAINT `fk_services` FOREIGN KEY (`laboratoire_id`) REFERENCES `laboratoire` (`id`);
+
+--
+-- Constraints for table `services_creneaux`
+--
+ALTER TABLE `services_creneaux`
+  ADD CONSTRAINT `fk_services_creneaux` FOREIGN KEY (`services_id`) REFERENCES `services` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
