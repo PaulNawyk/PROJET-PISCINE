@@ -8,87 +8,68 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link href="signup.css" rel="stylesheet" type="text/css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-
 </head>
 
 <body>
   <div id="wrapper">
-    <form id="signup-form">
+    <form id="signup-form" action="signup_process.php" method="POST">
       <div id="text">
         <h1>SIGN UP</h1>
         <div class="form-group">
           <label class="form-label" for="prenom">Prénom</label>
-          <input type="text" id="prenom" class="form-control" required />
+          <input type="text" id="prenom" name="prenom" class="form-control" required />
         </div>
-
         <div class="form-group">
           <label class="form-label" for="nom">Nom</label>
-          <input type="text" id="nom" class="form-control" required />
+          <input type="text" id="nom" name="nom" class="form-control" required />
         </div>
-
         <div class="form-group">
-          <label class="form-label" for="email">Email </label>
-          <input type="email" id="email" class="form-control" required />
+          <label class="form-label" for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-control" required />
         </div>
-
         <div class="form-group">
           <label class="form-label" for="password">Mot de passe</label>
-          <input type="password" id="password" class="form-control" required />
+          <input type="password" id="password" name="password" class="form-control" required />
         </div>
-
         <div class="form-group">
           <label class="form-label" for="confirm-password">Confirmer le mot de passe</label>
-          <input type="password" id="confirm-password" class="form-control" required />
+          <input type="password" id="confirm-password" name="confirm-password" class="form-control" required />
         </div>
-
         <div class="form-group">
-          <label class="form-label" for="adresse1">Adresse </label>
-          <input type="text" id="adresse1" class="form-control" required />
+          <label class="form-label" for="adresse1">Adresse</label>
+          <input type="text" id="adresse1" name="adresse1" class="form-control" required />
         </div>
-
         <div class="form-group">
           <label class="form-label" for="ville">Ville</label>
-          <input type="text" id="ville" class="form-control" required />
+          <input type="text" id="ville" name="ville" class="form-control" required />
         </div>
-
         <div class="form-group">
           <label class="form-label" for="code-postal">Code Postal</label>
-          <input type="text" id="code-postal" class="form-control" required />
+          <input type="text" id="code-postal" name="code-postal" class="form-control" required />
         </div>
-
         <div class="form-group">
           <label class="form-label" for="pays">Pays</label>
-          <input type="text" id="pays" class="form-control" required />
+          <input type="text" id="pays" name="pays" class="form-control" required />
         </div>
-
         <div class="form-group">
           <label class="form-label" for="telephone">Numéro de téléphone</label>
-          <input type="tel" id="telephone" class="form-control" required />
+          <input type="tel" id="telephone" name="telephone" class="form-control" required />
         </div>
-
         <div class="form-group">
           <label class="form-label" for="cartev">Numéro de Carte Vitale</label>
-          <input type="tel" id="cartev" class="form-control" required />
+          <input type="tel" id="cartev" name="cartev" class="form-control" required />
         </div>
-
         <div class="form-group">
           <input class="checkbox" type="checkbox" required />
-          <label class="condition" for="terms">
-            J'accepte les conditions d'utilisation
-          </label>
+          <label class="condition" for="terms">J'accepte les conditions d'utilisation</label>
         </div>
-
         <div class="form-group">
-          <button type="submit" class="button">Inscription</button>
+          <button type="submit" class="button btn btn-primary">Inscription</button>
         </div>
-
-        <p class="form-label">Vous avez déjà un compte? <a href="signin.html" class="text-link">Connectez-vous ici</a>
-        </p>
+        <p class="form-label">Vous avez déjà un compte? <a href="signin.html" class="text-link">Connectez-vous ici</a></p>
       </div>
     </form>
   </div>
-  
 </body>
 
 </html>

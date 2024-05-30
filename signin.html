@@ -7,37 +7,28 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link href="signin.css" rel="stylesheet" type="text/css" />
-
-
-
 </head>
 
 <body>
     <div id="wrapper">
-        <form id="signup-form">
+        <form id="signin-form" action="signin_process.php" method="POST">
             <div id="text">
                 <h1>SIGN IN</h1>
                 <div class="form-group">
-                    <label class="form-label" for="username">Username</label>
-                    <input type="text" id="username" class="form-control" required />
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" required />
                 </div>
-
                 <div class="form-group">
                     <label class="form-label" for="password">Password</label>
-                    <input type="password" id="password" class="form-control" required />
+                    <input type="password" id="password" name="password" class="form-control" required />
                 </div>
-
-
                 <div class="form-group">
                     <button type="submit" class="button">Connexion</button>
                 </div>
-                <p class="form-label">Vous avez  n'avez pas de compte? <a href="signup.html" class="text-link">Créer un compte</a></p>
-
+                <p class="form-label">Vous n'avez pas de compte? <a href="signup.html" class="text-link">Créer un compte</a></p>
             </div>
         </form>
     </div>
-    </div>
-
 </body>
 
 </html>
