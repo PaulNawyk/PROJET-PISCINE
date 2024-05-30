@@ -19,13 +19,13 @@ $nom = $_POST['nom'];
 $email = $_POST['email'];
 $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 $adresse_ligne1 = $_POST['adresse1'];
-$adresse_ligne2 = ""; // Valeur par défaut vide pour adresse_ligne2
+$adresse_ligne2 = $_POST['adresse2'];
 $ville = $_POST['ville'];
 $codePost = $_POST['code-postal'];
 $pays = $_POST['pays'];
 $telephone = $_POST['telephone'];
 $carte_vitale = $_POST['cartev'];
-$type = 'client';
+$type = 'client'; // Vous pouvez définir le type selon vos besoins
 
 // Préparer et exécuter la requête d'insertion
 $sql = "INSERT INTO users (prenom, nom, email, mdp, adresse_ligne1, adresse_ligne2, ville, codePost, pays, telephone, carte_vitale, type) 
