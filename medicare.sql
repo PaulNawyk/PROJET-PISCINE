@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 31, 2024 at 11:53 AM
+-- Generation Time: May 31, 2024 at 02:20 PM
 -- Server version: 5.7.24
--- PHP Version: 7.4.16
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,6 +34,100 @@ CREATE TABLE `disponibilites` (
   `heure_debut` time NOT NULL,
   `heure_fin` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `disponibilites`
+--
+
+INSERT INTO `disponibilites` (`id`, `medecin_id`, `jour`, `heure_debut`, `heure_fin`)
+VALUES
+(1, 11, 'Lundi', '08:00:00', '12:00:00'),
+(2, 11, 'Lundi', '13:00:00', '17:00:00'),
+(3, 11, 'Mardi', '08:00:00', '12:00:00'),
+(4, 11, 'Mardi', '13:00:00', '17:00:00'),
+(5, 11, 'Mercredi', '08:00:00', '12:00:00'),
+(6, 11, 'Mercredi', '13:00:00', '17:00:00'),
+(7, 11, 'Jeudi', '08:00:00', '12:00:00'),
+(8, 11, 'Jeudi', '13:00:00', '17:00:00'),
+(9, 11, 'Vendredi', '08:00:00', '12:00:00'),
+(10, 11, 'Vendredi', '13:00:00', '17:00:00'),
+(11, 12, 'Lundi', '08:00:00', '12:00:00'),
+(12, 12, 'Lundi', '13:00:00', '15:00:00'),
+(13, 12, 'Mardi', '08:00:00', '12:00:00'),
+(14, 12, 'Mardi', '13:00:00', '15:00:00'),
+(15, 12, 'Jeudi', '08:00:00', '12:00:00'),
+(16, 12, 'Jeudi', '13:00:00', '15:00:00'),
+(17, 12, 'Vendredi', '08:00:00', '12:00:00'),
+(18, 12, 'Vendredi', '13:00:00', '15:00:00'),
+(19, 13, 'Samedi', '09:00:00', '12:00:00'),
+(20, 13, 'Samedi', '13:00:00', '18:00:00'),
+(21, 13, 'Dimanche', '09:00:00', '12:00:00'),
+(22, 13, 'Dimanche', '13:00:00', '18:00:00'),
+(23, 14, 'Mercredi', '08:00:00', '12:00:00'),
+(24, 14, 'Mercredi', '13:00:00', '16:00:00'),
+(25, 14, 'Jeudi', '08:00:00', '12:00:00'),
+(26, 14, 'Jeudi', '13:00:00', '16:00:00'),
+(27, 14, 'Vendredi', '08:00:00', '12:00:00'),
+(28, 14, 'Vendredi', '13:00:00', '16:00:00'),
+(29, 15, 'Lundi', '08:00:00', '12:00:00'),
+(30, 15, 'Lundi', '13:00:00', '15:00:00'),
+(31, 15, 'Mardi', '08:00:00', '12:00:00'),
+(32, 15, 'Mardi', '13:00:00', '15:00:00'),
+(33, 15, 'Mercredi', '08:00:00', '12:00:00'),
+(34, 15, 'Mercredi', '13:00:00', '15:00:00'),
+(35, 15, 'Vendredi', '08:00:00', '12:00:00'),
+(36, 15, 'Vendredi', '13:00:00', '15:00:00'),
+(37, 21, 'Mardi', '08:00:00', '12:00:00'),
+(38, 21, 'Mardi', '15:00:00', '18:00:00'),
+(39, 21, 'Mercredi', '08:00:00', '12:00:00'),
+(40, 21, 'Mercredi', '15:00:00', '18:00:00'),
+(41, 21, 'Jeudi', '08:00:00', '12:00:00'),
+(42, 21, 'Jeudi', '15:00:00', '18:00:00'),
+(43, 21, 'Vendredi', '08:00:00', '12:00:00'),
+(44, 21, 'Vendredi', '15:00:00', '18:00:00'),
+(45, 31, 'Lundi', '09:00:00', '12:00:00'),
+(46, 31, 'Lundi', '13:00:00', '17:00:00'),
+(47, 31, 'Mardi', '09:00:00', '12:00:00'),
+(48, 31, 'Mardi', '13:00:00', '17:00:00'),
+(49, 31, 'Mercredi', '09:00:00', '12:00:00'),
+(50, 31, 'Mercredi', '13:00:00', '17:00:00'),
+(51, 41, 'Lundi', '08:00:00', '12:00:00'),
+(52, 41, 'Mardi', '08:00:00', '12:00:00'),
+(53, 41, 'Mardi', '13:00:00', '14:00:00'),
+(54, 41, 'Mercredi', '08:00:00', '12:00:00'),
+(55, 41, 'Jeudi', '08:00:00', '12:00:00'),
+(56, 41, 'Jeudi', '13:00:00', '14:00:00'),
+(57, 41, 'Vendredi', '08:00:00', '12:00:00'),
+(58, 41, 'Vendredi', '13:00:00', '14:00:00'),
+(59, 51, 'Samedi', '08:00:00', '12:00:00'),
+(60, 51, 'Samedi', '13:00:00', '20:00:00'),
+(61, 51, 'Dimanche', '08:00:00', '12:00:00'),
+(62, 51, 'Dimanche', '13:00:00', '20:00:00'),
+(63, 61, 'Lundi', '13:00:00', '17:00:00'),
+(64, 61, 'Lundi', '18:00:00', '21:00:00'),
+(65, 61, 'Mardi', '13:00:00', '17:00:00'),
+(66, 61, 'Mardi', '18:00:00', '21:00:00'),
+(67, 61, 'Jeudi', '13:00:00', '17:00:00'),
+(68, 61, 'Jeudi', '18:00:00', '21:00:00'),
+(69, 61, 'Vendredi', '13:00:00', '17:00:00'),
+(70, 61, 'Vendredi', '18:00:00', '21:00:00'),
+(71, 71, 'Mardi', '10:00:00', '13:00:00'),
+(72, 71, 'Mardi', '14:00:00', '18:00:00'),
+(73, 71, 'Mercredi', '10:00:00', '13:00:00'),
+(74, 71, 'Mercredi', '14:00:00', '18:00:00'),
+(75, 71, 'Jeudi', '10:00:00', '13:00:00'),
+(76, 71, 'Jeudi', '14:00:00', '18:00:00'),
+(77, 71, 'Vendredi', '10:00:00', '13:00:00'),
+(78, 71, 'Vendredi', '14:00:00', '18:00:00'),
+(79, 81, 'Lundi', '09:00:00', '15:00:00'),
+(80, 81, 'Mardi', '09:00:00', '15:00:00'),
+(81, 81, 'Mercredi', '09:00:00', '15:00:00'),
+(82, 91, 'Mercredi', '08:00:00', '12:00:00'),
+(83, 91, 'Mercredi', '13:00:00', '17:00:00'),
+(84, 91, 'Jeudi', '08:00:00', '12:00:00'),
+(85, 91, 'Jeudi', '13:00:00', '17:00:00'),
+(86, 91, 'Vendredi', '08:00:00', '12:00:00'),
+(87, 91, 'Vendredi', '13:00:00', '17:00:00');
 
 -- --------------------------------------------------------
 
@@ -245,8 +339,7 @@ INSERT INTO `users` (`id`, `nom`, `prenom`, `email`, `mdp`, `type`, `telephone`,
 -- Indexes for table `disponibilites`
 --
 ALTER TABLE `disponibilites`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_disponibilites_medecin` (`medecin_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `historique_consult`
@@ -328,7 +421,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `disponibilites`
 --
 ALTER TABLE `disponibilites`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT for table `historique_consult`
@@ -359,87 +452,6 @@ ALTER TABLE `paiement`
 --
 ALTER TABLE `patient`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `rdv`
---
-ALTER TABLE `rdv`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `services`
---
-ALTER TABLE `services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `services_creneaux`
---
-ALTER TABLE `services_creneaux`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `specialites`
---
-ALTER TABLE `specialites`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `disponibilites`
---
-ALTER TABLE `disponibilites`
-  ADD CONSTRAINT `fk_disponibilites_medecin` FOREIGN KEY (`medecin_id`) REFERENCES `medecin` (`id`);
-
---
--- Constraints for table `historique_consult`
---
-ALTER TABLE `historique_consult`
-  ADD CONSTRAINT `fk_historique_consult_medecin` FOREIGN KEY (`medecin_id`) REFERENCES `medecin` (`id`),
-  ADD CONSTRAINT `fk_historique_consult_patient` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`);
-
---
--- Constraints for table `medecin`
---
-ALTER TABLE `medecin`
-  ADD CONSTRAINT `fk_medecin_specialite` FOREIGN KEY (`specialite_id`) REFERENCES `specialites` (`id`),
-  ADD CONSTRAINT `fk_medecin_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
-
---
--- Constraints for table `patient`
---
-ALTER TABLE `patient`
-  ADD CONSTRAINT `fk_patient_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
-
---
--- Constraints for table `rdv`
---
-ALTER TABLE `rdv`
-  ADD CONSTRAINT `fk_rdv_laboratoire` FOREIGN KEY (`laboratoire_id`) REFERENCES `laboratoire` (`id`),
-  ADD CONSTRAINT `fk_rdv_medecin` FOREIGN KEY (`medecin_id`) REFERENCES `medecin` (`id`),
-  ADD CONSTRAINT `fk_rdv_patient` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`),
-  ADD CONSTRAINT `fk_rdv_service` FOREIGN KEY (`service_id`) REFERENCES `services` (`id`);
-
---
--- Constraints for table `services`
---
-ALTER TABLE `services`
-  ADD CONSTRAINT `fk_services` FOREIGN KEY (`laboratoire_id`) REFERENCES `laboratoire` (`id`);
-
---
--- Constraints for table `services_creneaux`
---
-ALTER TABLE `services_creneaux`
-  ADD CONSTRAINT `fk_services_creneaux` FOREIGN KEY (`services_id`) REFERENCES `services` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
