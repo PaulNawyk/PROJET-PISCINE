@@ -35,6 +35,148 @@ CREATE TABLE `disponibilites` (
   `heure_fin` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
+-- --------------------------------------------------------
+-- Pour le médecin avec l'id 11
+INSERT INTO disponibilites (medecin_id, jour, heure_debut, heure_fin) 
+VALUES 
+(11, 'Lundi', '08:00:00', '12:00:00'),
+(11, 'Lundi', '13:00:00', '17:00:00'),
+(11, 'Mardi', '08:00:00', '12:00:00'),
+(11, 'Mardi', '13:00:00', '17:00:00'),
+(11, 'Mercredi', '08:00:00', '12:00:00'),
+(11, 'Mercredi', '13:00:00', '17:00:00'),
+(11, 'Jeudi', '08:00:00', '12:00:00'),
+(11, 'Jeudi', '13:00:00', '17:00:00'),
+(11, 'Vendredi', '08:00:00', '12:00:00'),
+(11, 'Vendredi', '13:00:00', '17:00:00');
+
+-- Pour le médecin avec l'id 12
+INSERT INTO disponibilites (medecin_id, jour, heure_debut, heure_fin) 
+VALUES 
+(12, 'Lundi', '08:00:00', '12:00:00'),
+(12, 'Lundi', '13:00:00', '15:00:00'),
+(12, 'Mardi', '08:00:00', '12:00:00'),
+(12, 'Mardi', '13:00:00', '15:00:00'),
+(12, 'Jeudi', '08:00:00', '12:00:00'),
+(12, 'Jeudi', '13:00:00', '15:00:00'),
+(12, 'Vendredi', '08:00:00', '12:00:00'),
+(12, 'Vendredi', '13:00:00', '15:00:00');
+
+-- Pour le médecin avec l'id 13
+INSERT INTO disponibilites (medecin_id, jour, heure_debut, heure_fin) 
+VALUES 
+(13, 'Samedi', '09:00:00', '12:00:00'),
+(13, 'Samedi', '13:00:00', '18:00:00'),
+(13, 'Dimanche', '09:00:00', '12:00:00'),
+(13, 'Dimanche', '13:00:00', '18:00:00');
+
+-- Pour le médecin avec l'id 14
+INSERT INTO disponibilites (medecin_id, jour, heure_debut, heure_fin) 
+VALUES 
+(14, 'Mercredi', '08:00:00', '12:00:00'),
+(14, 'Mercredi', '13:00:00', '16:00:00'),
+(14, 'Jeudi', '08:00:00', '12:00:00'),
+(14, 'Jeudi', '13:00:00', '16:00:00'),
+(14, 'Vendredi', '08:00:00', '12:00:00'),
+(14, 'Vendredi', '13:00:00', '16:00:00');
+
+-- Pour le médecin avec l'id 15
+INSERT INTO disponibilites (medecin_id, jour, heure_debut, heure_fin) 
+VALUES 
+(15, 'Lundi', '08:00:00', '12:00:00'),
+(15, 'Lundi', '13:00:00', '15:00:00'),
+(15, 'Mardi', '08:00:00', '12:00:00'),
+(15, 'Mardi', '13:00:00', '15:00:00'),
+(15, 'Mercredi', '08:00:00', '12:00:00'),
+(15, 'Mercredi', '13:00:00', '15:00:00'),
+(15, 'Vendredi', '08:00:00', '12:00:00'),
+(15, 'Vendredi', '13:00:00', '15:00:00');
+
+-- Pour le médecin avec l'id 21
+INSERT INTO disponibilites (medecin_id, jour, heure_debut, heure_fin) 
+VALUES 
+(21, 'Mardi', '08:00:00', '12:00:00'),
+(21, 'Mardi', '15:00:00', '18:00:00'),
+(21, 'Mercredi', '08:00:00', '12:00:00'),
+(21, 'Mercredi', '15:00:00', '18:00:00'),
+(21, 'Jeudi', '08:00:00', '12:00:00'),
+(21, 'Jeudi', '15:00:00', '18:00:00'),
+(21, 'Vendredi', '08:00:00', '12:00:00'),
+(21, 'Vendredi', '15:00:00', '18:00:00');
+
+-- Pour le médecin avec l'id 31
+INSERT INTO disponibilites (medecin_id, jour, heure_debut, heure_fin) 
+VALUES 
+(31, 'Lundi', '09:00:00', '12:00:00'),
+(31, 'Lundi', '13:00:00', '17:00:00'),
+(31, 'Mardi', '09:00:00', '12:00:00'),
+(31, 'Mardi', '13:00:00', '17:00:00'),
+(31, 'Mercredi', '09:00:00', '12:00:00'),
+(31, 'Mercredi', '13:00:00', '17:00:00');
+
+-- Pour le médecin avec l'id 41
+INSERT INTO disponibilites (medecin_id, jour, heure_debut, heure_fin) 
+VALUES 
+(41, 'Lundi', '08:00:00', '12:00:00'),
+(41, 'Mardi', '08:00:00', '12:00:00'),
+(41, 'Mardi', '13:00:00', '14:00:00'),
+(41, 'Mercredi', '08:00:00', '12:00:00'),
+(41, 'Jeudi', '08:00:00', '12:00:00'),
+(41, 'Jeudi', '13:00:00', '14:00:00'),
+(41, 'Vendredi', '08:00:00', '12:00:00'),
+(41, 'Vendredi', '13:00:00', '14:00:00');
+
+-- Pour le médecin avec l'id 51
+INSERT INTO disponibilites (medecin_id, jour, heure_debut, heure_fin) 
+VALUES 
+(51, 'Samedi', '08:00:00', '12:00:00'),
+(51, 'Samedi', '13:00:00', '20:00:00'),
+(51, 'Dimanche', '08:00:00', '12:00:00'),
+(51, 'Dimanche', '13:00:00', '20:00:00');
+
+-- Pour le médecin avec l'id 61
+INSERT INTO disponibilites (medecin_id, jour, heure_debut, heure_fin) 
+VALUES 
+(61, 'Lundi', '13:00:00', '17:00:00'),
+(61, 'Lundi', '18:00:00', '21:00:00'),
+(61, 'Mardi', '13:00:00', '17:00:00'),
+(61, 'Mardi', '18:00:00', '21:00:00'),
+(61, 'Jeudi', '13:00:00', '17:00:00'),
+(61, 'Jeudi', '18:00:00', '21:00:00'),
+(61, 'Vendredi', '13:00:00', '17:00:00'),
+(61, 'Vendredi', '18:00:00', '21:00:00');
+
+-- Pour le médecin avec l'id 71
+INSERT INTO disponibilites (medecin_id, jour, heure_debut, heure_fin) 
+VALUES 
+(71, 'Mardi', '10:00:00', '13:00:00'),
+(71, 'Mardi', '14:00:00', '18:00:00'),
+(71, 'Mercredi', '10:00:00', '13:00:00'),
+(71, 'Mercredi', '14:00:00', '18:00:00'),
+(71, 'Jeudi', '10:00:00', '13:00:00'),
+(71, 'Jeudi', '14:00:00', '18:00:00'),
+(71, 'Vendredi', '10:00:00', '13:00:00'),
+(71, 'Vendredi', '14:00:00', '18:00:00');
+
+-- Pour le médecin avec l'id 81
+INSERT INTO disponibilites (medecin_id, jour, heure_debut, heure_fin) 
+VALUES 
+(81, 'Lundi', '09:00:00', '15:00:00'),
+(81, 'Mardi', '09:00:00', '15:00:00'),
+(81, 'Mercredi', '09:00:00', '15:00:00');
+
+-- Pour le médecin avec l'id 91
+INSERT INTO disponibilites (medecin_id, jour, heure_debut, heure_fin) 
+VALUES 
+(91, 'Mercredi', '08:00:00', '12:00:00'),
+(91, 'Mercredi', '13:00:00', '17:00:00'),
+(91, 'Jeudi', '08:00:00', '12:00:00'),
+(91, 'Jeudi', '13:00:00', '17:00:00'),
+(91, 'Vendredi', '08:00:00', '12:00:00'),
+(91, 'Vendredi', '13:00:00', '17:00:00');
+
+
 -- --------------------------------------------------------
 
 --
