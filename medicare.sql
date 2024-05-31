@@ -35,6 +35,10 @@ CREATE TABLE `disponibilites` (
   `heure_fin` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `disponibilites`
+--
+
 
 -- --------------------------------------------------------
 -- Pour le médecin avec l'id 11
