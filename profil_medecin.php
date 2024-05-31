@@ -64,10 +64,6 @@ if (isset($_GET['id'])) {
                     PARCOURIR
                     <span class="caret"></span>
                 </button>
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                    PARCOURIR
-                    <span class="caret"></span>
-                </button>
                 <ul class="dropdown-menu">
                     <li>
                     <li>
