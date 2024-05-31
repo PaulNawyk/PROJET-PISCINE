@@ -52,30 +52,39 @@ if (!$result) {
                     <li class="dropdown-submenu">
                         <a class="dropdown-item dropdown-toggle" href="#">Médecin Généraliste</a>
                         <ul class="dropdown-menu">
-                            <?php
-                            // Affichage des noms des médecins généralistes
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                                    echo "<li><a href='profil_medecin.php?id=" . $row["id"] . "'>" . $row["nom"] . "</a></li>";
-                                }
-                            }
-                            ?>
-
-
-                        </ul>
+                        <?php
+// Affichage des noms des médecins généralistes
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo "<li><a href='profil_medecin.php?id=" . $row["id"] . "'>" . $row["nom"] . "</a></li>";
+    }
+}
+?>   </ul>
                     <li class="dropdown-submenu">
-                        <a class="dropdown-item dropdown-toggle" href="#">Médecin Spécialiste</a>
-                        <ul class="dropdown-menu">
-                            <li>Addictologie</li>
-                            <li>Andrologie</li>
-                            <li>Cardiologie</li>
-                            <li>Dermatologie</li>
-                            <li>Gastro- Hépato-Entérologie</li>
-                            <li>Gynécologie</li>
-                            <li>I.S.T.</li>
-                            <li>Ostéopathie</li>
-                        </ul>
-                    </li>
+    <a class="dropdown-item dropdown-toggle" href="#">Médecin Spécialiste</a>
+    <ul class="dropdown-menu">
+        <?php
+        // Requête SQL pour sélectionner les noms des médecins spécialistes
+        $sql_specialistes = "SELECT m.id, u.nom 
+                            FROM medecin m
+                            JOIN users u ON m.user_id = u.id
+                            WHERE m.specialite_id != 1"; // Changer la condition pour sélectionner les spécialistes
+        $result_specialistes = $conn->query($sql_specialistes);
+        if (!$result_specialistes) {
+            printf("Erreur : %s\n", $conn->error);
+            exit();
+        }
+
+        // Affichage des noms des médecins spécialistes
+        if ($result_specialistes->num_rows > 0) {
+            while ($row_specialiste = $result_specialistes->fetch_assoc()) {
+                echo "<li><a href='profil_medecin.php?id=" . $row_specialiste["id"] . "'>" . $row_specialiste["nom"] . " - " . $row_specialiste["specialite_nom"] . "</a></li>";
+            }
+        }
+        ?>
+    </ul>
+</li>
+
                     <li>
                     <li class="dropdown-submenu">
                         <a class="dropdown-item dropdown-toggle" href="#">Laboratoire</a>
