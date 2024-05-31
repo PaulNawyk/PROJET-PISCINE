@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 31, 2024 at 02:20 PM
+-- Generation Time: May 31, 2024 at 06:44 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -39,8 +39,7 @@ CREATE TABLE `disponibilites` (
 -- Dumping data for table `disponibilites`
 --
 
-INSERT INTO `disponibilites` (`id`, `medecin_id`, `jour`, `heure_debut`, `heure_fin`)
-VALUES
+INSERT INTO `disponibilites` (`id`, `medecin_id`, `jour`, `heure_debut`, `heure_fin`) VALUES
 (1, 11, 'Lundi', '08:00:00', '12:00:00'),
 (2, 11, 'Lundi', '13:00:00', '17:00:00'),
 (3, 11, 'Mardi', '08:00:00', '12:00:00'),
