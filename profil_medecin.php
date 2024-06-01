@@ -30,10 +30,15 @@ if (isset($_GET['id'])) {
         $nom = $row_medecin['nom'];
         $prenom = $row_medecin['prenom'];
         $photo = $row_medecin['photo'];
-        $cv = $row_medecin['cv'];
         $specialite = $row_medecin['specialite'];
-        $mail = $row_medecin['mail'];
+        $cv_path = $row_medecin['cv']; 
 
+        // Lire le fichier XML du CV
+        if (file_exists($cv_path)) {
+            $cv_xml = simplexml_load_file($cv_path);
+        } else {
+            $cv_xml =null;
+        }
         // Requête SQL pour récupérer les dispo du med
         $sql_disponibilites = "SELECT jour, heure_debut, heure_fin FROM disponibilites WHERE medecin_id = $medecin_id";
         $result_disponibilites = $conn->query($sql_disponibilites);
@@ -157,10 +162,10 @@ ml-3" onclick="window.location.href='rendezvous.html'">RENDEZ-VOUS</button>
     <h1>Profil Utilisateur</h1>
     <div class="card">
         <div class="card-body">
-            <p class="card-text"><?php echo "<h2>Profil du Dr. $nom $prenom</h2>"; ?></p>
-            <p class="card-text"><?php echo "<p><strong>Spécialité :</strong> $specialite</p>"; ?></p>
-            <p class="card-text"><?php echo "<img src='$photo' alt='Photo du médecin' width='200'>"; ?></p>
-            <p class="card-text"><?php echo "<h3>CV :</h3>"; ?></p>
+        <p class="card-text"><?php echo "<h2>Profil du Dr. $nom $prenom</h2>"; ?></p>
+                    <p class="card-text"><?php echo "<p><strong>Spécialité :</strong> $specialite</p>"; ?></p>
+                    <p class="card-text"><?php echo "<img src='$photo' alt='Photo du médecin' width='200'>"; ?></p>
+                    <p class="card-text"><?php echo "<h3>Cliquez sur le lien pour trouver le CV :</h3>"; ?></p>
             <?php
                 if ($cv_xml) {
                     $prenom = $cv_xml->PersonalInformation->FirstName;
@@ -172,7 +177,8 @@ ml-3" onclick="window.location.href='rendezvous.html'">RENDEZ-VOUS</button>
                     
                 } else {
                     echo "<p>CV non disponible.</p>";
-                }?>
+                }
+                ?>
 
 
             <p class="card-text"><h3>Disponibilités :</h3></p>

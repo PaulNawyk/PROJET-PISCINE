@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 01, 2024 at 01:11 PM
+-- Generation Time: Jun 01, 2024 at 04:41 PM
 -- Server version: 5.7.24
--- PHP Version: 7.4.16
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -166,9 +166,9 @@ CREATE TABLE `laboratoire` (
 CREATE TABLE `medecin` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `photo` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `cv` text CHARACTER SET latin1 NOT NULL,
-  `specialite_id` int(11) NOT NULL
+  `photo` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `cv` text CHARACTER SET latin1,
+  `specialite_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -176,19 +176,19 @@ CREATE TABLE `medecin` (
 --
 
 INSERT INTO `medecin` (`id`, `user_id`, `photo`, `cv`, `specialite_id`) VALUES
-(11, 3, 'https://mymathews.com/media/institute_banner/Shree_Sapthagiri_College_of_Nursing_Banner.JPG', 'stephanie.html', 1),
-(12, 4, 'https://th.bing.com/th/id/R.3ee4c6ee5a3ec8aa81f534a8f037898a?rik=5Y5myJgs6ccI6Q&pid=ImgRaw&r=0', 'catherine.html', 1),
-(13, 5, 'https://th.bing.com/th/id/R.9e7579acac08c5b5add69b6572d34886?rik=tEwrKVtJkJHTAg&pid=ImgRaw&r=0', 'paul.html', 1),
-(14, 6, 'https://media.licdn.com/dms/image/C4D03AQEFwA5jy2Ho3w/profile-displayphoto-shrink_800_800/0/1624981969763?e=2147483647&v=beta&t=Gnzc1OgJBw9XRtJfrXXgDTh3nW8ItMpK1f2NT_ZRZO8', 'jean.html', 1),
-(15, 7, 'https://www.mrcbndu.ox.ac.uk/sites/default/files/styles/standard_image_crop/public/featured_images/Dr%20Kai%20Loewenbr%C3%BCck.png?itok=jTIKNZ3P', 'christophe.html', 1),
-(21, 8, 'https://th.bing.com/th/id/OIP.SO4k4SH5kP92kW51qjt9PAHaJ0?rs=1&pid=ImgDetMain', 'aurelie.html', 2),
-(31, 9, 'https://media.doctolib.com/image/upload/q_auto:eco,f_auto,w_1024,h_700,c_limit/iz6vo3pkcjkptjlt5lrv.jpg', 'celine.html', 3),
-(41, 10, 'https://cdn-s-www.leprogres.fr/images/E4B6E7AB-51A5-47E4-94EA-6A1950987E33/NW_raw/olivier-schwinn-elu-president-de-la-jce-oyonnax-plastics-vallee-photo-benoit-adrien-1452722704.jpg', 'philippe.html', 4),
-(51, 11, 'https://th.bing.com/th/id/OIP.7I7kCupl3N3AsRePJgLUCgHaHa?w=1024&h=1024&rs=1&pid=ImgDetMain', 'fabrice.html', 5),
-(61, 12, 'https://th.bing.com/th/id/OIP.SJ1vazvUdlckaawb7RGjbAHaIR?w=510&h=570&rs=1&pid=ImgDetMain', 'corinne.html', 6),
-(71, 13, 'https://thumbs.dreamstime.com/b/friendly-female-doctor-standing-clinic-portrait-cheerful-smiling-physician-perfect-medical-service-hospital-medicine-216455960.jpg', 'marianne.html', 7),
-(81, 14, 'https://th.bing.com/th/id/R.40ccebddd619a39e61310e482ac73fc9?rik=UstJHY8bLbRDvQ&pid=ImgRaw&r=0', 'laurent.html', 8),
-(91, 15, 'https://emails-entreprises.com/wp-content/uploads/2021/03/medecins-generalistes.jpg', 'laure.html', 9);
+(11, 3, 'https://mymathews.com/media/institute_banner/Shree_Sapthagiri_College_of_Nursing_Banner.JPG', 'cv_stephanie.xml', 1),
+(12, 4, 'https://th.bing.com/th/id/R.3ee4c6ee5a3ec8aa81f534a8f037898a?rik=5Y5myJgs6ccI6Q&pid=ImgRaw&r=0', 'cv_catherine.xml', 1),
+(13, 5, 'https://th.bing.com/th/id/R.9e7579acac08c5b5add69b6572d34886?rik=tEwrKVtJkJHTAg&pid=ImgRaw&r=0', 'cv_paul.xml', 1),
+(14, 6, 'https://media.licdn.com/dms/image/C4D03AQEFwA5jy2Ho3w/profile-displayphoto-shrink_800_800/0/1624981969763?e=2147483647&v=beta&t=Gnzc1OgJBw9XRtJfrXXgDTh3nW8ItMpK1f2NT_ZRZO8', 'cv_jean.xml', 1),
+(15, 7, 'https://www.mrcbndu.ox.ac.uk/sites/default/files/styles/standard_image_crop/public/featured_images/Dr%20Kai%20Loewenbr%C3%BCck.png?itok=jTIKNZ3P', 'cv_christophe.xml', 1),
+(21, 8, 'https://th.bing.com/th/id/OIP.SO4k4SH5kP92kW51qjt9PAHaJ0?rs=1&pid=ImgDetMain', 'cv_aurelie.xml', 2),
+(31, 9, 'https://media.doctolib.com/image/upload/q_auto:eco,f_auto,w_1024,h_700,c_limit/iz6vo3pkcjkptjlt5lrv.jpg', 'cv_celine.xml', 3),
+(41, 10, 'https://cdn-s-www.leprogres.fr/images/E4B6E7AB-51A5-47E4-94EA-6A1950987E33/NW_raw/olivier-schwinn-elu-president-de-la-jce-oyonnax-plastics-vallee-photo-benoit-adrien-1452722704.jpg', 'cv_philippe.xml', 4),
+(51, 11, 'https://th.bing.com/th/id/OIP.7I7kCupl3N3AsRePJgLUCgHaHa?w=1024&h=1024&rs=1&pid=ImgDetMain', 'cv_fabrice.xml', 5),
+(61, 12, 'https://th.bing.com/th/id/OIP.SJ1vazvUdlckaawb7RGjbAHaIR?w=510&h=570&rs=1&pid=ImgDetMain', 'cv_corinne.xml', 6),
+(71, 13, 'https://thumbs.dreamstime.com/b/friendly-female-doctor-standing-clinic-portrait-cheerful-smiling-physician-perfect-medical-service-hospital-medicine-216455960.jpg', 'cv_marianne.xml', 7),
+(81, 14, 'https://th.bing.com/th/id/R.40ccebddd619a39e61310e482ac73fc9?rik=UstJHY8bLbRDvQ&pid=ImgRaw&r=0', 'cv_laurent.xml', 8),
+(91, 15, 'https://emails-entreprises.com/wp-content/uploads/2021/03/medecins-generalistes.jpg', 'cv_laure.xml', 9);
 
 -- --------------------------------------------------------
 
@@ -316,19 +316,19 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `nom`, `prenom`, `email`, `mdp`, `type`, `telephone`, `adresse_ligne1`, `adresse_ligne2`, `ville`, `codePost`, `pays`, `carte_vitale`) VALUES
 (1, 'Gerin', 'Paul', 'paul.gerin@edu.ece.fr', '$2y$10$l56WTMqY6N2Wp1mO3lAetes4D5UVaKwAJJtcZ7HQ6602n..GUUzwO', 'client', '0638752665', '13 avenue maurice hauriou', '', 'Toulouse', '31000', 'France', '1021020192012'),
 (2, 'Hogommat', 'Julien', 'julien.hogommat@edu.ece.fr', '$2y$10$P/C716Th38ma4jUY449ruekm2yEIIcZFYbQf84stV8tns72ziMO8e', 'client', '06 83 72 44 47', '8 rue de la croix macaire', '', 'Herblay', '95220', 'france', '0104040408249'),
-(3, 'Dupont', 'Stephanie', 'stephanie.dupont@medicare.fr', '$2y$10$mIbO.usc6Bc6sFDthZAtYOI.tErKMR2kF7EQi0qVGaDzo9ymKmYd.', 'medecin', '0235959480', '9', '', 'Auzebosc', '76190', 'France', NULL),
-(4, 'Gerin', 'Catherine', 'catherine.gerin@medicare.fr', 'gerin', 'medecin', '06 73 82 82 92', '10 rue du chateaufort', '', 'Perpignan', '31499', 'France', NULL),
-(5, 'Valet', 'Paul', 'paul.valet@medicare.fr', 'valet', 'medecin', '06 81 91 43 34', ' 17 rue de l\'epine', '', 'Beziers', '34032', 'France', NULL),
-(6, 'Remy', 'Jean', 'jean.remy@medicare.fr', 'remy', 'medecin', '06 73 19 23 33', '4 impasse de generale de gaulle', '', 'Toulon', '76188', 'France', NULL),
-(7, 'Sellito', 'Christophe', 'cristophe.sellito@medicare.fr', 'sellito', 'medecin', '06 13 32 32 33', '10 rue de la fourche', '', 'Marseille', '13333', 'France', NULL),
-(8, 'Rembry', 'Aurélie', 'aurelie.rembry@medicare.fr', 'rembry', 'medecin', '06 11 88 31 31', '4 rue du marteau de thor', '', 'Paris', '75008', 'France', NULL),
-(9, 'Leroy', 'Celine', 'celine.leroy@medicare.fr', 'leroy', 'medecin', '06 35 15 67 87', 'Rue des champs elysees', '', 'Paris', '75007', 'France', NULL),
-(10, 'Cohen', 'Philippe', 'philippe.cohen@medicare.fr', 'cohen', 'medecin', '06 73 23 12 12', '8 venue du repas', '', 'Brest', '74900', 'France', NULL),
-(11, 'Benamou', 'Fabrice', 'fabrice.benamou', 'benamou', 'medecin', '06 28 89 98 09', 'Rue de la bouffe', '', 'Paris', '75006', 'France', NULL),
-(12, 'Fleury', 'Corinne', 'corinne.fleury@medicare.fr', 'fleury', 'medecin', '06 82 12 33 33', '20 rue de l\'épee', '', 'Lille', '12333', 'France', NULL),
-(13, 'Bouchet ', 'Marianne ', 'marinne.bouchet', 'bouchet', 'medecin', '06 78 88 91 91', '7 rue des apagnagnan', '', 'Amiens', '70039', 'France', NULL),
-(14, 'Tillon', 'Laurent', 'laurent.tillon@medicare.fr', 'tillon', 'medecin', '06 13 13 89 09', '9 rue de l\'apagnan', '', 'Amiens', '48000', 'France', NULL),
-(15, 'Allory', 'Laure', 'laure.allory@medicare.fr', 'allory', 'medecin', '06 73 83 91 11', '10 champs du boeuf', '', 'Lyon', '69000', 'France', NULL);
+(3, 'Dupont', 'stephanie', 'stephanie.dupont@medicare.fr', '$2y$10$mIbO.usc6Bc6sFDthZAtYOI.tErKMR2kF7EQi0qVGaDzo9ymKmYd.', 'medecin', '0235959480', '9', '', 'Auzebosc', '76190', 'France', NULL),
+(4, 'Gerin', 'catherine', 'catherine.gerin@medicare.fr', 'gerin', 'medecin', '06 73 82 82 92', '10 rue du chateaufort', '', 'Perpignan', '31499', 'France', NULL),
+(5, 'Valet', 'paul', 'paul.valet@medicare.fr', 'valet', 'medecin', '06 81 91 43 34', ' 17 rue de l\'epine', '', 'Beziers', '34032', 'France', NULL),
+(6, 'Remy', 'jean', 'jean.remy@medicare.fr', 'remy', 'medecin', '06 73 19 23 33', '4 impasse de generale de gaulle', '', 'Toulon', '76188', 'France', NULL),
+(7, 'Sellito', 'christophe', 'cristophe.sellito@medicare.fr', 'sellito', 'medecin', '06 13 32 32 33', '10 rue de la fourche', '', 'Marseille', '13333', 'France', NULL),
+(8, 'Rembry', 'aurelie', 'aurelie.rembry@medicare.fr', 'rembry', 'medecin', '06 11 88 31 31', '4 rue du marteau de thor', '', 'Paris', '75008', 'France', NULL),
+(9, 'Leroy', 'celine', 'celine.leroy@medicare.fr', 'leroy', 'medecin', '06 35 15 67 87', 'Rue des champs elysees', '', 'Paris', '75007', 'France', NULL),
+(10, 'Cohen', 'philippe', 'philippe.cohen@medicare.fr', 'cohen', 'medecin', '06 73 23 12 12', '8 venue du repas', '', 'Brest', '74900', 'France', NULL),
+(11, 'Benamou', 'fabrice', 'fabrice.benamou', 'benamou', 'medecin', '06 28 89 98 09', 'Rue de la bouffe', '', 'Paris', '75006', 'France', NULL),
+(12, 'Fleury', 'corinne', 'corinne.fleury@medicare.fr', 'fleury', 'medecin', '06 82 12 33 33', '20 rue de l\'épee', '', 'Lille', '12333', 'France', NULL),
+(13, 'Bouchet ', 'marianne ', 'marinne.bouchet', 'bouchet', 'medecin', '06 78 88 91 91', '7 rue des apagnagnan', '', 'Amiens', '70039', 'France', NULL),
+(14, 'Tillon', 'laurent', 'laurent.tillon@medicare.fr', 'tillon', 'medecin', '06 13 13 89 09', '9 rue de l\'apagnan', '', 'Amiens', '48000', 'France', NULL),
+(15, 'Allory', 'laure', 'laure.allory@medicare.fr', 'allory', 'medecin', '06 73 83 91 11', '10 champs du boeuf', '', 'Lyon', '69000', 'France', NULL);
 
 --
 -- Indexes for dumped tables
@@ -451,6 +451,12 @@ ALTER TABLE `paiement`
 --
 ALTER TABLE `patient`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
