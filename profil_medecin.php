@@ -1,6 +1,6 @@
 <?php
 
-// Connexion à la base de données
+
 $servername = "localhost";
 $username = "root";
 $password = "root";
@@ -8,16 +8,16 @@ $dbname = "medicare";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Vérification de la connexion
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Vérification si l'ID du médecin est passé en paramètre
+// Vérif si l'ID du med est passé en paramètre
 if (isset($_GET['id'])) {
     $medecin_id = $_GET['id'];
 
-    // Requête SQL pour récupérer les informations du médecin
+    // Requête SQL pour récupérer les info du med
     $sql_medecin = "SELECT m.id, u.nom, u.prenom, m.photo, m.cv, s.nom as specialite 
                     FROM medecin m
                     JOIN users u ON m.user_id = u.id
@@ -27,7 +27,7 @@ if (isset($_GET['id'])) {
     $result_medecin = $conn->query($sql_medecin);
 
     if ($result_medecin->num_rows > 0) {
-        // Récupération des informations du médecin
+        // Récupération des info du med
         $row_medecin = $result_medecin->fetch_assoc();
         $nom = $row_medecin['nom'];
         $prenom = $row_medecin['prenom'];
@@ -36,13 +36,13 @@ if (isset($_GET['id'])) {
         $specialite = $row_medecin['specialite'];
         $mail = $row_medecin['mail'];
 
-        // Requête SQL pour récupérer les disponibilités du médecin
+        // Requête SQL pour récupérer les dispo du med
         $sql_disponibilites = "SELECT jour, heure_debut, heure_fin FROM disponibilites WHERE medecin_id = $medecin_id";
         $result_disponibilites = $conn->query($sql_disponibilites);
 
-        // Vérification si des disponibilités sont trouvées
+        // Vérif si des dispo sont trouvées
         if ($result_disponibilites->num_rows > 0) {
-            // Initialise un tableau pour stocker les disponibilités
+            // Initialise un tableau pour stocker les dispo
             $disponibilites = array();
 
             // Parcours des résultats de la requête et stockage des données de disponibilité dans le tableau
@@ -50,7 +50,7 @@ if (isset($_GET['id'])) {
                 $disponibilites[] = $row_disponibilite;
             }
         } else {
-            // Aucune disponibilité trouvée
+            // Aucune dispo
             $disponibilites = null;
         }
     } else {
@@ -89,7 +89,7 @@ if (isset($_GET['id'])) {
                         <a class="dropdown-item dropdown-toggle" href="#">Médecin Généraliste</a>
                         <ul class="dropdown-menu">
                             <?php
-                            // Requête SQL pour sélectionner les noms des médecins généralistes
+                            // Requête SQL pour sélec les noms des med généralistes
                             $sql_generalistes = "SELECT m.id, u.nom 
                                                 FROM medecin m
                                                 JOIN users u ON m.user_id = u.id
@@ -100,7 +100,7 @@ if (isset($_GET['id'])) {
                                 exit();
                             }
 
-                            // Affichage des noms des médecins généralistes
+                            //  noms des med généraliste
                             if ($result_generalistes->num_rows > 0) {
                                 while ($row_generaliste = $result_generalistes->fetch_assoc()) {
                                     echo "<li><a href='profil_medecin.php?id=" . $row_generaliste["id"] . "'>" . $row_generaliste["nom"] . "</a></li>";
@@ -111,7 +111,7 @@ if (isset($_GET['id'])) {
                         <a class="dropdown-item dropdown-toggle" href="#">Médecin Spécialiste</a>
                         <ul class="dropdown-menu">
                             <?php
-                            // Requête SQL pour sélectionner les noms des médecins spécialistes
+                            // requête SQL pour selec les noms des médecins spécialistes
                             $sql_specialistes = "SELECT m.id, u.nom 
                                                 FROM medecin m
                                                 JOIN users u ON m.user_id = u.id
@@ -122,7 +122,7 @@ if (isset($_GET['id'])) {
                                 exit();
                             }
 
-                            // Affichage des noms des médecins spécialistes
+                            //  noms des med spe
                             if ($result_specialistes->num_rows > 0) {
                                 while ($row_specialiste = $result_specialistes->fetch_assoc()) {
                                     echo "<li><a href='profil_medecin.php?id=" . $row_specialiste["id"] . "'>" . $row_specialiste["nom"] . " - " . $row_specialiste["specialite_nom"] . "</a></li>";
@@ -175,7 +175,7 @@ if (isset($_GET['id'])) {
                 </thead>
                 <tbody>
                     <?php
-                    // Création des plages horaires de la journée
+                   
                     $plages_horaires = array(
                         "8h - 9h",
                         "9h - 10h",
@@ -190,12 +190,12 @@ if (isset($_GET['id'])) {
                         "18h - 19h",
                         "19h - 20h",
                         "20h - 21h",
-                        "21h - 22h",
-                        "22h - 23h"
-                    );                // Initialisation du tableau pour stocker les disponibilités
+                    
+                        
+                    );                // tableau pour stocker les dispo
                     $tableau_disponibilites = array();
     
-                    // Création du tableau des disponibilités
+                    //creation du tab des dispo
                     foreach ($plages_horaires as $plage_horaire) {
                         $tableau_disponibilites[$plage_horaire] = array(
                             'Lundi' => '',
@@ -208,34 +208,33 @@ if (isset($_GET['id'])) {
                         );
                     }
     
-                    // Remplissage du tableau des disponibilités avec les données récupérées
+                    // tab rempli 
                     foreach ($disponibilites as $disponibilite) {
                         $jour = $disponibilite['jour'];
                         $heure_debut = $disponibilite['heure_debut'];
                         $heure_fin = $disponibilite['heure_fin'];
     
-                        // Formater la disponibilité
                         $disponibilite_formattee = "$heure_debut - $heure_fin";
     
-                        // Découper l'heure de début et l'heure de fin pour obtenir les heures
+                        // decoupage l'heure de début et l'heure de fin pour avoir les heures
                         $heure_debut_parts = explode(':', $heure_debut);
                         $heure_fin_parts = explode(':', $heure_fin);
     
-                        // Indice de début et de fin dans le tableau des plages horaires
-                        $index_debut = intval($heure_debut_parts[0]) - 8; // Par exemple, 9h - 8 = 1
-                        $index_fin = intval($heure_fin_parts[0]) - 8; // Par exemple, 12h - 8 = 4
+                        
+                        $index_debut = intval($heure_debut_parts[0]) - 8; // 9h - 8 = 1
+                        $index_fin = intval($heure_fin_parts[0]) - 8; // 12h - 8 = 4
     
-                        // Remplir les plages horaires concernées avec "Disponible"
+                        // case "dispo"
                         for ($i = $index_debut; $i < $index_fin; $i++) {
                             $tableau_disponibilites[$plages_horaires[$i]][$jour] = 'Disponible';
                         }
                     }
     
-                    // Affichage du tableau des disponibilités
+                    // tab des dispo
                     foreach ($tableau_disponibilites as $plage_horaire => $jours) {
                         echo "<tr><td>$plage_horaire</td>";
                         foreach ($jours as $jour => $disponible) {
-                            // Couleur des cases selon la disponibilité
+                            // couleur des cases 
                             $class_couleur = ($disponible == 'Disponible') ? 'bg-success' : 'bg-light';
                             echo "<td class='$class_couleur'>$disponible</td>";
                         }
