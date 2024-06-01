@@ -19,24 +19,36 @@ $nom = $_POST['nom'];
 $email = $_POST['email'];
 $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 $adresse_ligne1 = $_POST['adresse1'];
-$adresse_ligne2 = $_POST['adresse2'];
+$adresse_ligne2 = $_POST['adresse2'] ?? ''; // Champs optionnel
 $ville = $_POST['ville'];
 $codePost = $_POST['code-postal'];
 $pays = $_POST['pays'];
 $telephone = $_POST['telephone'];
 $carte_vitale = $_POST['cartev'];
-$type = 'client'; // Vous pouvez définir le type selon vos besoins
+$type = $_POST['type']; // Récupérer le type de profil
 
-// Préparer et exécuter la requête d'insertion
-$sql = "INSERT INTO users (prenom, nom, email, mdp, adresse_ligne1, adresse_ligne2, ville, codePost, pays, telephone, carte_vitale, type) 
-VALUES ('$prenom', '$nom', '$email', '$password', '$adresse_ligne1', '$adresse_ligne2', '$ville', '$codePost', '$pays', '$telephone', '$carte_vitale','$type')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+// Vérifier si l'adresse e-mail est valide pour un compte admin
+if ($type === 'admin' && !preg_match('/@omnesadmin\.fr$/', $email)) {
+    die("Erreur: Les administrateurs doivent avoir une adresse e-mail se terminant par @omnesadmin.fr");
 }
 
-// Fermer la connexion
+// Préparer et exécuter la requête d'insertion en utilisant des instructions préparées
+$stmt = $conn->prepare("INSERT INTO users (prenom, nom, email, mdp, adresse_ligne1, adresse_ligne2, ville, codePost, pays, telephone, carte_vitale, type) 
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+if ($stmt === false) {
+    die("Erreur lors de la préparation de la requête: " . $conn->error);
+}
+
+$stmt->bind_param("ssssssssssss", $prenom, $nom, $email, $password, $adresse_ligne1, $adresse_ligne2, $ville, $codePost, $pays, $telephone, $carte_vitale, $type);
+
+if ($stmt->execute()) {
+    header("Location: signin.html");
+} else {
+    echo "Error: " . $stmt->error;
+}
+
+// Fermer la requête et la connexion
+$stmt->close();
 $conn->close();
 ?>

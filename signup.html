@@ -8,6 +8,26 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link href="signup.css" rel="stylesheet" type="text/css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#signup-form").on("submit", function(event) {
+        var password = $("#password").val();
+        var confirmPassword = $("#confirm-password").val();
+        var email = $("#email").val();
+        var profileType = $("input[name='type']:checked").val();
+
+        if (password !== confirmPassword) {
+          event.preventDefault();
+          alert("Les mots de passe ne correspondent pas.");
+        }
+
+        if (profileType === "admin" && !email.endsWith("@omnesadmin.fr")) {
+          event.preventDefault();
+          alert("Les administrateurs doivent avoir une adresse e-mail se terminant par @omnesadmin.fr");
+        }
+      });
+    });
+  </script>
 </head>
 
 <body>
@@ -40,6 +60,10 @@
           <input type="text" id="adresse1" name="adresse1" class="form-control" required />
         </div>
         <div class="form-group">
+          <label class="form-label" for="adresse2">Complément d'adresse</label>
+          <input type="text" id="adresse2" name="adresse2" class="form-control" />
+        </div>
+        <div class="form-group">
           <label class="form-label" for="ville">Ville</label>
           <input type="text" id="ville" name="ville" class="form-control" required />
         </div>
@@ -58,6 +82,15 @@
         <div class="form-group">
           <label class="form-label" for="cartev">Numéro de Carte Vitale</label>
           <input type="tel" id="cartev" name="cartev" class="form-control" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Type de profil</label><br>
+          <input type="radio" id="client" name="type" value="client" checked>
+          <label for="client">Client</label><br>
+          <input type="radio" id="medecin" name="type" value="medecin">
+          <label for="medecin">Médecin</label><br>
+          <input type="radio" id="admin" name="type" value="admin">
+          <label for="admin">Admin</label>
         </div>
         <div class="form-group">
           <input class="checkbox" type="checkbox" required />

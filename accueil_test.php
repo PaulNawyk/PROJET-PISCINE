@@ -12,6 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+
 // Requête SQL pour sélectionner les noms des médecins généralistes
 $sql = "SELECT m.id, u.nom 
         FROM medecin m
@@ -22,7 +23,14 @@ if (!$result) {
     printf("Erreur : %s\n", $conn->error);
     exit();
 }
+// Stocker le type d'utilisateur dans la session
+$_SESSION['user_type'] = $row['type']; // Supposons que le type soit stocké dans la colonne 'type' de votre table 'users'
+
+
 ?>
+
+
+
 
 <!DOCTYPE html>
 <html>
@@ -98,6 +106,17 @@ if ($result->num_rows > 0) {
             <button class="btn btn-default ml-3" onclick="window.location.href='profil.php'">PROFIL</button>
             <input id="searchbar" class="form-control mx-3" type="text" name="search" placeholder="RECHERCHE..." style="width: 15%;">
             <img src="img/loupe.jpg" alt="LOGO" width="30" height="30">
+            <?php
+session_start();
+
+// Vérifier si l'utilisateur est connecté et s'il est admin
+if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 'admin') {
+    // Afficher le bouton exclusif pour les admins
+    echo '<a href="page_admin.php" class="btn btn-primary">Bouton Exclusif Admin</a>';}
+?>
+
+
+
         </div>
         <div id="section">
             <div class="presentation">

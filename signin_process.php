@@ -31,9 +31,15 @@ if ($result->num_rows > 0) {
     // Vérifier le mot de passe
     if (password_verify($password, $hash)) {
         // Identifiants corrects
+        if ($row['type'] === 'admin') {
+            $_SESSION['user_type'] = 'admin';
+        } else {
+            $_SESSION['user_type'] = 'client'; // Ou 'medecin' selon le type d'utilisateur
+        }
         $_SESSION['user_id'] = $row['id'];
         $_SESSION['user_email'] = $row['email'];
-        header("Location: accueil.html"); // Rediriger vers la page de destination
+        
+        header("Location: accueil_test.php"); // Rediriger vers la page de destination
         exit();
     } else {
         // Mot de passe incorrect
