@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 31, 2024 at 06:44 PM
+-- Generation Time: Jun 01, 2024 at 01:11 PM
 -- Server version: 5.7.24
--- PHP Version: 8.0.1
+-- PHP Version: 7.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -176,19 +176,19 @@ CREATE TABLE `medecin` (
 --
 
 INSERT INTO `medecin` (`id`, `user_id`, `photo`, `cv`, `specialite_id`) VALUES
-(11, 3, 'https://mymathews.com/media/institute_banner/Shree_Sapthagiri_College_of_Nursing_Banner.JPG', 'stephanie_dupont.xml', 1),
-(12, 4, 'https://th.bing.com/th/id/R.3ee4c6ee5a3ec8aa81f534a8f037898a?rik=5Y5myJgs6ccI6Q&pid=ImgRaw&r=0', 'catherine_gerin.xml', 1),
-(13, 5, 'https://th.bing.com/th/id/R.9e7579acac08c5b5add69b6572d34886?rik=tEwrKVtJkJHTAg&pid=ImgRaw&r=0', 'paul_valet.xml', 1),
-(14, 6, 'https://media.licdn.com/dms/image/C4D03AQEFwA5jy2Ho3w/profile-displayphoto-shrink_800_800/0/1624981969763?e=2147483647&v=beta&t=Gnzc1OgJBw9XRtJfrXXgDTh3nW8ItMpK1f2NT_ZRZO8', 'jean_remy.xml', 1),
-(15, 7, 'https://www.mrcbndu.ox.ac.uk/sites/default/files/styles/standard_image_crop/public/featured_images/Dr%20Kai%20Loewenbr%C3%BCck.png?itok=jTIKNZ3P', 'christophe_sellito.xml', 1),
-(21, 8, 'https://th.bing.com/th/id/OIP.SO4k4SH5kP92kW51qjt9PAHaJ0?rs=1&pid=ImgDetMain', 'aurelie_rembry.xml', 2),
-(31, 9, 'https://media.doctolib.com/image/upload/q_auto:eco,f_auto,w_1024,h_700,c_limit/iz6vo3pkcjkptjlt5lrv.jpg', 'celine_leroy.xml', 3),
-(41, 10, 'https://cdn-s-www.leprogres.fr/images/E4B6E7AB-51A5-47E4-94EA-6A1950987E33/NW_raw/olivier-schwinn-elu-president-de-la-jce-oyonnax-plastics-vallee-photo-benoit-adrien-1452722704.jpg', 'philippe_cohen.xml', 4),
-(51, 11, 'https://th.bing.com/th/id/OIP.7I7kCupl3N3AsRePJgLUCgHaHa?w=1024&h=1024&rs=1&pid=ImgDetMain', 'fabrice_benamou.xml', 5),
-(61, 12, 'https://th.bing.com/th/id/OIP.SJ1vazvUdlckaawb7RGjbAHaIR?w=510&h=570&rs=1&pid=ImgDetMain', 'corinne_fleury.xml', 6),
-(71, 13, 'https://thumbs.dreamstime.com/b/friendly-female-doctor-standing-clinic-portrait-cheerful-smiling-physician-perfect-medical-service-hospital-medicine-216455960.jpg', 'marianne_bouchet.xml', 7),
-(81, 14, 'https://th.bing.com/th/id/R.40ccebddd619a39e61310e482ac73fc9?rik=UstJHY8bLbRDvQ&pid=ImgRaw&r=0', 'laurent_tillon.xml', 8),
-(91, 15, 'https://emails-entreprises.com/wp-content/uploads/2021/03/medecins-generalistes.jpg', 'laure_allory.xml', 9);
+(11, 3, 'https://mymathews.com/media/institute_banner/Shree_Sapthagiri_College_of_Nursing_Banner.JPG', 'stephanie.html', 1),
+(12, 4, 'https://th.bing.com/th/id/R.3ee4c6ee5a3ec8aa81f534a8f037898a?rik=5Y5myJgs6ccI6Q&pid=ImgRaw&r=0', 'catherine.html', 1),
+(13, 5, 'https://th.bing.com/th/id/R.9e7579acac08c5b5add69b6572d34886?rik=tEwrKVtJkJHTAg&pid=ImgRaw&r=0', 'paul.html', 1),
+(14, 6, 'https://media.licdn.com/dms/image/C4D03AQEFwA5jy2Ho3w/profile-displayphoto-shrink_800_800/0/1624981969763?e=2147483647&v=beta&t=Gnzc1OgJBw9XRtJfrXXgDTh3nW8ItMpK1f2NT_ZRZO8', 'jean.html', 1),
+(15, 7, 'https://www.mrcbndu.ox.ac.uk/sites/default/files/styles/standard_image_crop/public/featured_images/Dr%20Kai%20Loewenbr%C3%BCck.png?itok=jTIKNZ3P', 'christophe.html', 1),
+(21, 8, 'https://th.bing.com/th/id/OIP.SO4k4SH5kP92kW51qjt9PAHaJ0?rs=1&pid=ImgDetMain', 'aurelie.html', 2),
+(31, 9, 'https://media.doctolib.com/image/upload/q_auto:eco,f_auto,w_1024,h_700,c_limit/iz6vo3pkcjkptjlt5lrv.jpg', 'celine.html', 3),
+(41, 10, 'https://cdn-s-www.leprogres.fr/images/E4B6E7AB-51A5-47E4-94EA-6A1950987E33/NW_raw/olivier-schwinn-elu-president-de-la-jce-oyonnax-plastics-vallee-photo-benoit-adrien-1452722704.jpg', 'philippe.html', 4),
+(51, 11, 'https://th.bing.com/th/id/OIP.7I7kCupl3N3AsRePJgLUCgHaHa?w=1024&h=1024&rs=1&pid=ImgDetMain', 'fabrice.html', 5),
+(61, 12, 'https://th.bing.com/th/id/OIP.SJ1vazvUdlckaawb7RGjbAHaIR?w=510&h=570&rs=1&pid=ImgDetMain', 'corinne.html', 6),
+(71, 13, 'https://thumbs.dreamstime.com/b/friendly-female-doctor-standing-clinic-portrait-cheerful-smiling-physician-perfect-medical-service-hospital-medicine-216455960.jpg', 'marianne.html', 7),
+(81, 14, 'https://th.bing.com/th/id/R.40ccebddd619a39e61310e482ac73fc9?rik=UstJHY8bLbRDvQ&pid=ImgRaw&r=0', 'laurent.html', 8),
+(91, 15, 'https://emails-entreprises.com/wp-content/uploads/2021/03/medecins-generalistes.jpg', 'laure.html', 9);
 
 -- --------------------------------------------------------
 
