@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 01, 2024 at 04:41 PM
+-- Generation Time: Jun 01, 2024 at 06:30 PM
 -- Server version: 5.7.24
--- PHP Version: 8.0.1
+-- PHP Version: 7.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -157,6 +157,18 @@ CREATE TABLE `laboratoire` (
   `email` varchar(255) CHARACTER SET latin1 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `laboratoire`
+--
+
+INSERT INTO `laboratoire` (`id`, `nom`, `salle`, `telephone`, `email`) VALUES
+(100, 'Depistage', 'Sc-100', '09 09 09 09 09 ', 'depistage.labo@gmail.com'),
+(101, 'Biologie preventive', 'Sc-101', '06 06 06 06 94 ', 'preventive.labo@gmail.com'),
+(102, 'Biologie de la femme enceinte ', 'Sc-102', '07 98 98 02 03', 'enceinte.labo@gmail.com'),
+(103, 'Biologie de routine', 'Sc-103', '06 73 82 28 12', 'routine.labo@gmail.com'),
+(104, 'Cancerologie', 'Sc-104', '06 87 87 78 78', 'cancerologie.labo@gmail.com'),
+(105, 'Gynecologie', 'Sc-105', '06 78 23 23 23', 'gynecologie.labo@gmail.com');
+
 -- --------------------------------------------------------
 
 --
@@ -166,9 +178,9 @@ CREATE TABLE `laboratoire` (
 CREATE TABLE `medecin` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `photo` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
-  `cv` text CHARACTER SET latin1,
-  `specialite_id` int(11) DEFAULT NULL
+  `photo` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `cv` text CHARACTER SET latin1 NOT NULL,
+  `specialite_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -432,7 +444,7 @@ ALTER TABLE `historique_consult`
 -- AUTO_INCREMENT for table `laboratoire`
 --
 ALTER TABLE `laboratoire`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT for table `medecin`
@@ -451,12 +463,6 @@ ALTER TABLE `paiement`
 --
 ALTER TABLE `patient`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
