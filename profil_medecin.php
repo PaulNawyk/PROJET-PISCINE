@@ -1,13 +1,11 @@
 <?php
-
-
+// Connexion à la base de données
 $servername = "localhost";
 $username = "root";
 $password = "root";
 $dbname = "medicare";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
-
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -69,7 +67,13 @@ if (isset($_GET['id'])) {
     <meta charset="utf-8" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="base.css" rel="stylesheet" type="text/css" />
+    <style>
+        .bg-selected {
+            background-color: red;
+        }
+    </style>
 </head>
 
 <body>
@@ -137,14 +141,14 @@ if (isset($_GET['id'])) {
                         <a class="dropdown-item dropdown-toggle" href="#">Laboratoire</a>
                        
                         <ul class="dropdown-menu">
-    <li>Labor
-    atoire de biologie médicale</li>
+    <li>Laboratoire de biologie médicale</li>
 
 </ul>
 </li>
 </ul>
 </div>
-<button class="btn btn-default ml-3" onclick="window.location.href='rendezvous.html'">RENDEZ-VOUS</button>
+<button class="btn btn-default
+ml-3" onclick="window.location.href='rendezvous.html'">RENDEZ-VOUS</button>
 <button class="btn btn-default ml-3" onclick="window.location.href='profil.php'">PROFIL</button>
 <input id="searchbar" class="form-control mx-3" type="text" name="search" placeholder="RECHERCHE..." style="width: 15%;">
 <img src="img/loupe.jpg" alt="LOGO" width="30" height="30">
@@ -160,6 +164,7 @@ if (isset($_GET['id'])) {
             <p class="card-text"><?php echo "<p>$cv</p>"; ?></p>
             <p class="card-text"><h3>Disponibilités :</h3></p>
             <?php if ($disponibilites): ?>
+            <form action="save_dispo.php" method="post"> <!-- Ajout du formulaire pour enregistrer les disponibilités -->
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -236,13 +241,17 @@ if (isset($_GET['id'])) {
                         foreach ($jours as $jour => $disponible) {
                             // couleur des cases 
                             $class_couleur = ($disponible == 'Disponible') ? 'bg-success' : 'bg-light';
-                            echo "<td class='$class_couleur'>$disponible</td>";
+                            // ajout d'un champ de formulaire pour enregistrer l'état de la case
+                            echo "<td class='$class_couleur'><input type='checkbox' name='dispo[]' value='$jour-$plage_horaire'></td>";
                         }
                         echo "</tr>";
                     }
                     ?>
                 </tbody>
             </table>
+            <input type="hidden" name="medecin_id" value="<?php echo $medecin_id; ?>"> <!-- Champ caché pour l'ID du médecin -->
+            <input type="submit" value="Enregistrer les disponibilités">
+            </form>
             <?php else: ?>
             <p>Aucune disponibilité trouvée pour ce médecin.</p>
 <?php endif; ?>
@@ -271,8 +280,13 @@ if (isset($_GET['id'])) {
             });
             return false;
         });
+
+        // Gestion du changement de couleur au clic sur les cellules du tableau
+        $('td.bg-success').on('click', function() {
+            $(this).toggleClass('bg-selected');
+        });
     });
 </script>
+
 </body>
 </html>
-    
