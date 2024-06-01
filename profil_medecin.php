@@ -80,7 +80,7 @@ if (isset($_GET['id'])) {
     <div id="wrapper">
         <div id="header">Medicare : Services Médicaux</div>
         <div id="navigation" class="d-flex align-items-center">
-            <button class="btn btn-default mx-3" onclick="window.location.href='accueil.html'">ACCUEIL</button>
+            <button class="btn btn-default mx-3" onclick="window.location.href='accueil_test.php'">ACCUEIL</button>
             <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
                     PARCOURIR

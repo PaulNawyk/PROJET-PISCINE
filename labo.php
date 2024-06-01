@@ -47,7 +47,7 @@ $_SESSION['user_type'] = $row['type']; // Supposons que le type soit stocké dan
     <div id="wrapper">
         <div id="header">Medicare : Services Médicaux</div>
         <div id="navigation" class="d-flex align-items-center">
-            <button class="btn btn-default mx-3">ACCUEIL</button>
+            <button class="btn btn-default mx-3" onclick="window.location.href='accueil_test.php'">ACCUEIL</button>
 
             <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
@@ -97,7 +97,7 @@ if ($result->num_rows > 0) {
                     <li class="dropdown-submenu">
                         <a class="dropdown-item dropdown-toggle" href="#">Laboratoire</a>
                         <ul class="dropdown-menu">
-                        <li><a href="labo.php">Laboratoire de biologie médicale</a></li>
+                            <li>Laboratoire de biologie médicale</a></li>
                         </ul>
                 </ul>
             </div>
@@ -122,63 +122,16 @@ if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 'admin') {
         </div>
         <div id="section">
             <div class="presentation">
-                Bienvenue sur Medicare,<br> Votre nouvelle plateforme de santé en ligne ! <br><br>
-                Nous sommes ravis de vous accueillir sur Medicare, votre partenaire de confiance pour toutes vos consultations médicales et services de santé en ligne. Chez Medicare, notre mission est de rendre l'accès aux soins plus simple, rapide et efficefficace pour tous. Grâce à notre interface intuitive et notre vaste réseau de professionnels de santé qualifiés, vous pouvez désormais prendre rendez-vous, consulter vos résultats médicaux et obtenir des conseils de santé personnalisés en quelques clics.<br><br>
-                Explorez dès maintenant les nombreuses fonctionnalités de Medicare et découvrez comment nous pouvons vous aider à mieux gérer votre santé au quotidien. Merci de nous faire confiance pour vos besoins médicaux. Nous sommes ici pour vous accompagner à chaque étape de votre parcours de santé.<br><br>
-                Bienvenue chez Medicare, où votre bien-être est notre priorité. <br>
+            Laboratoire de biologie médicale <br>
+            Dépistage covid-19 <br>
+            Biologie préventive<br>
+            Biologie de la femme enceinte <br>
+            Biologie de routine<br>
+            Cancérologie<br>
+            Gynécologie   <br>             
 
             </div>
 
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <ul class="carousel-indicators">
-                    <li data-target="#demo" data-slide-to="0" class="active"></li>
-                    <li data-target="#demo" data-slide-to="1"></li>
-                    <li data-target="#demo" data-slide-to="2"></li>
-                </ul>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row no-gutters">
-                            <div class="col-4">
-                                <img class="rounded mx-auto d-block" src="img/carrousel1.jpg">
-                            </div>
-                            <div class="col-4">
-                                <img class="rounded mx-auto d-block" src="img/carrousel2.jpg">
-                            </div>
-                            <div class="col-4">
-                                <img class="rounded mx-auto d-block" src="img/carrousel3.jpg">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row no-gutters">
-                            <div class="col-4">
-                                <img class="rounded mx-auto d-block" src="img/carrousel4.jpg">
-                            </div>
-                            <div class="col-4">
-                                <img class="rounded mx-auto d-block" src="img/carrousel5.jpg">
-                            </div>
-                            <div class="col-4">
-                                <img class="rounded mx-auto d-block" src="img/carrousel6.jpg">
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-
-                <div id="wrapper2">
-                    <div>
-                        <img class="evenement" src="img/covid.jpg" />
-                    </div>
-
-                    <div id="description">
-                        <h1 class="titre">COVID-19</h1>
-                        La recrudescence récente du COVID-19 suscite à nouveau des inquiétudes à travers le monde. Alors que de nombreux pays avaient réussi à maîtriser la propagation du virus grâce à des campagnes de vaccination massives et à des mesures sanitaires strictes, une nouvelle vague d'infections rappelle que la pandémie est loin d'être terminée.
-                    </div>
-
-                </div>
 
 
 
