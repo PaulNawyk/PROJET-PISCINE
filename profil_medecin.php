@@ -161,7 +161,20 @@ ml-3" onclick="window.location.href='rendezvous.html'">RENDEZ-VOUS</button>
             <p class="card-text"><?php echo "<p><strong>Spécialité :</strong> $specialite</p>"; ?></p>
             <p class="card-text"><?php echo "<img src='$photo' alt='Photo du médecin' width='200'>"; ?></p>
             <p class="card-text"><?php echo "<h3>CV :</h3>"; ?></p>
-            <p class="card-text"><?php echo "<p>$cv</p>"; ?></p>
+            <?php
+                if ($cv_xml) {
+                    $prenom = $cv_xml->PersonalInformation->FirstName;
+                    // Lien vers le fichier HTML du CV
+                    $html_file = "cv_$prenom.html";
+                
+                    // Afficher le lien vers le CV
+                    echo "<a href='$html_file'>CV</a>";
+                    
+                } else {
+                    echo "<p>CV non disponible.</p>";
+                }?>
+
+
             <p class="card-text"><h3>Disponibilités :</h3></p>
             <?php if ($disponibilites): ?>
             <form action="save_dispo.php" method="post"> <!-- Ajout du formulaire pour enregistrer les disponibilités -->
