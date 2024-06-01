@@ -1,9 +1,14 @@
 <?php
-// Vérifier si le formulaire a été soumis
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Récupérer les données du formulaire
-    $nom = $_POST['nom']; // Remplacez 'nom' par les autres champs du médecin si nécessaire
+session_start();
 
+// Vérifier si l'utilisateur est connecté en tant qu'admin
+if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'admin') {
+    header("Location: signin.html"); // Rediriger vers la page de connexion si l'utilisateur n'est pas un admin
+    exit();
+}
+
+// Vérifier si le formulaire d'ajout de médecin a été soumis
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Connexion à la base de données
     $servername = "localhost";
     $username = "root";
@@ -17,10 +22,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Insertion du médecin dans la base de données
-    $sql_insert_medecin = "INSERT INTO medecin (nom) VALUES ('$nom')"; // Ajoutez d'autres champs si nécessaire
+    // Récupérer les données du formulaire
+    $nom = $_POST['nom'];
+
+    // Récupérer l'ID de l'utilisateur associé au médecin
+    $user_id = $_POST['user_id'];
+
+    // Préparer et exécuter la requête d'insertion
+    $sql_insert_medecin = "INSERT INTO medecin (user_id) VALUES ('$user_id')";
+
     if ($conn->query($sql_insert_medecin) === TRUE) {
-        echo "Nouveau médecin ajouté avec succès.";
+        echo "Médecin ajouté avec succès.";
     } else {
         echo "Erreur lors de l'ajout du médecin : " . $conn->error;
     }

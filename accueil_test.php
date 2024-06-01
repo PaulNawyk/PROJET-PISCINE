@@ -104,7 +104,9 @@ if ($result->num_rows > 0) {
 
             <button class="btn btn-default ml-3">RENDEZ-VOUS</button>
             <button class="btn btn-default ml-3" onclick="window.location.href='profil.php'">PROFIL</button>
-            <input id="searchbar" class="form-control mx-3" type="text" name="search" placeholder="RECHERCHE..." style="width: 15%;">
+<form action="recherche.php" method="POST">
+    <input id="searchbar" class="form-control mx-3" type="text" name="search" placeholder="RECHERCHE..." style="width: 90%;">
+</form>
             <img src="img/loupe.jpg" alt="LOGO" width="30" height="30">
             <?php
 session_start();

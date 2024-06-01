@@ -58,13 +58,13 @@ $result_medecins = $conn->query($sql_select_medecins);
         ?>
     </ul>
 
-    <!-- Formulaire pour ajouter un médecin -->
-    <h3>Ajouter un nouveau médecin :</h3>
-    <form action="add_doctor.php" method="POST">
-        <label for="nom">Nom :</label>
-        <input type="text" name="nom" required>
-        <!-- Ajoutez d'autres champs pour les autres informations du médecin si nécessaire -->
-        <button type="submit">Ajouter Médecin</button>
+    <h2>Ajouter un médecin</h2>
+    <form action="add_doctor.php" method="post">
+        <label for="nom">Nom du médecin:</label><br>
+        <input type="text" id="nom" name="nom"><br>
+        <label for="user_id">ID de l'utilisateur associé:</label><br>
+        <input type="text" id="user_id" name="user_id"><br>
+        <input type="submit" value="Ajouter médecin">
     </form>
 </body>
 </html>
