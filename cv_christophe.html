@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>CV de christophe sellito</title>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 15px;
+            font-size: 16px;
+            background-color: #37bdcb;
+            border: 2px solid #0277bd;
+            border-radius: 10px;
+            color: #0277bd;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #81d4fa;
+        }
+        #contenu {
+            margin-top: 20px;
+            text-align: left;
+            border: 1px solid #0277bd;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h2 {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #0277bd;
+        }
+        p {
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        .contact-info, .professional-experience, .education, .skills, .languages {
+            margin-top: 30px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        .section-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #0277bd;
+            margin-bottom: 10px;
+        }
+        .experience-item {
+            margin-top: 15px;
+        }
+        .education-item {
+            margin-top: 15px;
+        }
+        .skill-item, .language-item {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            background-color: #0277bd;
+            color: #fff;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="btnChargerCV">Afficher le CV</button>
+    <div id="contenu"></div>
+
+    <script>
+        document.getElementById('btnChargerCV').addEventListener('click', function() {
+            chargerCV();
+        });
+
+        function chargerCV() {
+            fetch('cv_christophe.xml')
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(data, "text/xml");
+                    let contenu = '<h2>Informations Personnelles</h2>';
+                    const personalInfo = xmlDoc.getElementsByTagName('PersonalInformation')[0];
+                    contenu += '<p>Nom: ' + personalInfo.getElementsByTagName('LastName')[0].textContent + '</p>';
+                    contenu += '<p>Prénom: ' + personalInfo.getElementsByTagName('FirstName')[0].textContent + '</p>';
+                    contenu += '<p>Titre: ' + personalInfo.getElementsByTagName('Title')[0].textContent + '</p>';
+                    const contactInfo = personalInfo.getElementsByTagName('ContactInfo')[0];
+                    contenu += '<p>Email: ' + contactInfo.getElementsByTagName('Email')[0].textContent + '</p>';
+                    contenu += '<p>Téléphone: ' + contactInfo.getElementsByTagName('Phone')[0].textContent + '</p>';
+                    const address = contactInfo.getElementsByTagName('Address')[0];
+                    contenu += '<p>Adresse: ' + address.getElementsByTagName('Street')[0].textContent + ', ' + address.getElementsByTagName('City')[0].textContent + ', ' + address.getElementsByTagName('PostalCode')[0].textContent + ', ' + address.getElementsByTagName('Country')[0].textContent + '</p>';
+
+                    const experiences = xmlDoc.getElementsByTagName('Experience');
+                    contenu += '<h2>Expériences Professionnelles</h2><ul>';
+                    for (let i = 0; i < experiences.length; i++) {
+                        const experience = experiences[i];
+                        contenu += '<li>';
+                        contenu += '<p>Titre: ' + experience.getElementsByTagName('Title')[0].textContent + '</p>';
+                        contenu += '<p>Organisation: ' + experience.getElementsByTagName('Organization')[0].textContent + '</p>';
+                        contenu += '<p>Location: ' + experience.getElementsByTagName('Location')[0].textContent + '</p>';
+                        contenu += '<p>Date de début: ' + experience.getElementsByTagName('StartDate')[0].textContent + '</p>';
+                        contenu += '<p>Date de fin: ' + experience.getElementsByTagName('EndDate')[0].textContent + '</p>';
+                        const responsibilities = experience.getElementsByTagName('Responsibility');
+                        contenu += '<ul><li><strong>Responsabilités:</strong></li>';
+                        for (let j = 0; j < responsibilities.length; j++) {
+                            contenu += '<li>' + responsibilities[j].textContent + '</li>';
+                        }
+                        contenu += '</ul></li>';
+                    }
+                    contenu += '</ul>';
+
+                    const education = xmlDoc.getElementsByTagName('Degree');
+                    contenu += '<h2>Éducation</h2><ul>';
+                    for (let i = 0; i < education.length; i++) {
+                        const degree = education[i];
+                        contenu += '<li>';
+                        contenu += '<p>Titre: ' + degree.getElementsByTagName('Title')[0].textContent + '</p>';
+                        contenu += '<p>Institution: ' + degree.getElementsByTagName('Institution')[0].textContent + '</p>';
+                        contenu += '<p>Location: ' + degree.getElementsByTagName('Location')[0].textContent + '</p>';
+                        contenu += '<p>Date de début: ' + degree.getElementsByTagName('StartDate')[0].textContent + '</p>';
+                        contenu += '<p>Date de fin: ' + degree.getElementsByTagName('EndDate')[0].textContent + '</p>';
+                        contenu += '</li>';
+                    }
+                    contenu += '</ul>';
+
+                    const skills = xmlDoc.getElementsByTagName('Skill');
+                    contenu += '<h2>Compétences</h2><ul>';
+                    for (let i = 0; i < skills.length; i++) {
+                        contenu += '<li>' + skills[i].textContent + '</li>';
+                    }
+                    contenu += '</ul>';
+
+                    const languages = xmlDoc.getElementsByTagName('Language');
+                    contenu += '<h2>Langues</h2><ul>';
+                    for (let i = 0; i < languages.length; i++) {
+                        const language = languages[i];
+                        contenu += '<li>';
+                        contenu += '<p>Nom: ' + language.getElementsByTagName('Name')[0].textContent + '</p>';
+                        contenu += '<p>Maîtrise: ' + language.getElementsByTagName('Proficiency')[0].textContent + '</p>';
+                        contenu += '</li>';
+                    }
+                    contenu += '</ul>';
+
+                    document.getElementById('contenu').innerHTML = contenu;
+                })
+                .catch(error => console.error('Erreur lors du chargement du CV:', error));
+        }
+    </script>
+</body>
+</html>

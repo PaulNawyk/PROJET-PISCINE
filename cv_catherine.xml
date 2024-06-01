@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CV>
+    <PersonalInformation>
+        <FirstName>catherine</FirstName>
+        <LastName>Gérin</LastName>
+        <Title>Médecin Généraliste</Title>
+        <ContactInfo>
+            <Email>catherine.gerin@medicare.fr</Email>
+            <Phone>+33 2 34 56 78 90</Phone>
+            <Address>
+                <Street>15 Avenue des Champs</Street>
+                <City>Lyon</City>
+                <PostalCode>69001</PostalCode>
+                <Country>France</Country>
+            </Address>
+        </ContactInfo>
+    </PersonalInformation>
+
+    <ProfessionalExperience>
+        <Experience>
+            <Title>Médecin Généraliste</Title>
+            <Organization>Centre Médical Lyonnais</Organization>
+            <Location>Lyon, France</Location>
+            <StartDate>2018-03-01</StartDate>
+            <EndDate>Present</EndDate>
+            <Responsibilities>
+                <Responsibility>Consultations et suivi des patients</Responsibility>
+                <Responsibility>Prise en charge des maladies chroniques</Responsibility>
+                <Responsibility>Prévention et éducation à la santé</Responsibility>
+                <Responsibility>Collaboration avec des spécialistes pour des soins intégrés</Responsibility>
+            </Responsibilities>
+        </Experience>
+        <Experience>
+            <Title>Médecin Urgentiste</Title>
+            <Organization>Hôpital Édouard Herriot</Organization>
+            <Location>Lyon, France</Location>
+            <StartDate>2015-01-01</StartDate>
+            <EndDate>2018-02-28</EndDate>
+            <Responsibilities>
+                <Responsibility>Prise en charge des urgences médicales</Responsibility>
+                <Responsibility>Diagnostic et traitement immédiat des patients</Responsibility>
+                <Responsibility>Coordination avec les services hospitaliers</Responsibility>
+                <Responsibility>Formation et encadrement des internes</Responsibility>
+            </Responsibilities>
+        </Experience>
+        <Experience>
+            <Title>Interne en Médecine Générale</Title>
+            <Organization>Hôpital de la Croix-Rousse</Organization>
+            <Location>Lyon, France</Location>
+            <StartDate>2012-07-01</StartDate>
+            <EndDate>2014-12-31</EndDate>
+            <Responsibilities>
+                <Responsibility>Consultations sous supervision</Responsibility>
+                <Responsibility>Participation aux gardes et urgences</Responsibility>
+                <Responsibility>Formation continue et séminaires</Responsibility>
+                <Responsibility>Recherche clinique et publications</Responsibility>
+            </Responsibilities>
+        </Experience>
+    </ProfessionalExperience>
+
+    <Education>
+        <Degree>
+            <Title>Diplôme d'État de Docteur en Médecine</Title>
+            <Institution>Université Claude Bernard Lyon 1</Institution>
+            <Location>Lyon, France</Location>
+            <StartDate>2006-09-01</StartDate>
+            <EndDate>2012-06-30</EndDate>
+        </Degree>
+        <Degree>
+            <Title>Licence en Biologie</Title>
+            <Institution>Université Lyon 1</Institution>
+            <Location>Lyon, France</Location>
+            <StartDate>2003-09-01</StartDate>
+            <EndDate>2006-06-30</EndDate>
+        </Degree>
+    </Education>
+
+    <Skills>
+        <Skill>Gestion des urgences médicales</Skill>
+        <Skill>Diagnostic rapide</Skill>
+        <Skill>Soins préventifs</Skill>
+        <Skill>Éducation à la santé</Skill>
+        <Skill>Communication et écoute</Skill>
+    </Skills>
+
+    <Languages>
+        <Language>
+            <Name>Français</Name>
+            <Proficiency>Langue Maternelle</Proficiency>
+        </Language>
+        <Language>
+            <Name>Espagnol</Name>
+            <Proficiency>Courant</Proficiency>
+        </Language>
+        <Language>
+            <Name>Anglais</Name>
+            <Proficiency>Intermédiaire</Proficiency>
+        </Language>
+    </Languages>
+</CV>

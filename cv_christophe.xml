@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CV>
+    <PersonalInformation>
+        <FirstName>Christophe</FirstName>
+        <LastName>Selitto</LastName>
+        <Title>Médecin Généraliste</Title>
+        <ContactInfo>
+            <Email>christophe.sellito@medicare.fr</Email>
+            <Phone>+33 5 67 89 01 23</Phone>
+            <Address>
+                <Street>45 Rue des Docteurs</Street>
+                <City>Toulouse</City>
+                <PostalCode>31000</PostalCode>
+                <Country>France</Country>
+            </Address>
+        </ContactInfo>
+    </PersonalInformation>
+
+    <ProfessionalExperience>
+        <Experience>
+            <Title>Médecin Généraliste</Title>
+            <Organization>Cabinet Médical Selitto</Organization>
+            <Location>Toulouse, France</Location>
+            <StartDate>2019-04-01</StartDate>
+            <EndDate>Present</EndDate>
+            <Responsibilities>
+                <Responsibility>Consultations médicales pour patients de tous âges</Responsibility>
+                <Responsibility>Suivi des patients atteints de maladies chroniques</Responsibility>
+                <Responsibility>Prise en charge des urgences non vitales</Responsibility>
+                <Responsibility>Orientation vers des spécialistes si nécessaire</Responsibility>
+            </Responsibilities>
+        </Experience>
+        <Experience>
+            <Title>Interne en Médecine Générale</Title>
+            <Organization>Hôpital Purpan</Organization>
+            <Location>Toulouse, France</Location>
+            <StartDate>2016-06-01</StartDate>
+            <EndDate>2019-03-31</EndDate>
+            <Responsibilities>
+                <Responsibility>Consultations sous supervision</Responsibility>
+                <Responsibility>Gestion des urgences médicales</Responsibility>
+                <Responsibility>Participation aux gardes de nuit</Responsibility>
+                <Responsibility>Formation des étudiants en médecine</Responsibility>
+            </Responsibilities>
+        </Experience>
+        <Experience>
+            <Title>Externe en Médecine</Title>
+            <Organization>Centre Hospitalier Universitaire (CHU) de Toulouse</Organization>
+            <Location>Toulouse, France</Location>
+            <StartDate>2013-06-01</StartDate>
+            <EndDate>2016-05-31</EndDate>
+            <Responsibilities>
+                <Responsibility>Assistance aux consultations</Responsibility>
+                <Responsibility>Suivi des patients hospitalisés</Responsibility>
+                <Responsibility>Participation aux interventions chirurgicales</Responsibility>
+                <Responsibility>Rédaction des comptes-rendus médicaux</Responsibility>
+            </Responsibilities>
+        </Experience>
+    </ProfessionalExperience>
+
+    <Education>
+        <Degree>
+            <Title>Diplôme d'État de Docteur en Médecine</Title>
+            <Institution>Université de Toulouse</Institution>
+            <Location>Toulouse, France</Location>
+            <StartDate>2009-09-01</StartDate>
+            <EndDate>2016-06-30</EndDate>
+        </Degree>
+        <Degree>
+            <Title>Baccalauréat Scientifique</Title>
+            <Institution>Lycée Pierre de Fermat</Institution>
+            <Location>Toulouse, France</Location>
+            <StartDate>2006-09-01</StartDate>
+            <EndDate>2009-06-30</EndDate>
+        </Degree>
+    </Education>
+
+    <Skills>
+        <Skill>Consultation médicale</Skill>
+        <Skill>Suivi des maladies chroniques</Skill>
+        <Skill>Gestion des urgences non vitales</Skill>
+        <Skill>Prévention et éducation à la santé</Skill>
+        <Skill>Communication avec les patients</Skill>
+        <Skill>Utilisation des logiciels de gestion de dossiers médicaux</Skill>
+    </Skills>
+
+    <Languages>
+        <Language>
+            <Name>Français</Name>
+            <Proficiency>Langue Maternelle</Proficiency>
+        </Language>
+        <Language>
+            <Name>Anglais</Name>
+            <Proficiency>Courant</Proficiency>
+        </Language>
+        <Language>
+            <Name>Espagnol</Name>
+            <Proficiency>Intermédiaire</Proficiency>
+        </Language>
+    </Languages>
+</CV>

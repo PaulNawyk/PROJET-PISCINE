@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CV>
+    <PersonalInformation>
+        <FirstName>Laurent</FirstName>
+        <LastName>Tillon</LastName>
+        <Title>Médecin Spécialiste en IST</Title>
+        <ContactInfo>
+            <Email>laurent.tillon@medicare.fr</Email>
+            <Phone>0167894321</Phone>
+            <Address>
+                <Street>123 Boulevard de la Santé</Street>
+                <City>Paris</City>
+                <PostalCode>75010</PostalCode>
+                <Country>France</Country>
+            </Address>
+        </ContactInfo>
+    </PersonalInformation>
+    
+    <ProfessionalExperience>
+        <Experience>
+            <Title>Spécialiste des IST</Title>
+            <Organization>Hôpital Saint-Louis</Organization>
+            <Location>Paris, France</Location>
+            <StartDate>2010-01-15</StartDate>
+            <EndDate>Présent</EndDate>
+            <Responsibilities>
+                <Responsibility>Responsable du service des maladies sexuellement transmissibles, axé sur la recherche et le traitement des IST.</Responsibility>
+            </Responsibilities>
+        </Experience>
+        <Experience>
+            <Title>Résident en Infectiologie</Title>
+            <Organization>Hôpital de la Pitié-Salpêtrière</Organization>
+            <Location>Paris, France</Location>
+            <StartDate>2006-07-01</StartDate>
+            <EndDate>2009-12-31</EndDate>
+            <Responsibilities>
+                <Responsibility>Formation spécialisée en infectiologie, avec rotation dans le service des maladies sexuellement transmissibles.</Responsibility>
+            </Responsibilities>
+        </Experience>
+    </ProfessionalExperience>
+    
+    <Education>
+        <Degree>
+            <Title>Docteur en Médecine</Title>
+            <Institution>Université Pierre et Marie Curie</Institution>
+            <Location>Paris, France</Location>
+            <StartDate>2006-06-15</StartDate>
+            <EndDate>2006-06-15</EndDate>
+        </Degree>
+        <Degree>
+            <Title>Master en Infectiologie</Title>
+            <Institution>Université Pierre et Marie Curie</Institution>
+            <Location>Paris, France</Location>
+            <StartDate>2009-06-15</StartDate>
+            <EndDate>2009-06-15</EndDate>
+        </Degree>
+    </Education>
+    
+    <Skills>
+        <Skill>Prévention des IST</Skill>
+        <Skill>Diagnostic des IST</Skill>
+        <Skill>Traitement des IST</Skill>
+        <Skill>Conseil en santé sexuelle</Skill>
+    </Skills>
+    
+    <Languages>
+        <Language>
+            <Name>Français</Name>
+            <Proficiency>Langue Maternelle</Proficiency>
+        </Language>
+        <Language>
+            <Name>Anglais</Name>
+            <Proficiency>Courant</Proficiency>
+        </Language>
+    </Languages>
+</CV>

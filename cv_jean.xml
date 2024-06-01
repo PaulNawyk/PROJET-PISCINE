@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CV>
+    <PersonalInformation>
+        <FirstName>Jean</FirstName>
+        <LastName>Rémy</LastName>
+        <Title>Médecin Généraliste</Title>
+        <ContactInfo>
+            <Email>jean.remy @medicare.fr</Email>
+            <Phone>+33 4 56 78 90 12</Phone>
+            <Address>
+                <Street>30 Boulevard de la République</Street>
+                <City>Bordeaux</City>
+                <PostalCode>33000</PostalCode>
+                <Country>France</Country>
+            </Address>
+        </ContactInfo>
+    </PersonalInformation>
+
+    <ProfessionalExperience>
+        <Experience>
+            <Title>Médecin Généraliste</Title>
+            <Organization>Cabinet Médical Rémy</Organization>
+            <Location>Bordeaux, France</Location>
+            <StartDate>2016-09-01</StartDate>
+            <EndDate>Present</EndDate>
+            <Responsibilities>
+                <Responsibility>Consultations médicales quotidiennes</Responsibility>
+                <Responsibility>Prise en charge des maladies aiguës et chroniques</Responsibility>
+                <Responsibility>Prévention et dépistage</Responsibility>
+                <Responsibility>Orientation des patients vers des spécialistes</Responsibility>
+            </Responsibilities>
+        </Experience>
+        <Experience>
+            <Title>Interne en Médecine Générale</Title>
+            <Organization>Hôpital Pellegrin</Organization>
+            <Location>Bordeaux, France</Location>
+            <StartDate>2013-06-01</StartDate>
+            <EndDate>2016-08-31</EndDate>
+            <Responsibilities>
+                <Responsibility>Prise en charge des patients en consultation</Responsibility>
+                <Responsibility>Assistance aux urgences</Responsibility>
+                <Responsibility>Participation aux visites à domicile</Responsibility>
+                <Responsibility>Coordination des soins avec les autres services</Responsibility>
+            </Responsibilities>
+        </Experience>
+        <Experience>
+            <Title>Externe en Médecine</Title>
+            <Organization>Centre Hospitalier Universitaire (CHU) de Bordeaux</Organization>
+            <Location>Bordeaux, France</Location>
+            <StartDate>2010-06-01</StartDate>
+            <EndDate>2013-05-31</EndDate>
+            <Responsibilities>
+                <Responsibility>Assistance aux consultations</Responsibility>
+                <Responsibility>Suivi des patients hospitalisés</Responsibility>
+                <Responsibility>Participation aux réunions cliniques</Responsibility>
+                <Responsibility>Rédaction des dossiers médicaux</Responsibility>
+            </Responsibilities>
+        </Experience>
+    </ProfessionalExperience>
+
+    <Education>
+        <Degree>
+            <Title>Diplôme d'État de Docteur en Médecine</Title>
+            <Institution>Université de Bordeaux</Institution>
+            <Location>Bordeaux, France</Location>
+            <StartDate>2007-09-01</StartDate>
+            <EndDate>2013-06-30</EndDate>
+        </Degree>
+        <Degree>
+            <Title>Baccalauréat Scientifique</Title>
+            <Institution>Lycée Michel de Montaigne</Institution>
+            <Location>Bordeaux, France</Location>
+            <StartDate>2004-09-01</StartDate>
+            <EndDate>2007-06-30</EndDate>
+        </Degree>
+    </Education>
+
+    <Skills>
+        <Skill>Consultation médicale</Skill>
+        <Skill>Diagnostic et traitement des maladies courantes</Skill>
+        <Skill>Suivi des maladies chroniques</Skill>
+        <Skill>Prévention et éducation à la santé</Skill>
+        <Skill>Gestion des dossiers médicaux</Skill>
+        <Skill>Écoute et communication avec les patients</Skill>
+    </Skills>
+
+    <Languages>
+        <Language>
+            <Name>Français</Name>
+            <Proficiency>Langue Maternelle</Proficiency>
+        </Language>
+        <Language>
+            <Name>Anglais</Name>
+            <Proficiency>Courant</Proficiency>
+        </Language>
+    </Languages>
+</CV>

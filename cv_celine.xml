@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CV>
+    <PersonalInformation>
+        <FirstName>celine</FirstName>
+        <LastName>Leroy</LastName>
+        
+        <Email>celine.leroy@medicare.fr</Email>
+        <Telephone>0987654321</Telephone>
+        <Address>
+            <Line1>456 Rue de l'Exemple</Line1>
+            <Line2>Apartment 2A</Line2>
+            <City>Marseille</City>
+            <PostalCode>13000</PostalCode>
+            <Country>France</Country>
+        </Address>
+    </PersonalInformation>
+    
+    <Profile> 
+        <Description>Experienced Andrologist with expertise in male reproductive disorders and sexual healthcare.</Description> 
+    </Profile>
+
+    <ProfessionalExperience>
+        <Experience>
+            <Position>Andrologist</Position>
+            <Company>Clinique du Parc</Company>
+            <Location>Marseille, France</Location>
+            <StartDate>2016-05-01</StartDate>
+            <EndDate>Present</EndDate>
+            <Description>Specialized in diagnosis and treatment of andrological disorders including fertility issues and erectile dysfunction.</Description>
+        </Experience>
+        <Experience>
+            <Position>Andrology Resident</Position>
+            <Company>Centre Hospitalier Universitaire de Marseille</Company>
+            <Location>Marseille, France</Location>
+            <StartDate>2012-07-01</StartDate>
+            <EndDate>2016-04-30</EndDate>
+            <Description>Intensive training in andrology with rotations in various specialized units.</Description>
+        </Experience>
+    </ProfessionalExperience>
+    
+    <Education>
+        <Degree>
+            <Title>Doctor of Medicine</Title>
+            <Institution>University of Aix-Marseille</Institution>
+            <Location>Marseille, France</Location>
+            <GraduationDate>2011-06-15</GraduationDate>
+        </Degree>
+        <Degree>
+            <Title>Master's in Andrology</Title>
+            <Institution>University of Aix-Marseille</Institution>
+            <Location>Marseille, France</Location>
+            <GraduationDate>2015-06-15</GraduationDate>
+        </Degree>
+    </Education>
+    
+    <Skills>
+        <Skill>Diagnosis of male reproductive disorders</Skill>
+        <Skill>Treatment of erectile dysfunction</Skill>
+        <Skill>Hormonal therapies</Sk

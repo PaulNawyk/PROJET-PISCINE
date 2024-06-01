@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CV>
+    <PersonalInformation>
+        <FirstName>Philippe</FirstName>
+        <LastName>Cohen</LastName>
+        <Email>philippe.cohen@medicare.fr</Email>
+        <Phone>0123456789</Phone>
+        <Address>
+            <Street>123 Rue Exemple</Street>
+            <Apartment>Appartement 4B</Apartment>
+            <City>Paris</City>
+            <PostalCode>75000</PostalCode>
+            <Country>France</Country>
+        </Address>
+    </PersonalInformation>
+    
+    <Profile> 
+        <Description>Specialist physician in cardiology with over 10 years of experience in the treatment of cardiovascular diseases.</Description> 
+    </Profile>
+
+    <ProfessionalExperience>
+        <Experience>
+            <Position>Cardiologist</Position>
+            <Organization>Hôpital Saint-Louis</Organization>
+            <Location>Paris, France</Location>
+            <StartDate>2015-01-01</StartDate>
+            <EndDate>Present</EndDate>
+            <Responsibilities>
+                <Responsibility>Head of the cardiology department. Specialized in the diagnosis and treatment of heart diseases.</Responsibility>
+            </Responsibilities>
+        </Experience>
+        <Experience>
+            <Position>Cardiology Intern</Position>
+            <Organization>Hôpital de la Pitié-Salpêtrière</Organization>
+            <Location>Paris, France</Location>
+            <StartDate>2010-01-01</StartDate>
+            <EndDate>2014-12-31</EndDate>
+            <Responsibilities>
+                <Responsibility>Training in cardiology, with rotation in various departments.</Responsibility>
+            </Responsibilities>
+        </Experience>
+    </ProfessionalExperience>
+    
+    <Education>
+        <Degree>
+            <Title>Doctor of Medicine</Title>
+            <Institution>Université de Paris</Institution>
+            <Location>Paris, France</Location>
+            <GraduationDate>2009-06-15</GraduationDate>
+        </Degree>
+        <Degree>
+            <Title>Master's in Cardiology</Title>
+            <Institution>Université de Paris</Institution>
+            <Location>Paris, France</Location>
+            <GraduationDate>2014-06-15</GraduationDate>
+        </Degree>
+    </Education>
+    
+    <Skills>
+        <Skill>Diagnosis and treatment of cardiovascular diseases</Skill>
+        <Skill>Echocardiography</Skill>
+        <Skill>Cardiac intensive care</Skill>
+        <Skill>Clinical research</Skill>
+    </Skills>
+    
+    <Publications>
+        <Publication>
+            <Title>Study on the effects of statins on reducing cardiovascular risks</Title>
+            <Journal>Journal of Cardiology</Journal>
+            <PublicationDate>2018-03-01</PublicationDate>
+        </Publication>
+    </Publications>
+    
+    <Languages>
+        <Language>
+            <Name>French</Name>
+            <Proficiency>Native</Proficiency>
+        </Language>
+        <Language>
+            <Name>English</Name>
+            <Proficiency>Fluent</Proficiency>
+        </Language>
+    </Languages>
+</CV>
