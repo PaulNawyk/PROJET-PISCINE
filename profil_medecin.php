@@ -179,7 +179,26 @@ ml-3" onclick="window.location.href='rendezvous.html'">RENDEZ-VOUS</button>
                     echo "<p>CV non disponible.</p>";
                 }
                 ?>
+<!-- Ajout de la chatbox -->
+<div class="chat-popup" id="myChatBox">
+  <form action="accueil_test.php" class="form-container">
+    <h1>Chat</h1>
+    <label for="msg"><b>Message</b></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+    <button type="submit" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closeChatBox()">Close</button>
+  </form>
+</div>
 
+<script>
+function openChatBox() {
+  document.getElementById("myChatBox").style.display = "block";
+}
+
+function closeChatBox() {
+  document.getElementById("myChatBox").style.display = "none";
+}
+</script>
 
             <p class="card-text"><h3>Disponibilités :</h3></p>
             <?php if ($disponibilites): ?>
