@@ -3,26 +3,24 @@
     <PersonalInformation>
         <FirstName>Celine</FirstName>
         <LastName>Leroy</LastName>
-        
-        <Email>celine.leroy@medicare.fr</Email>
-        <Telephone>0987654321</Telephone>
-        <Address>
-            <Line1>456 Rue de l'Exemple</Line1>
-            <Line2>Apartment 2A</Line2>
-            <City>Marseille</City>
-            <PostalCode>13000</PostalCode>
-            <Country>France</Country>
-        </Address>
+        <Title>Andrologist</Title>
+        <ContactInfo>
+            <Email>celine.leroy@medicare.fr</Email>
+            <Phone>0987654321</Phone>
+            <Address>
+                <Street>456 Example Street</Street>
+                <Apartment>Apartment 2A</Apartment>
+                <City>Marseille</City>
+                <PostalCode>13000</PostalCode>
+                <Country>France</Country>
+            </Address>
+        </ContactInfo>
     </PersonalInformation>
-    
-    <Profile> 
-        <Description>Experienced Andrologist with expertise in male reproductive disorders and sexual healthcare.</Description> 
-    </Profile>
 
     <ProfessionalExperience>
         <Experience>
             <Position>Andrologist</Position>
-            <Company>Clinique du Parc</Company>
+            <Organization>Parc Clinic</Organization>
             <Location>Marseille, France</Location>
             <StartDate>2016-05-01</StartDate>
             <EndDate>Present</EndDate>
@@ -30,14 +28,14 @@
         </Experience>
         <Experience>
             <Position>Andrology Resident</Position>
-            <Company>Centre Hospitalier Universitaire de Marseille</Company>
+            <Organization>Marseille University Hospital</Organization>
             <Location>Marseille, France</Location>
             <StartDate>2012-07-01</StartDate>
             <EndDate>2016-04-30</EndDate>
             <Description>Intensive training in andrology with rotations in various specialized units.</Description>
         </Experience>
     </ProfessionalExperience>
-    
+
     <Education>
         <Degree>
             <Title>Doctor of Medicine</Title>
@@ -52,8 +50,21 @@
             <GraduationDate>2015-06-15</GraduationDate>
         </Degree>
     </Education>
-    
+
     <Skills>
         <Skill>Diagnosis of male reproductive disorders</Skill>
         <Skill>Treatment of erectile dysfunction</Skill>
-        <Skill>Hormonal therapies</Sk
+        <Skill>Hormonal therapies</Skill>
+    </Skills>
+
+    <Languages>
+        <Language>
+            <Name>Français</Name>
+            <Proficiency>Langue Maternelle</Proficiency>
+        </Language>
+        <Language>
+            <Name>Anglais</Name>
+            <Proficiency>Courant</Proficiency>
+        </Language>
+    </Languages>
+</CV>
