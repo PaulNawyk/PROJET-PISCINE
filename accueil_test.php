@@ -43,31 +43,27 @@ $conn->close();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medicare</title>
-    <meta charset="utf-8" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link href="base.css" rel="stylesheet" type="text/css" />
+    <link href="base.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
     <div id="wrapper">
-
         <div id="header">
             <div id="wrapperlogo">
                 <div class="header-text">
-                    <h1>MEDICARE </h1>
-                    <h2> Services Médicaux</h2>
+                    <h1>MEDICARE</h1>
+                    <h2>Services Médicaux</h2>
                 </div>
-                <div><img class="logo" src="img/logo.jpg" /></div>
-                
+                <div><img class="logo" src="img/logo.jpg" alt="Logo"></div>
             </div>
-
         </div>
-
 
         <div id="navigation" class="d-flex align-items-center">
             <button class="btn btn-default mx-3">ACCUEIL</button>
@@ -84,7 +80,7 @@ $conn->close();
                             // Affichage des noms des médecins généralistes
                             if ($result_generalistes->num_rows > 0) {
                                 while ($row = $result_generalistes->fetch_assoc()) {
-                                    echo "<li><a href='profil_medecin.php?id=" . $row["id"] . "'>" . $row["nom"] . "</a></li>";
+                                    echo "<li><a class='dropdown-item' href='profil_medecin.php?id=" . $row["id"] . "'>" . $row["nom"] . "</a></li>";
                                 }
                             }
                             ?>
@@ -97,7 +93,7 @@ $conn->close();
                             // Affichage des noms des médecins spécialistes
                             if ($result_specialistes->num_rows > 0) {
                                 while ($row_specialiste = $result_specialistes->fetch_assoc()) {
-                                    echo "<li><a href='profil_medecin.php?id=" . $row_specialiste["id"] . "'>" . $row_specialiste["nom"] . " - " . $row_specialiste["specialite_nom"] . "</a></li>";
+                                    echo "<li><a class='dropdown-item' href='profil_medecin.php?id=" . $row_specialiste["id"] . "'>" . $row_specialiste["nom"] . " - " . $row_specialiste["specialite_nom"] . "</a></li>";
                                 }
                             }
                             ?>
@@ -106,7 +102,7 @@ $conn->close();
                     <li class="dropdown-submenu">
                         <a class="dropdown-item dropdown-toggle" href="#">Laboratoire</a>
                         <ul class="dropdown-menu">
-                            <li><a href="labo.php">Laboratoire de biologie médicale</a></li>
+                            <li><a class="dropdown-item" href="labo.php">Laboratoire de biologie médicale</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -116,7 +112,7 @@ $conn->close();
             <form action="recherche.php" method="POST" class="d-flex mx-3">
                 <input id="searchbar" class="form-control" type="text" name="search" placeholder="RECHERCHE..." style="width: 90%;">
             </form>
-            <img src= "img\loupe.jpg" alt="LOGO" width="30" height="30">
+            <img src="img/loupe.jpg" alt="LOGO" width="30" height="30">
             <?php
             // Afficher le bouton exclusif pour les admins
             if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 'admin') {
@@ -124,72 +120,79 @@ $conn->close();
             }
             ?>
         </div>
+        
         <div id="section">
-        <div class="presentation">
-            <p>
-                <span style="font-size: 1.2em;">Bienvenue sur Medicare,</span><br>
-                <span style="font-size: 1.1em;">Votre nouvelle plateforme de santé en ligne !</span> <br><br>
-            </p>
-            <p>Nous sommes ravis de vous accueillir sur Medicare, votre partenaire de confiance pour toutes vos consultations médicales et services de santé en ligne.</p>
-            <p>Chez Medicare, notre mission est de rendre l'accès aux soins plus simple, rapide et efficace pour tous. Grâce à notre interface intuitive et notre vaste réseau de professionnels de santé qualifiés, vous pouvez désormais prendre rendez-vous, consulter vos résultats médicaux et obtenir des conseils de santé personnalisés en quelques clics.</p>
-            <p>Explorez dès maintenant les nombreuses fonctionnalités de Medicare et découvrez comment nous pouvons vous aider à mieux gérer votre santé au quotidien. Merci de nous faire confiance pour vos besoins médicaux. Nous sommes ici pour vous accompagner à chaque étape de votre parcours de santé.</p>
-            <p>
-                <span style="font-size: 1em;">Bienvenue chez Medicare, où votre bien-être est notre priorité.</span> <br>
-            </p>
-        </div>
+            <div class="presentation">
+                <p>
+                    <span style="font-size: 1.2em;">Bienvenue sur Medicare,</span><br>
+                    <span style="font-size: 1.1em;">Votre nouvelle plateforme de santé en ligne !</span> <br><br>
+                </p>
+                <p>Nous sommes ravis de vous accueillir sur Medicare, votre partenaire de confiance pour toutes vos consultations médicales et services de santé en ligne.</p>
+                <p>Chez Medicare, notre mission est de rendre l'accès aux soins plus simple, rapide et efficace pour tous. Grâce à notre interface intuitive et notre vaste réseau de professionnels de santé qualifiés, vous pouvez désormais prendre rendez-vous, consulter vos résultats médicaux et obtenir des conseils de santé personnalisés en quelques clics.</p>
+                <p>Explorez dès maintenant les nombreuses fonctionnalités de Medicare et découvrez comment nous pouvons vous aider à mieux gérer votre santé au quotidien. Merci de nous faire confiance pour vos besoins médicaux. Nous sommes ici pour vous accompagner à chaque étape de votre parcours de santé.</p>
+                <p>
+                    <span style="font-size: 1em;">Bienvenue chez Medicare, où votre bien-être est notre priorité.</span> <br>
+                </p>
+            </div>
 
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <ul class="carousel-indicators">
-                    <li data-target="#demo" data-slide-to="0" class="active"></li>
-                    <li data-target="#demo" data-slide-to="1"></li>
-                    <li data-target="#demo" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
                 </ul>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row no-gutters">
                             <div class="col-4">
-                                <img class="rounded mx-auto d-block" src="img/carrousel1.jpg">
+                                <img class="rounded mx-auto d-block" src="img/carrousel1.jpg" alt="Image 1">
                             </div>
                             <div class="col-4">
-                                <img class="rounded mx-auto d-block" src="img/carrousel2.jpg">
+                                <img class="rounded mx-auto d-block" src="img/carrousel2.jpg" alt="Image 2">
                             </div>
                             <div class="col-4">
-                                <img class="rounded mx-auto d-block" src="img/carrousel3.jpg">
+                                <img class="rounded mx-auto d-block" src="img/carrousel3.jpg" alt="Image 3">
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="row no-gutters">
                             <div class="col-4">
-                                <img class="rounded mx-auto d-block" src="img/carrousel4.jpg">
+                                <img class="rounded mx-auto d-block" src="img/carrousel4.jpg" alt="Image 4">
                             </div>
                             <div class="col-4">
-                                <img class="rounded mx-auto d-block" src="img/carrousel5.jpg">
+                                <img class="rounded mx-auto d-block" src="img/carrousel5.jpg" alt="Image 5">
                             </div>
                             <div class="col-4">
-                                <img class="rounded mx-auto d-block" src="img/carrousel6.jpg">
+                                <img class="rounded mx-auto d-block" src="img/carrousel6.jpg" alt="Image 6">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div id="wrapper2">
-                <div> <img class="evenement" src="img/covid.jpg" /></div>
+                <div><img class="evenement" src="img/covid.jpg" alt="COVID-19"></div>
                 <div id="description">
                     <h1 class="titre">COVID-19</h1>
                     La recrudescence récente du COVID-19 suscite à nouveau des inquiétudes à travers le monde. Alors que de nombreux pays avaient réussi à maîtriser la propagation du virus grâce à des campagnes de vaccination massives et à des mesures sanitaires strictes, une nouvelle vague d'infections rappelle que la pandémie est loin d'être terminée.
                 </div>
             </div>
-            <div id = "wrapper2">
-                <div ><img class = "evenement" src="img/poux.jpeg" /></div>
+            <div id="wrapper2">
+                <div><img class="evenement" src="img/poux.jpeg" alt="Poux"></div>
                 <div id="description">
-                    <h1 class="titre" >Apparition de Poux :</h1> <h2> Une Préoccupation Croissante</h2>
-                    Récemment, plusieurs écoles élémentaires ont signalé une recrudescence des cas de poux parmi les élèves. Ce phénomène, bien que courant, suscite des inquiétudes tant chez les parents que chez les enseignants, en raison de la rapidité avec laquelle ces parasites peuvent se propager dans des environnements où les enfants sont en contact étroit.                </div>
+                    <h1 class="titre">Apparition de Poux :</h1>
+                    <h2>Une Préoccupation Croissante</h2>
+                    Récemment, plusieurs écoles élémentaires ont signalé une recrudescence des cas de poux parmi les élèves. Ce phénomène, bien que courant, suscite des inquiétudes tant chez les parents que chez les enseignants, en raison de la rapidité avec laquelle ces parasites peuvent se propager dans des environnements où les enfants sont en contact étroit.
                 </div>
+                <div id="map-section" class="my-4">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5250.7452444036135!2d2.2885375999999997!3d48.8511045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b486bb253%3A0x61e9cc6979f93fae!2s10%20Rue%20Sextius%20Michel%2C%2075015%20Paris!5e0!3m2!1sfr!2sfr!4v1717347703773!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
+            </div>
+        </div>
+        
         <div id="footer">
-            <p>Pour nous contacter : medicare.paris@soin.fr </p>
-            <p>Par téléphone : +33 6 76 89 90 10</p> 
+            <p>Pour nous contacter : medicare.paris@soin.fr</p>
+            <p>Par téléphone : +33 6 76 89 90 10</p>
         </div>
     </div>
     
