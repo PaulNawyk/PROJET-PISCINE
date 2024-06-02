@@ -50,8 +50,15 @@ if (!$result_labo) {
 
 <body>
     <div id="wrapper" class="container">
-        <div id="header" class="my-4 text-center">
-            <h1>Medicare : Services Médicaux</h1>
+    <div id="header">
+            <div id="wrapperlogo">
+                <div class="header-text">
+                    <h1>MEDICARE </h1>
+                    <h2> Services Médicaux</h2>
+                </div>
+                <div><img class="logo" src="img/logo.jpg" /></div>
+                
+            </div>
         </div>
         <div id="navigation" class="d-flex align-items-center mb-4 justify-content-between">
             <div>

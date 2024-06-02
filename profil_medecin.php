@@ -11,11 +11,11 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Vérifier si l'ID du médecin est passé en paramètre
+
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $medecin_id = intval($_GET['id']);
 
-    // Requête SQL pour récupérer les informations du médecin
+    //  SQL info du med
     $stmt = $conn->prepare("SELECT m.id, u.nom, u.prenom, m.photo, m.cv, s.nom as specialite 
                             FROM medecin m
                             JOIN users u ON m.user_id = u.id
@@ -26,7 +26,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $result_medecin = $stmt->get_result();
 
     if ($result_medecin->num_rows > 0) {
-        // Récupération des informations du médecin
+        //  info du med
         $row_medecin = $result_medecin->fetch_assoc();
         $nom = htmlspecialchars($row_medecin['nom']);
         $prenom = htmlspecialchars($row_medecin['prenom']);
@@ -34,20 +34,20 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         $specialite = htmlspecialchars($row_medecin['specialite']);
         $cv_path = htmlspecialchars($row_medecin['cv']);
 
-        // Lire le fichier XML du CV
+        
         if (file_exists($cv_path)) {
             $cv_xml = simplexml_load_file($cv_path);
         } else {
             $cv_xml = null;
         }
 
-        // Requête SQL pour récupérer les disponibilités du médecin
+        //  SQL pour recuperer les dispo du med
         $stmt_dispo = $conn->prepare("SELECT jour, heure_debut, heure_fin FROM disponibilites WHERE medecin_id = ?");
         $stmt_dispo->bind_param("i", $medecin_id);
         $stmt_dispo->execute();
         $result_disponibilites = $stmt_dispo->get_result();
 
-        // Vérifier si des disponibilités sont trouvées
+        // verif des dispo 
         $disponibilites = array();
         if ($result_disponibilites->num_rows > 0) {
             while ($row_disponibilite = $result_disponibilites->fetch_assoc()) {
@@ -71,7 +71,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     <meta charset="UTF-8">
     <title>Profil Médecin</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="base.css" rel="stylesheet">
+    <link href="base_medecin.css" rel="stylesheet">
     <style>
         .bg-selected {
             background-color: red;
@@ -81,7 +81,16 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 
 <body>
     <div id="wrapper">
-        <div id="header">Medicare : Services Médicaux</div>
+        <div id="header">
+            <div id="wrapperlogo">
+                <div class="header-text">
+                    <h1>MEDICARE </h1>
+                    <h2> Services Médicaux</h2>
+                </div>
+                <div><img class="logo" src="img/logo.jpg" /></div>
+                
+            </div>
+        </div>
         <div id="navigation" class="d-flex align-items-center">
             <button class="btn btn-default mx-3" onclick="window.location.href='accueil_test.php'">ACCUEIL</button>
             <div class="dropdown">
@@ -136,33 +145,52 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             </div>
             <button class="btn btn-default ml-3" onclick="window.location.href='rendezvous.html'">RENDEZ-VOUS</button>
             <button class="btn btn-default ml-3" onclick="window.location.href='profil.php'">PROFIL</button>
-            <input id="searchbar" class="form-control mx-3" type="text" name="search" placeholder="RECHERCHE..." style="width: 15%;">
-            <img src="img/loupe.jpg" alt="LOGO" width="30" height="30">
         </div>
+
+        <div>
+            <form action="recherche.php" method="POST" class="form-inline">
+                <input id="searchbar" class="form-control" type="text" name="search" placeholder="RECHERCHE..." style="width: 300px;">
+                <button type="submit" class="btn btn-default ml-2"><img src="img/loupe.jpg" alt="LOGO" width="30" height="30"></button>
+            </form>
+        </div>
+        
         <div id="section">
-            <h1>Profil Utilisateur</h1>
+            <h1 style="text-align: center;">Votre médecin</h1>
             <div class="card">
                 <div class="card-body">
-                    <h2>Profil du Dr. <?php echo "$nom $prenom"; ?></h2>
-                    <p><strong>Spécialité :</strong> <?php echo $specialite; ?></p>
-                    <img src="<?php echo $photo; ?>" alt="Photo du médecin" width="200">
-                    <h3>Cliquez sur le lien pour trouver le CV :</h3>
-                    <?php
-                    if ($cv_xml) {
-                        $prenom = htmlspecialchars($cv_xml->PersonalInformation->FirstName);
-                        $html_file = "cv_" . $prenom . ".html";
-                        echo "<a href='$html_file'>CV</a>";
-                    } else {
-                        echo "<p>CV non disponible.</p>";
-                    }
-                    ?>
+                    <div style="display: flex; align-items: center;">
+                        <div>
+                        <h2>Dr. <?php echo "$nom $prenom"; ?></h2>
+                        <h5><p><strong>Spécialité :</strong> <?php echo $specialite; ?></p></h5>
+
+                            <div>
+                                <h4>Voir le CV de mon médecin:</h4>
+                                <?php
+                                if ($cv_xml) {
+                                    $prenom = htmlspecialchars($cv_xml->PersonalInformation->FirstName);
+                                    $html_file = "cv_" . $prenom . ".html";
+                                    echo "<a href='$html_file'>Cliquez ici</a>";
+                                } else {
+                                    echo "<p>CV non disponible.</p>";
+                                }
+                                ?>
+                            </div>
+                        </div>
+
+                    
+                        <div style="margin-left: 400px;">
+                            <img src="<?php echo $photo; ?>" alt="Photo du médecin" width="300">
+                        </div>
+
+                    </div>
+
                     <div class="chat-popup" id="myChatBox">
-                        <form action="accueil_test.php" class="form-container">
-                            <h1>Chat</h1>
-                            <label for="msg"><b>Message</b></label>
+                        <form action="accueil_test.php" class="form-container" onsubmit="alert('Votre médecin a bien reçu votre question');">
+                            <h4>Posez votre question au médecin : </h4>
                             <textarea placeholder="Type message.." name="msg" required></textarea>
-                            <button type="submit" class="btn">Send</button>
-                            <button type="button" class="btn cancel" onclick="closeChatBox()">Close</button>
+                        <button type="submit" class="btn">Send</button>
+                            
+                            
                         </form>
                     </div>
                     <script>
@@ -272,9 +300,9 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                             });
 
                             $('#rdvForm').submit(function(e) {
-                                e.preventDefault(); // Empêcher le formulaire de soumettre de manière normale
+                                e.preventDefault(); // empeche le form de soumettre de maniere normale
 
-                                // Effectuer une requête AJAX pour soumettre le formulaire
+                                // requete ajax
                                 $.ajax({
                                     type: 'POST',
                                     url: $(this).attr('action'),
@@ -283,7 +311,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                                     success: function(response) {
                                         if (response.success) {
                                             alert('Rendez-vous pris avec succès!');
-                                            window.location.href = 'rendezvous.php'; // Rediriger vers la page des rendez-vous
+                                            window.location.href = 'rendezvous.php'; // redirige vers la page des rdv
                                         } else {
                                             alert('Erreur lors de la prise de rendez-vous: ' + response.message);
                                         }
@@ -298,9 +326,9 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                     <script>
                         $(document).ready(function() {
                             $('#rdvForm').submit(function(e) {
-                                e.preventDefault(); // Empêcher le formulaire de soumettre de manière normale
+                                e.preventDefault(); // empeche le form de soumettre de maniere normale
 
-                                // Effectuer une requête AJAX pour soumettre le formulaire
+                                // requete ajax
                                 $.ajax({
                                     type: 'POST',
                                     url: $(this).attr('action'),
@@ -309,7 +337,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                                     success: function(response) {
                                         if (response.success) {
                                             alert('Rendez-vous pris avec succès!');
-                                            window.location.href = 'rendezvous.php'; // Rediriger vers la page des rendez-vous
+                                            window.location.href = 'rendezvous.php'; // redirige vers la page des rdv
                                         } else {
                                             alert('Erreur lors de la prise de rendez-vous: ' + response.message);
                                         }
@@ -325,7 +353,8 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             </div>
         </div>
         <div id="footer">
-            Pour nous contacter : medicare.paris@soin.fr ; Par téléphone : +33 6 76 89 90 10
+            <p>Pour nous contacter : medicare.paris@soin.fr </p>
+            <p>Par téléphone : +33 6 76 89 90 10</p> 
         </div>
     </div>
 </body>

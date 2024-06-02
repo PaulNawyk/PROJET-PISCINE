@@ -55,7 +55,20 @@ $conn->close();
 
 <body>
     <div id="wrapper">
-        <div id="header">Medicare : Services Médicaux</div>
+
+        <div id="header">
+            <div id="wrapperlogo">
+                <div class="header-text">
+                    <h1>MEDICARE </h1>
+                    <h2> Services Médicaux</h2>
+                </div>
+                <div><img class="logo" src="img/logo.jpg" /></div>
+                
+            </div>
+
+        </div>
+
+
         <div id="navigation" class="d-flex align-items-center">
             <button class="btn btn-default mx-3">ACCUEIL</button>
             <div class="dropdown">
@@ -103,7 +116,7 @@ $conn->close();
             <form action="recherche.php" method="POST" class="d-flex mx-3">
                 <input id="searchbar" class="form-control" type="text" name="search" placeholder="RECHERCHE..." style="width: 90%;">
             </form>
-            <img src="img/loupe.jpg" alt="LOGO" width="30" height="30">
+            <img src= "img\loupe.jpg" alt="LOGO" width="30" height="30">
             <?php
             // Afficher le bouton exclusif pour les admins
             if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 'admin') {
@@ -112,12 +125,19 @@ $conn->close();
             ?>
         </div>
         <div id="section">
-            <div class="presentation">
-                Bienvenue sur Medicare,<br> Votre nouvelle plateforme de santé en ligne ! <br><br>
-                Nous sommes ravis de vous accueillir sur Medicare, votre partenaire de confiance pour toutes vos consultations médicales et services de santé en ligne. Chez Medicare, notre mission est de rendre l'accès aux soins plus simple, rapide et efficace pour tous. Grâce à notre interface intuitive et notre vaste réseau de professionnels de santé qualifiés, vous pouvez désormais prendre rendez-vous, consulter vos résultats médicaux et obtenir des conseils de santé personnalisés en quelques clics.<br><br>
-                Explorez dès maintenant les nombreuses fonctionnalités de Medicare et découvrez comment nous pouvons vous aider à mieux gérer votre santé au quotidien. Merci de nous faire confiance pour vos besoins médicaux. Nous sommes ici pour vous accompagner à chaque étape de votre parcours de santé.<br><br>
-                Bienvenue chez Medicare, où votre bien-être est notre priorité. <br>
-            </div>
+        <div class="presentation">
+            <p>
+                <span style="font-size: 1.2em;">Bienvenue sur Medicare,</span><br>
+                <span style="font-size: 1.1em;">Votre nouvelle plateforme de santé en ligne !</span> <br><br>
+            </p>
+            <p>Nous sommes ravis de vous accueillir sur Medicare, votre partenaire de confiance pour toutes vos consultations médicales et services de santé en ligne.</p>
+            <p>Chez Medicare, notre mission est de rendre l'accès aux soins plus simple, rapide et efficace pour tous. Grâce à notre interface intuitive et notre vaste réseau de professionnels de santé qualifiés, vous pouvez désormais prendre rendez-vous, consulter vos résultats médicaux et obtenir des conseils de santé personnalisés en quelques clics.</p>
+            <p>Explorez dès maintenant les nombreuses fonctionnalités de Medicare et découvrez comment nous pouvons vous aider à mieux gérer votre santé au quotidien. Merci de nous faire confiance pour vos besoins médicaux. Nous sommes ici pour vous accompagner à chaque étape de votre parcours de santé.</p>
+            <p>
+                <span style="font-size: 1em;">Bienvenue chez Medicare, où votre bien-être est notre priorité.</span> <br>
+            </p>
+        </div>
+
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <ul class="carousel-indicators">
                     <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -154,19 +174,25 @@ $conn->close();
                 </div>
             </div>
             <div id="wrapper2">
-                <div>
-                    <img class="evenement" src="img/covid.jpg" />
-                </div>
+                <div> <img class="evenement" src="img/covid.jpg" /></div>
                 <div id="description">
                     <h1 class="titre">COVID-19</h1>
                     La recrudescence récente du COVID-19 suscite à nouveau des inquiétudes à travers le monde. Alors que de nombreux pays avaient réussi à maîtriser la propagation du virus grâce à des campagnes de vaccination massives et à des mesures sanitaires strictes, une nouvelle vague d'infections rappelle que la pandémie est loin d'être terminée.
                 </div>
             </div>
-            <div id="footer">
-                Pour nous contacter : medicare.paris@soin.fr ; Par téléphone : +33 6 76 89 90 10
+            <div id = "wrapper2">
+                <div ><img class = "evenement" src="img/poux.jpeg" /></div>
+                <div id="description">
+                    <h1 class="titre" >Apparition de Poux :</h1> <h2> Une Préoccupation Croissante</h2>
+                    Récemment, plusieurs écoles élémentaires ont signalé une recrudescence des cas de poux parmi les élèves. Ce phénomène, bien que courant, suscite des inquiétudes tant chez les parents que chez les enseignants, en raison de la rapidité avec laquelle ces parasites peuvent se propager dans des environnements où les enfants sont en contact étroit.                </div>
+                </div>
             </div>
+        <div id="footer">
+            <p>Pour nous contacter : medicare.paris@soin.fr </p>
+            <p>Par téléphone : +33 6 76 89 90 10</p> 
         </div>
     </div>
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>

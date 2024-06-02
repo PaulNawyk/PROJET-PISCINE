@@ -5,20 +5,32 @@
       margin-right:2%;
       height : 8%;
       margin-top: 2%;
-      
-
+          
       }
+      .header-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-grow: 1;
+        margin-top: -3%;   
+    }
+
       #wrapperlogo{
         display:flex;
         justify-content:space-between;
         margin-left: 30%;
         margin-top: 5%;
       }
+
       .logo{
-        width : 40%;
-        height : 80%;
-        border-radius: 10px;
+        width : 50%;
+        height : auto;
+        border-radius: 30px;
+        margin-left: 50%;
+        margin-right: 20px; 
+        margin-top: -60px; 
       }
+
       #wrapper{
       position:absolute;
       width : 100%;
@@ -36,7 +48,7 @@
       margin-right:2%;
       height : 5%;
       border-radius: 10px;
-      
+      font-family: "Georgia", sans-serif;
       }
 
       #section {
@@ -46,6 +58,7 @@
         margin-right:2%;
         height : 76%;
         border-radius: 10px;
+        font-family: "Georgia", sans-serif;
         
     }
     .presentation{
@@ -53,6 +66,7 @@
     padding-right: 5%;
     padding-top: 3%;
     padding-bottom: 3%;
+    font-family: "Georgia", sans-serif;
   }
     
     .carousel-inner img {
@@ -71,6 +85,10 @@
     width: 95%;
     height : 80%;
     border-radius: 10px;
+    max-width: 800px;
+    max-height: 700px;
+    object-fit: cover;
+    
   }
   
   
@@ -82,6 +100,8 @@
       margin-right:2%;
       height : 5%;
       border-radius: 10px;
+      padding: 10px 0;
+      width: 96%;
       
   }
   
@@ -89,6 +109,10 @@
     margin-left: 8%;
     margin-right: 10%;
     margin-top: 3%;
+  }
+
+  .description{
+    font-family: Georgia, serif;
   }
   
 
