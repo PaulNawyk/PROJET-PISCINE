@@ -2,10 +2,10 @@
 -- version 5.1.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jun 02, 2024 at 10:32 AM
--- Server version: 5.7.24
--- PHP Version: 8.0.1
+-- Hôte : localhost:3306
+-- Généré le : dim. 02 juin 2024 à 20:43
+-- Version du serveur : 5.7.24
+-- Version de PHP : 8.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `medicare`
+-- Base de données : `medicare`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `disponibilites`
+-- Structure de la table `disponibilites`
 --
 
 CREATE TABLE `disponibilites` (
@@ -36,7 +36,7 @@ CREATE TABLE `disponibilites` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `disponibilites`
+-- Déchargement des données de la table `disponibilites`
 --
 
 INSERT INTO `disponibilites` (`id`, `medecin_id`, `jour`, `heure_debut`, `heure_fin`) VALUES
@@ -131,7 +131,7 @@ INSERT INTO `disponibilites` (`id`, `medecin_id`, `jour`, `heure_debut`, `heure_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `historique_consult`
+-- Structure de la table `historique_consult`
 --
 
 CREATE TABLE `historique_consult` (
@@ -146,7 +146,7 @@ CREATE TABLE `historique_consult` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `laboratoire`
+-- Structure de la table `laboratoire`
 --
 
 CREATE TABLE `laboratoire` (
@@ -157,10 +157,22 @@ CREATE TABLE `laboratoire` (
   `email` varchar(255) CHARACTER SET latin1 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Déchargement des données de la table `laboratoire`
+--
+
+INSERT INTO `laboratoire` (`id`, `nom`, `salle`, `telephone`, `email`) VALUES
+(100, 'Depistage', 'Sc-100', '09 09 09 09 09 ', 'depistage.labo@gmail.com'),
+(101, 'Biologie preventive', 'Sc-101', '06 06 06 06 94 ', 'preventive.labo@gmail.com'),
+(102, 'Biologie de la femme enceinte ', 'Sc-102', '07 98 98 02 03', 'enceinte.labo@gmail.com'),
+(103, 'Biologie de routine', 'Sc-103', '06 73 82 28 12', 'routine.labo@gmail.com'),
+(104, 'Cancerologie', 'Sc-104', '06 87 87 78 78', 'cancerologie.labo@gmail.com'),
+(105, 'Gynecologie', 'Sc-105', '06 78 23 23 23', 'gynecologie.labo@gmail.com');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `medecin`
+-- Structure de la table `medecin`
 --
 
 CREATE TABLE `medecin` (
@@ -172,7 +184,7 @@ CREATE TABLE `medecin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `medecin`
+-- Déchargement des données de la table `medecin`
 --
 
 INSERT INTO `medecin` (`id`, `user_id`, `photo`, `cv`, `specialite_id`) VALUES
@@ -188,12 +200,13 @@ INSERT INTO `medecin` (`id`, `user_id`, `photo`, `cv`, `specialite_id`) VALUES
 (61, 12, 'https://th.bing.com/th/id/OIP.SJ1vazvUdlckaawb7RGjbAHaIR?w=510&h=570&rs=1&pid=ImgDetMain', 'cv_corinne.xml', 6),
 (71, 13, 'https://thumbs.dreamstime.com/b/friendly-female-doctor-standing-clinic-portrait-cheerful-smiling-physician-perfect-medical-service-hospital-medicine-216455960.jpg', 'cv_marianne.xml', 7),
 (81, 14, 'https://th.bing.com/th/id/R.40ccebddd619a39e61310e482ac73fc9?rik=UstJHY8bLbRDvQ&pid=ImgRaw&r=0', 'cv_laurent.xml', 8),
-(91, 15, 'https://emails-entreprises.com/wp-content/uploads/2021/03/medecins-generalistes.jpg', 'cv_laure.xml', 9);
+(91, 15, 'https://emails-entreprises.com/wp-content/uploads/2021/03/medecins-generalistes.jpg', 'cv_laure.xml', 9),
+(92, 20, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `paiement`
+-- Structure de la table `paiement`
 --
 
 CREATE TABLE `paiement` (
@@ -208,7 +221,7 @@ CREATE TABLE `paiement` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `patient`
+-- Structure de la table `patient`
 --
 
 CREATE TABLE `patient` (
@@ -219,7 +232,7 @@ CREATE TABLE `patient` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rdv`
+-- Structure de la table `rdv`
 --
 
 CREATE TABLE `rdv` (
@@ -236,7 +249,7 @@ CREATE TABLE `rdv` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rendezvous`
+-- Structure de la table `rendezvous`
 --
 
 CREATE TABLE `rendezvous` (
@@ -248,7 +261,7 @@ CREATE TABLE `rendezvous` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `rendezvous`
+-- Déchargement des données de la table `rendezvous`
 --
 
 INSERT INTO `rendezvous` (`id`, `client_id`, `medecin_id`, `date`, `heure`) VALUES
@@ -276,12 +289,18 @@ INSERT INTO `rendezvous` (`id`, `client_id`, `medecin_id`, `date`, `heure`) VALU
 (22, NULL, 12, '2024-06-03', '08:25:00'),
 (23, NULL, 12, '2024-06-03', '08:25:00'),
 (24, NULL, 12, '2024-06-03', '08:28:00'),
-(25, NULL, 12, '2024-06-03', '08:28:00');
+(25, NULL, 12, '2024-06-03', '08:28:00'),
+(26, NULL, 21, '2024-06-01', '23:44:00'),
+(27, NULL, 21, '2024-06-01', '23:44:00'),
+(28, NULL, 21, '2024-06-05', '00:44:00'),
+(29, NULL, 21, '2024-06-05', '00:44:00'),
+(30, NULL, 11, '2024-06-03', '03:16:00'),
+(31, NULL, 11, '2024-06-03', '03:16:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `services`
+-- Structure de la table `services`
 --
 
 CREATE TABLE `services` (
@@ -294,7 +313,7 @@ CREATE TABLE `services` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `services_creneaux`
+-- Structure de la table `services_creneaux`
 --
 
 CREATE TABLE `services_creneaux` (
@@ -309,7 +328,7 @@ CREATE TABLE `services_creneaux` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `specialites`
+-- Structure de la table `specialites`
 --
 
 CREATE TABLE `specialites` (
@@ -318,7 +337,7 @@ CREATE TABLE `specialites` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `specialites`
+-- Déchargement des données de la table `specialites`
 --
 
 INSERT INTO `specialites` (`id`, `nom`) VALUES
@@ -335,7 +354,7 @@ INSERT INTO `specialites` (`id`, `nom`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structure de la table `users`
 --
 
 CREATE TABLE `users` (
@@ -355,7 +374,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users`
+-- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`id`, `nom`, `prenom`, `email`, `mdp`, `type`, `telephone`, `adresse_ligne1`, `adresse_ligne2`, `ville`, `codePost`, `pays`, `carte_vitale`) VALUES
@@ -373,20 +392,22 @@ INSERT INTO `users` (`id`, `nom`, `prenom`, `email`, `mdp`, `type`, `telephone`,
 (12, 'Fleury', 'corinne', 'corinne.fleury@medicare.fr', 'fleury', 'medecin', '06 82 12 33 33', '20 rue de l\'épee', '', 'Lille', '12333', 'France', NULL),
 (13, 'Bouchet ', 'marianne ', 'marinne.bouchet', 'bouchet', 'medecin', '06 78 88 91 91', '7 rue des apagnagnan', '', 'Amiens', '70039', 'France', NULL),
 (14, 'Tillon', 'laurent', 'laurent.tillon@medicare.fr', 'tillon', 'medecin', '06 13 13 89 09', '9 rue de l\'apagnan', '', 'Amiens', '48000', 'France', NULL),
-(15, 'Allory', 'laure', 'laure.allory@medicare.fr', 'allory', 'medecin', '06 73 83 91 11', '10 champs du boeuf', '', 'Lyon', '69000', 'France', NULL);
+(15, 'Allory', 'laure', 'laure.allory@medicare.fr', 'allory', 'medecin', '06 73 83 91 11', '10 champs du boeuf', '', 'Lyon', '69000', 'France', NULL),
+(16, 'dfgfdgf', 'frdrgfd', 'paulgerin@icloud.com', '$2y$10$zz144KSLWKlaUL4W6HKLvuN09g1u3P2tJ258rQsf5pRt//gxGER/.', 'client', '0638752665', '9 Boulevard Du Chateau', '', 'Neuilly-Sur-Seine', '92200', 'france', '01238182'),
+(17, 'pogba', 'paul', 'paulpogba@omnesadmin.fr', '$2y$10$xV8YPSWHh3tZu6qHH6HXOu8HexVyd9rSt0PyLlq978Rtmimc0iRbS', 'admin', '0638752665', '9 Boulevard Du Chateau', '', 'Neuilly-Sur-Seine', '92200', 'france', '01238182');
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `disponibilites`
+-- Index pour la table `disponibilites`
 --
 ALTER TABLE `disponibilites`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `historique_consult`
+-- Index pour la table `historique_consult`
 --
 ALTER TABLE `historique_consult`
   ADD PRIMARY KEY (`id`),
@@ -394,13 +415,13 @@ ALTER TABLE `historique_consult`
   ADD KEY `fk_historique_consult_patient` (`patient_id`);
 
 --
--- Indexes for table `laboratoire`
+-- Index pour la table `laboratoire`
 --
 ALTER TABLE `laboratoire`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `medecin`
+-- Index pour la table `medecin`
 --
 ALTER TABLE `medecin`
   ADD PRIMARY KEY (`id`),
@@ -408,20 +429,20 @@ ALTER TABLE `medecin`
   ADD KEY `fk_medecin_specialite` (`specialite_id`);
 
 --
--- Indexes for table `paiement`
+-- Index pour la table `paiement`
 --
 ALTER TABLE `paiement`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `patient`
+-- Index pour la table `patient`
 --
 ALTER TABLE `patient`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_patient_user` (`user_id`);
 
 --
--- Indexes for table `rdv`
+-- Index pour la table `rdv`
 --
 ALTER TABLE `rdv`
   ADD PRIMARY KEY (`id`),
@@ -431,7 +452,7 @@ ALTER TABLE `rdv`
   ADD KEY `fk_rdv_service` (`service_id`);
 
 --
--- Indexes for table `rendezvous`
+-- Index pour la table `rendezvous`
 --
 ALTER TABLE `rendezvous`
   ADD PRIMARY KEY (`id`),
@@ -439,90 +460,90 @@ ALTER TABLE `rendezvous`
   ADD KEY `fk_medecin` (`medecin_id`);
 
 --
--- Indexes for table `services`
+-- Index pour la table `services`
 --
 ALTER TABLE `services`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_services` (`laboratoire_id`);
 
 --
--- Indexes for table `services_creneaux`
+-- Index pour la table `services_creneaux`
 --
 ALTER TABLE `services_creneaux`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_services_creneaux` (`services_id`);
 
 --
--- Indexes for table `specialites`
+-- Index pour la table `specialites`
 --
 ALTER TABLE `specialites`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Index pour la table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `disponibilites`
+-- AUTO_INCREMENT pour la table `disponibilites`
 --
 ALTER TABLE `disponibilites`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
--- AUTO_INCREMENT for table `historique_consult`
+-- AUTO_INCREMENT pour la table `historique_consult`
 --
 ALTER TABLE `historique_consult`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `laboratoire`
+-- AUTO_INCREMENT pour la table `laboratoire`
 --
 ALTER TABLE `laboratoire`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
--- AUTO_INCREMENT for table `medecin`
+-- AUTO_INCREMENT pour la table `medecin`
 --
 ALTER TABLE `medecin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
--- AUTO_INCREMENT for table `paiement`
+-- AUTO_INCREMENT pour la table `paiement`
 --
 ALTER TABLE `paiement`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `patient`
+-- AUTO_INCREMENT pour la table `patient`
 --
 ALTER TABLE `patient`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `rendezvous`
+-- AUTO_INCREMENT pour la table `rendezvous`
 --
 ALTER TABLE `rendezvous`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- Constraints for dumped tables
+-- Contraintes pour les tables déchargées
 --
 
 --
--- Constraints for table `rendezvous`
+-- Contraintes pour la table `rendezvous`
 --
 ALTER TABLE `rendezvous`
   ADD CONSTRAINT `fk_client` FOREIGN KEY (`client_id`) REFERENCES `users` (`id`),
