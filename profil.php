@@ -123,10 +123,10 @@ $conn->close();
             }
             ?>
         </div>
-        
+            
         <div id="section">
         <div id="section">
-            <h1>Profil Utilisateur</h1>
+            <h1>Votre profil</h1>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $user['prenom'] . ' ' . $user['nom']; ?></h5>

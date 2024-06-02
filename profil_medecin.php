@@ -102,15 +102,9 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                         <a class="dropdown-item dropdown-toggle" href="#">Médecin Généraliste</a>
                         <ul class="dropdown-menu">
                             <?php
-                            $stmt_gen = $conn->prepare("SELECT m.id, u.nom 
-                                                        FROM medecin m
-                                                        JOIN users u ON m.user_id = u.id
-                                                        WHERE m.specialite_id = 1");
-                            $stmt_gen->execute();
-                            $result_generalistes = $stmt_gen->get_result();
                             if ($result_generalistes->num_rows > 0) {
-                                while ($row_generaliste = $result_generalistes->fetch_assoc()) {
-                                    echo "<li><a href='profil_medecin.php?id=" . htmlspecialchars($row_generaliste["id"]) . "'>" . htmlspecialchars($row_generaliste["nom"]) . "</a></li>";
+                                while ($row = $result_generalistes->fetch_assoc()) {
+                                    echo "<li><a class='dropdown-item' href='profil_medecin.php?id=" . $row["id"] . "'>" . $row["nom"] . "</a></li>";
                                 }
                             }
                             ?>
@@ -120,15 +114,9 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                         <a class="dropdown-item dropdown-toggle" href="#">Médecin Spécialiste</a>
                         <ul class="dropdown-menu">
                             <?php
-                            $stmt_spec = $conn->prepare("SELECT m.id, u.nom 
-                                                         FROM medecin m
-                                                         JOIN users u ON m.user_id = u.id
-                                                         WHERE m.specialite_id != 1");
-                            $stmt_spec->execute();
-                            $result_specialistes = $stmt_spec->get_result();
                             if ($result_specialistes->num_rows > 0) {
                                 while ($row_specialiste = $result_specialistes->fetch_assoc()) {
-                                    echo "<li><a href='profil_medecin.php?id=" . htmlspecialchars($row_specialiste["id"]) . "'>" . htmlspecialchars($row_specialiste["nom"]) . "</a></li>";
+                                    echo "<li><a class='dropdown-item' href='profil_medecin.php?id=" . $row_specialiste["id"] . "'>" . $row_specialiste["nom"] . " - " . $row_specialiste["specialite_nom"] . "</a></li>";
                                 }
                             }
                             ?>
@@ -137,12 +125,12 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                     <li class="dropdown-submenu">
                         <a class="dropdown-item dropdown-toggle" href="#">Laboratoire</a>
                         <ul class="dropdown-menu">
-                            <li>Laboratoire de biologie médicale</li>
+                            <li><a class="dropdown-item" href="labo.php">Laboratoire de biologie médicale</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
-            <button class="btn btn-default ml-3" onclick="window.location.href='rendezvous.html'">RENDEZ-VOUS</button>
+            <button class="btn btn-default ml-3" onclick="window.location.href='rendezvous.php'">RENDEZ-VOUS</button>
             <button class="btn btn-default ml-3" onclick="window.location.href='profil.php'">PROFIL</button>
             <form action="recherche.php" method="POST" class="form-inline">
                 <input id="searchbar" class="form-control" type="text" name="search" placeholder="RECHERCHE..." style="width: 300px;">
