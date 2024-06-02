@@ -16,9 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $medecin_id = intval($_POST['medecin_id']);
     $date = $_POST['date'];
     $heure = $_POST['heure'];
-    $client_id = $_SESSION['client_id']; // Assurez-vous que le client est connecté
-
-    // Enregistrer le rendez-vous
+    $client_id = $_SESSION['client_id']; 
+    // enregistrer le rdv
     $stmt = $conn->prepare("INSERT INTO rendezvous (client_id, medecin_id, date, heure) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("iiss", $client_id, $medecin_id, $date, $heure);
 

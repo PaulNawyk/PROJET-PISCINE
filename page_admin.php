@@ -1,13 +1,12 @@
 <?php
 session_start();
 
-// Vérifier si l'utilisateur est connecté en tant qu'admin
 if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'admin') {
-    header("Location: signin.html"); // Rediriger vers la page de connexion si l'utilisateur n'est pas un admin
+    header("Location: signin.html"); 
     exit();
 }
 
-// Connexion à la base de données
+// co bdd
 $servername = "localhost";
 $username = "root";
 $password = "root";
@@ -15,12 +14,12 @@ $dbname = "medicare";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Vérification de la connexion
+// check co
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Suppression d'un médecin
+// delet med
 if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
     $medecin_id = $_GET['delete'];
     $sql_delete = "DELETE FROM medecin WHERE id = $medecin_id";
@@ -31,7 +30,7 @@ if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
     }
 }
 
-// Affichage de la liste des médecins
+// affichage medecin
 $sql_select_medecins = "SELECT * FROM medecin";
 $result_medecins = $conn->query($sql_select_medecins);
 ?>
@@ -44,7 +43,6 @@ $result_medecins = $conn->query($sql_select_medecins);
 <body>
     <h2>Panel Admin</h2>
 
-    <!-- Liste des médecins -->
     <h3>Médecins existants :</h3>
     <ul>
         <?php
@@ -71,6 +69,5 @@ $result_medecins = $conn->query($sql_select_medecins);
 </html>
 
 <?php
-// Fermer la connexion à la base de données
 $conn->close();
 ?>

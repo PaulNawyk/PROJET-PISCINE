@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Vérifier si l'utilisateur est connecté
+// verif user co
 if (!isset($_SESSION['user_id'])) {
     header("Location: signin.html");
     exit();

@@ -1,13 +1,11 @@
 <?php
 session_start();
 
-// Vérifiez si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
     header("Location: signin.html");
     exit();
 }
 
-// Connexion à la base de données
 $servername = "localhost";
 $username = "root";
 $password = "root";
@@ -15,14 +13,11 @@ $dbname = "medicare";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Vérification de la connexion
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-// Assuming the user's ID is stored in the session after login
 $user_id = $_SESSION['user_id'];
 
-// Fetch user data
 $sql = "SELECT * FROM users WHERE id = $user_id";
 $result = $conn->query($sql);
 
@@ -32,7 +27,6 @@ if ($result->num_rows > 0) {
     echo "No user found";
     exit;
 }
-// Requête SQL pour sélectionner les noms des médecins généralistes
 $sql_generalistes = "SELECT m.id, u.nom 
                      FROM medecin m
                      JOIN users u ON m.user_id = u.id
@@ -41,7 +35,6 @@ $stmt_generalistes = $conn->prepare($sql_generalistes);
 $stmt_generalistes->execute();
 $result_generalistes = $stmt_generalistes->get_result();
 
-// Requête SQL pour sélectionner les noms des médecins spécialistes
 $sql_specialistes = "SELECT m.id, u.nom, s.nom AS specialite_nom 
                      FROM medecin m
                      JOIN users u ON m.user_id = u.id
@@ -90,7 +83,6 @@ $conn->close();
                         <a class="dropdown-item dropdown-toggle" href="#">Médecin Généraliste</a>
                         <ul class="dropdown-menu">
                             <?php
-                            // Affichage des noms des médecins généralistes
                             if ($result_generalistes->num_rows > 0) {
                                 while ($row = $result_generalistes->fetch_assoc()) {
                                     echo "<li><a class='dropdown-item' href='profil_medecin.php?id=" . $row["id"] . "'>" . $row["nom"] . "</a></li>";
@@ -103,7 +95,6 @@ $conn->close();
                         <a class="dropdown-item dropdown-toggle" href="#">Médecin Spécialiste</a>
                         <ul class="dropdown-menu">
                             <?php
-                            // Affichage des noms des médecins spécialistes
                             if ($result_specialistes->num_rows > 0) {
                                 while ($row_specialiste = $result_specialistes->fetch_assoc()) {
                                     echo "<li><a class='dropdown-item' href='profil_medecin.php?id=" . $row_specialiste["id"] . "'>" . $row_specialiste["nom"] . " - " . $row_specialiste["specialite_nom"] . "</a></li>";
@@ -127,7 +118,6 @@ $conn->close();
             </form>
             <img src="img/loupe.jpg" alt="LOGO" width="30" height="30">
             <?php
-            // Afficher le bouton exclusif pour les admins
             if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 'admin') {
                 echo '<a href="page_admin.php" class="btn btn-primary ml-3">Bouton Exclusif Admin</a>';
             }

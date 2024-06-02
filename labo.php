@@ -1,5 +1,6 @@
 <?php
-// Connexion à la base de données
+
+// co bdd
 $servername = "localhost";
 $username = "root";
 $password = "root";
@@ -7,12 +8,12 @@ $dbname = "medicare";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Vérification de la connexion
+// check co
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Requête SQL pour sélectionner les noms des médecins généralistes
+// requete sql
 $sql = "SELECT m.id, u.nom 
         FROM medecin m
         JOIN users u ON m.user_id = u.id
@@ -23,11 +24,11 @@ if (!$result) {
     exit();
 }
 
-// Stocker le type d'utilisateur dans la session
+// stocker dans bdd
 session_start();
-$_SESSION['user_type'] = $row['type']; // Supposons que le type soit stocké dans la colonne 'type' de votre table 'users'
+$_SESSION['user_type'] = $row['type']; 
 
-// Requête SQL pour sélectionner les informations du laboratoire
+// requete sql
 $sql_labo = "SELECT * FROM laboratoire";
 $result_labo = $conn->query($sql_labo);
 if (!$result_labo) {
@@ -44,35 +45,28 @@ if (!$result_labo) {
     <meta charset="utf-8" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link href="base.css" rel="stylesheet" type="text/css"/>
+    <link href="labo.css" rel="stylesheet" type="text/css"/>
     <style>
-        /* Appliquer un reset global */
+       
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Assurer que le body et le conteneur principal prennent toute la largeur disponible */
         body, html {
             width: 100%;
-            overflow-x: hidden; /* Empêcher le débordement horizontal */
+            overflow-x: hidden; 
         }
-
-        /* Supprimer les marges et les paddings inutiles */
         #wrapper {
             margin: 0 auto;
             padding: 0 15px;
         }
-
-        /* Ajuster le header et le footer pour qu'ils prennent la largeur complète sans débordement */
         #header, #footer {
             width: 100%;
             margin: 0 auto;
             padding: 0 15px;
         }
-
-        /* Assurer que les cartes et les éléments de la section principale ne débordent pas */
         #section {
             padding: 15px;
         }
@@ -84,13 +78,9 @@ if (!$result_labo) {
         .presentation {
             margin: 0 auto;
         }
-
-        /* Assurer que les boutons et les éléments du formulaire de navigation ne débordent pas */
         #navigation {
             padding: 0 15px;
         }
-
-        /* Réduire le padding des boutons pour éviter les débordements */
         .btn {
             padding: 5px 10px;
         }
@@ -128,7 +118,6 @@ if (!$result_labo) {
                         <a class="dropdown-item dropdown-toggle" href="#">Médecin Généraliste</a>
                         <ul class="dropdown-menu">
                             <?php
-                            // Affichage des noms des médecins généralistes
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
                                     echo "<li><a class='dropdown-item' href='profil_medecin.php?id=" . $row["id"] . "'>" . $row["nom"] . "</a></li>";
@@ -140,18 +129,15 @@ if (!$result_labo) {
                         <a class="dropdown-item dropdown-toggle" href="#">Médecin Spécialiste</a>
                         <ul class="dropdown-menu">
                             <?php
-                            // Requête SQL pour sélectionner les noms des médecins spécialistes
                             $sql_specialistes = "SELECT m.id, u.nom 
                                                 FROM medecin m
                                                 JOIN users u ON m.user_id = u.id
-                                                WHERE m.specialite_id != 1"; // Changer la condition pour sélectionner les spécialistes
+                                                WHERE m.specialite_id != 1";
                             $result_specialistes = $conn->query($sql_specialistes);
                             if (!$result_specialistes) {
                                 printf("Erreur : %s\n", $conn->error);
                                 exit();
                             }
-
-                            // Affichage des noms des médecins spécialistes
                             if ($result_specialistes->num_rows > 0) {
                                 while ($row_specialiste = $result_specialistes->fetch_assoc()) {
                                     echo "<li><a class='dropdown-item' href='profil_medecin.php?id=" . $row_specialiste["id"] . "'>" . $row_specialiste["nom"] . "</a></li>";
@@ -175,9 +161,7 @@ if (!$result_labo) {
                 <button type="submit" class="btn btn-default ml-2"><img src="img/loupe.jpg" alt="LOGO" width="30" height="30"></button>
             </form>
             <?php
-            // Vérifier si l'utilisateur est connecté et s'il est admin
             if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 'admin') {
-                // Afficher le bouton exclusif pour les admins
                 echo '<a href="page_admin.php" class="btn btn-primary ml-3">Bouton Exclusif Admin</a>';
             }
             ?>
@@ -215,7 +199,7 @@ if (!$result_labo) {
             <div class="row">
                 <?php
                 if ($result_labo->num_rows > 0) {
-                    $result_labo->data_seek(0); // Reset pointer to the start
+                    $result_labo->data_seek(0); 
                     while ($row_labo = $result_labo->fetch_assoc()) {
                         $description = "";
                         switch ($row_labo['nom']) {

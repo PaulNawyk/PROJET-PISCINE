@@ -1,12 +1,9 @@
 <?php
 session_start();
-// Vérifie si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
-    // Redirigez l'utilisateur vers la page de connexion
     header("Location: signin.html");
     exit();
 }
-// Connexion à la base de données
 $servername = "localhost";
 $username = "root";
 $password = "root";
@@ -17,10 +14,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-// Récupérer l'ID de l'utilisateur à partir de la session
 $user_id = $_SESSION['user_id'];
 
-// Requête SQL pour récupérer les rendez-vous de l'utilisateur connecté
 $sql = "SELECT r.date, r.heure, u.nom, u.prenom, s.nom as specialite 
         FROM rendezvous r
         JOIN medecin m ON r.medecin_id = m.id
@@ -43,7 +38,7 @@ $result_rendezvous = $stmt->get_result();
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link href="base.css" rel="stylesheet">
+    <link href="profil.css" rel="stylesheet">
 </head>
 <body>
     <div id="wrapper">

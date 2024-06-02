@@ -28,21 +28,20 @@
     $password = "root";
     $dbname = "medicare";
 
-    // Créer une connexion
+    // creer co
     $conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Vérifier la connexion
+    // verfi co
     if ($conn->connect_error) {
         die("Connexion échouée: " . $conn->connect_error);
     }
 
-    // Initialiser le tableau des jours de la semaine
+    // initialiser tableau jour
     $jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
 
-    // Initialiser le tableau pour stocker les disponibilités
     $disponibilites = [];
 
-    // Récupérer les disponibilités des médecins depuis la base de données
+    // recup les disponibilites
     $sql = "SELECT sp.nom AS specialite_nom, u.nom AS medecin_nom, d.jour, d.heure_debut, d.heure_fin 
             FROM disponibilites d
             LEFT JOIN medecin m ON d.medecin_id = m.id
@@ -51,7 +50,6 @@
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        // Organiser les disponibilités dans un tableau
         while($row = $result->fetch_assoc()) {
             $specialite_nom = $row['specialite_nom'];
             $medecin_nom = $row['medecin_nom'];
@@ -75,23 +73,23 @@
     }
     $conn->close();
 
-    // Générer le planning semainier
+    // gerer semaine
     echo "<table>";
     echo "<tr><th>Heure</th>";
 
-    // Afficher les jours de la semaine dans l'en-tête
+    // afficher jours 
     foreach ($jours as $jour) {
         echo "<th>$jour</th>";
     }
     echo "</tr>";
 
-    // Afficher les heures de 08:00 à 20:00
+    // afficher les heures de 08:00 à 20:00
     for ($heure = 8; $heure <= 20; $heure++) {
         $heure_formatee = str_pad($heure, 2, '0', STR_PAD_LEFT) . ":00";
         echo "<tr>";
         echo "<td class='hour-cell'>$heure_formatee</td>";
 
-        // Afficher les disponibilités pour chaque jour
+        // afficher les disponibilités pour chaque jour
         foreach ($jours as $jour) {
             echo "<td class='hour-cell'>";
             if (isset($disponibilites[$jour])) {
