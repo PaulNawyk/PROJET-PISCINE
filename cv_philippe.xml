@@ -3,82 +3,82 @@
     <PersonalInformation>
         <FirstName>Philippe</FirstName>
         <LastName>Cohen</LastName>
-        <Email>philippe.cohen@medicare.fr</Email>
-        <Phone>0123456789</Phone>
-        <Address>
-            <Street>123 Rue Exemple</Street>
-            <Apartment>Appartement 4B</Apartment>
-            <City>Paris</City>
-            <PostalCode>75000</PostalCode>
-            <Country>France</Country>
-        </Address>
+        <Title>Médecin Spécialiste en Cardiologie</Title>
+        <ContactInfo>
+            <Email>philippe.cohen@medicare.fr</Email>
+            <Phone>0123456789</Phone>
+            <Address>
+                <Street>123 Rue Exemple</Street>
+                <City>Paris</City>
+                <PostalCode>75000</PostalCode>
+                <Country>France</Country>
+            </Address>
+        </ContactInfo>
     </PersonalInformation>
-    
-    <Profile> 
-        <Description>Specialist physician in cardiology with over 10 years of experience in the treatment of cardiovascular diseases.</Description> 
-    </Profile>
 
     <ProfessionalExperience>
         <Experience>
-            <Position>Cardiologist</Position>
+            <Title>Cardiologue</Title>
             <Organization>Hôpital Saint-Louis</Organization>
             <Location>Paris, France</Location>
             <StartDate>2015-01-01</StartDate>
-            <EndDate>Present</EndDate>
+            <EndDate>Présent</EndDate>
             <Responsibilities>
-                <Responsibility>Head of the cardiology department. Specialized in the diagnosis and treatment of heart diseases.</Responsibility>
+                <Responsibility>Responsable du service de cardiologie. Spécialisé dans le diagnostic et le traitement des maladies cardiaques.</Responsibility>
             </Responsibilities>
         </Experience>
         <Experience>
-            <Position>Cardiology Intern</Position>
+            <Title>Interne en Cardiologie</Title>
             <Organization>Hôpital de la Pitié-Salpêtrière</Organization>
             <Location>Paris, France</Location>
             <StartDate>2010-01-01</StartDate>
             <EndDate>2014-12-31</EndDate>
             <Responsibilities>
-                <Responsibility>Training in cardiology, with rotation in various departments.</Responsibility>
+                <Responsibility>Formation en cardiologie, avec rotation dans différents services.</Responsibility>
             </Responsibilities>
         </Experience>
     </ProfessionalExperience>
-    
+
     <Education>
         <Degree>
-            <Title>Doctor of Medicine</Title>
+            <Title>Docteur en Médecine</Title>
             <Institution>Université de Paris</Institution>
             <Location>Paris, France</Location>
-            <GraduationDate>2009-06-15</GraduationDate>
+            <StartDate>2009-06-15</StartDate>
+            <EndDate>2009-06-15</EndDate>
         </Degree>
         <Degree>
-            <Title>Master's in Cardiology</Title>
+            <Title>Master en Cardiologie</Title>
             <Institution>Université de Paris</Institution>
             <Location>Paris, France</Location>
-            <GraduationDate>2014-06-15</GraduationDate>
+            <StartDate>2014-06-15</StartDate>
+            <EndDate>2014-06-15</EndDate>
         </Degree>
     </Education>
-    
+
     <Skills>
-        <Skill>Diagnosis and treatment of cardiovascular diseases</Skill>
-        <Skill>Echocardiography</Skill>
-        <Skill>Cardiac intensive care</Skill>
-        <Skill>Clinical research</Skill>
+        <Skill>Diagnostic et traitement des maladies cardiovasculaires</Skill>
+        <Skill>Echocardiographie</Skill>
+        <Skill>Soins intensifs cardiaques</Skill>
+        <Skill>Recherche clinique</Skill>
     </Skills>
-    
+
     <Publications>
         <Publication>
-            <Title>Study on the effects of statins on reducing cardiovascular risks</Title>
-            <Journal>Journal of Cardiology</Journal>
+            <Title>Étude sur les effets des statines sur la réduction des risques cardiovasculaires</Title>
+            <Journal>Journal de Cardiologie</Journal>
             <PublicationDate>2018-03-01</PublicationDate>
         </Publication>
     </Publications>
-    
+
     <Languages>
         <Language>
-            <Name>French</Name>
-            <Proficiency>Native</Proficiency>
+            <Name>Français</Name>
+            <Proficiency>Langue Maternelle</Proficiency>
         </Language>
         <Language>
-            <Name>English</Name>
-            <Proficiency>Fluent</Proficiency>
+            <Name>Anglais</Name>
+            <Proficiency>Courant</Proficiency>
         </Language>
     </Languages>
 </CV>
