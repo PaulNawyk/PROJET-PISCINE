@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 01, 2024 at 06:30 PM
+-- Generation Time: Jun 02, 2024 at 10:32 AM
 -- Server version: 5.7.24
--- PHP Version: 7.4.16
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -157,18 +157,6 @@ CREATE TABLE `laboratoire` (
   `email` varchar(255) CHARACTER SET latin1 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `laboratoire`
---
-
-INSERT INTO `laboratoire` (`id`, `nom`, `salle`, `telephone`, `email`) VALUES
-(100, 'Depistage', 'Sc-100', '09 09 09 09 09 ', 'depistage.labo@gmail.com'),
-(101, 'Biologie preventive', 'Sc-101', '06 06 06 06 94 ', 'preventive.labo@gmail.com'),
-(102, 'Biologie de la femme enceinte ', 'Sc-102', '07 98 98 02 03', 'enceinte.labo@gmail.com'),
-(103, 'Biologie de routine', 'Sc-103', '06 73 82 28 12', 'routine.labo@gmail.com'),
-(104, 'Cancerologie', 'Sc-104', '06 87 87 78 78', 'cancerologie.labo@gmail.com'),
-(105, 'Gynecologie', 'Sc-105', '06 78 23 23 23', 'gynecologie.labo@gmail.com');
-
 -- --------------------------------------------------------
 
 --
@@ -178,9 +166,9 @@ INSERT INTO `laboratoire` (`id`, `nom`, `salle`, `telephone`, `email`) VALUES
 CREATE TABLE `medecin` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `photo` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `cv` text CHARACTER SET latin1 NOT NULL,
-  `specialite_id` int(11) NOT NULL
+  `photo` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `cv` text CHARACTER SET latin1,
+  `specialite_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -244,6 +232,51 @@ CREATE TABLE `rdv` (
   `heure` time NOT NULL,
   `adresse` varchar(255) CHARACTER SET latin1 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rendezvous`
+--
+
+CREATE TABLE `rendezvous` (
+  `id` int(11) NOT NULL,
+  `client_id` int(11) DEFAULT NULL,
+  `medecin_id` int(11) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `heure` time DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `rendezvous`
+--
+
+INSERT INTO `rendezvous` (`id`, `client_id`, `medecin_id`, `date`, `heure`) VALUES
+(1, NULL, 11, '2024-06-03', '08:08:00'),
+(2, NULL, 11, '2024-06-03', '12:10:00'),
+(3, NULL, 11, '2024-06-03', '13:10:00'),
+(4, NULL, 11, '2024-06-03', '14:10:00'),
+(5, NULL, 11, '2024-06-03', '08:11:00'),
+(6, NULL, 21, '2024-06-04', '08:15:00'),
+(7, NULL, 21, '2024-06-04', '08:15:00'),
+(8, NULL, 21, '2024-06-04', '08:15:00'),
+(9, NULL, 21, '2024-06-04', '08:15:00'),
+(10, NULL, 11, '2024-06-03', '08:17:00'),
+(11, NULL, 11, '2024-06-03', '08:17:00'),
+(12, NULL, 11, '2024-06-03', '08:17:00'),
+(13, NULL, 11, '2024-06-03', '08:17:00'),
+(14, NULL, 11, '2024-06-03', '09:20:00'),
+(15, NULL, 11, '2024-06-03', '09:20:00'),
+(16, NULL, 11, '2024-06-03', '09:20:00'),
+(17, NULL, 11, '2024-06-03', '09:20:00'),
+(18, NULL, 12, '2024-06-03', '08:25:00'),
+(19, NULL, 12, '2024-06-03', '08:25:00'),
+(20, NULL, 12, '2024-06-03', '08:25:00'),
+(21, NULL, 12, '2024-06-03', '08:25:00'),
+(22, NULL, 12, '2024-06-03', '08:25:00'),
+(23, NULL, 12, '2024-06-03', '08:25:00'),
+(24, NULL, 12, '2024-06-03', '08:28:00'),
+(25, NULL, 12, '2024-06-03', '08:28:00');
 
 -- --------------------------------------------------------
 
@@ -398,6 +431,14 @@ ALTER TABLE `rdv`
   ADD KEY `fk_rdv_service` (`service_id`);
 
 --
+-- Indexes for table `rendezvous`
+--
+ALTER TABLE `rendezvous`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_client` (`client_id`),
+  ADD KEY `fk_medecin` (`medecin_id`);
+
+--
 -- Indexes for table `services`
 --
 ALTER TABLE `services`
@@ -444,7 +485,7 @@ ALTER TABLE `historique_consult`
 -- AUTO_INCREMENT for table `laboratoire`
 --
 ALTER TABLE `laboratoire`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `medecin`
@@ -463,6 +504,29 @@ ALTER TABLE `paiement`
 --
 ALTER TABLE `patient`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `rendezvous`
+--
+ALTER TABLE `rendezvous`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `rendezvous`
+--
+ALTER TABLE `rendezvous`
+  ADD CONSTRAINT `fk_client` FOREIGN KEY (`client_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `fk_medecin` FOREIGN KEY (`medecin_id`) REFERENCES `medecin` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
