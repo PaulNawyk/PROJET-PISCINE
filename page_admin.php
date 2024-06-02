@@ -66,6 +66,7 @@ $result_medecins = $conn->query($sql_select_medecins);
         <input type="text" id="user_id" name="user_id"><br>
         <input type="submit" value="Ajouter médecin">
     </form>
+    <button class="btn btn-default mx-3" onclick="window.location.href='admin_dispoMed.php'">DISPO MEDECIN</button>
 </body>
 </html>
 

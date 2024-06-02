@@ -184,9 +184,11 @@ $conn->close();
                     <h2>Une Préoccupation Croissante</h2>
                     Récemment, plusieurs écoles élémentaires ont signalé une recrudescence des cas de poux parmi les élèves. Ce phénomène, bien que courant, suscite des inquiétudes tant chez les parents que chez les enseignants, en raison de la rapidité avec laquelle ces parasites peuvent se propager dans des environnements où les enfants sont en contact étroit.
                 </div>
-                <div id="map-section" class="my-4">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5250.7452444036135!2d2.2885375999999997!3d48.8511045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b486bb253%3A0x61e9cc6979f93fae!2s10%20Rue%20Sextius%20Michel%2C%2075015%20Paris!5e0!3m2!1sfr!2sfr!4v1717347703773!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
             </div>
+            <div id="map-section" class="my-4">
+                    Retrouvez nous 10 Rue Sexitus Michel :
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5250.7452444036135!2d2.2885375999999997!3d48.8511045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b486bb253%3A0x61e9cc6979f93fae!2s10%20Rue%20Sextius%20Michel%2C%2075015%20Paris!5e0!3m2!1sfr!2sfr!4v1717347703773!5m2!1sfr!2sfr" width="400" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
         

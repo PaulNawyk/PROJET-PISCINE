@@ -43,88 +43,137 @@ if (!$result_labo) {
     <title>Medicare</title>
     <meta charset="utf-8" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link href="base.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="base.css" rel="stylesheet" type="text/css"/>
+    <style>
+        /* Appliquer un reset global */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Assurer que le body et le conteneur principal prennent toute la largeur disponible */
+        body, html {
+            width: 100%;
+            overflow-x: hidden; /* Empêcher le débordement horizontal */
+        }
+
+        /* Supprimer les marges et les paddings inutiles */
+        #wrapper {
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Ajuster le header et le footer pour qu'ils prennent la largeur complète sans débordement */
+        #header, #footer {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Assurer que les cartes et les éléments de la section principale ne débordent pas */
+        #section {
+            padding: 15px;
+        }
+
+        .card {
+            margin: 0;
+        }
+
+        .presentation {
+            margin: 0 auto;
+        }
+
+        /* Assurer que les boutons et les éléments du formulaire de navigation ne débordent pas */
+        #navigation {
+            padding: 0 15px;
+        }
+
+        /* Réduire le padding des boutons pour éviter les débordements */
+        .btn {
+            padding: 5px 10px;
+        }
+
+        .form-inline {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .form-inline .form-control {
+            flex: 1;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="wrapper" class="container">
-    <div id="header">
+    <div id="wrapper">
+        <div id="header">
             <div id="wrapperlogo">
-                <div class="header-text">
-                    <h1>MEDICARE </h1>
-                    <h2> Services Médicaux</h2>
-                </div>
+                <div><h1>MEDICARE : Services Médicaux</h1></div>
                 <div><img class="logo" src="img/logo.jpg" /></div>
-                
             </div>
         </div>
-        <div id="navigation" class="d-flex align-items-center mb-4 justify-content-between">
-            <div>
-                <button class="btn btn-default mx-1" onclick="window.location.href='accueil_test.php'">ACCUEIL</button>
+        <div id="navigation" class="d-flex align-items-center">
+            <button class="btn btn-default mx-3" onclick="window.location.href='accueil_test.php'">ACCUEIL</button>
 
-                <div class="dropdown d-inline-block">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                        PARCOURIR
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item dropdown-toggle" href="#">Médecin Généraliste</a>
-                            <ul class="dropdown-menu">
-                                <?php
-                                // Affichage des noms des médecins généralistes
-                                if ($result->num_rows > 0) {
-                                    while ($row = $result->fetch_assoc()) {
-                                        echo "<li><a class='dropdown-item' href='profil_medecin.php?id=" . $row["id"] . "'>" . $row["nom"] . "</a></li>";
-                                    }
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                    PARCOURIR
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                    <li><li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#">Médecin Généraliste</a>
+                        <ul class="dropdown-menu">
+                            <?php
+                            // Affichage des noms des médecins généralistes
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo "<li><a class='dropdown-item' href='profil_medecin.php?id=" . $row["id"] . "'>" . $row["nom"] . "</a></li>";
                                 }
-                                ?>
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item dropdown-toggle" href="#">Médecin Spécialiste</a>
-                            <ul class="dropdown-menu">
-                                <?php
-                                // Requête SQL pour sélectionner les noms des médecins spécialistes
-                                $sql_specialistes = "SELECT m.id, u.nom 
-                                                    FROM medecin m
-                                                    JOIN users u ON m.user_id = u.id
-                                                    WHERE m.specialite_id != 1"; // Changer la condition pour sélectionner les spécialistes
-                                $result_specialistes = $conn->query($sql_specialistes);
-                                if (!$result_specialistes) {
-                                    printf("Erreur : %s\n", $conn->error);
-                                    exit();
-                                }
+                            }
+                            ?>
+                        </ul>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#">Médecin Spécialiste</a>
+                        <ul class="dropdown-menu">
+                            <?php
+                            // Requête SQL pour sélectionner les noms des médecins spécialistes
+                            $sql_specialistes = "SELECT m.id, u.nom 
+                                                FROM medecin m
+                                                JOIN users u ON m.user_id = u.id
+                                                WHERE m.specialite_id != 1"; // Changer la condition pour sélectionner les spécialistes
+                            $result_specialistes = $conn->query($sql_specialistes);
+                            if (!$result_specialistes) {
+                                printf("Erreur : %s\n", $conn->error);
+                                exit();
+                            }
 
-                                // Affichage des noms des médecins spécialistes
-                                if ($result_specialistes->num_rows > 0) {
-                                    while ($row_specialiste = $result_specialistes->fetch_assoc()) {
-                                        echo "<li><a class='dropdown-item' href='profil_medecin.php?id=" . $row_specialiste["id"] . "'>" . $row_specialiste["nom"] . "</a></li>";
-                                    }
+                            // Affichage des noms des médecins spécialistes
+                            if ($result_specialistes->num_rows > 0) {
+                                while ($row_specialiste = $result_specialistes->fetch_assoc()) {
+                                    echo "<li><a class='dropdown-item' href='profil_medecin.php?id=" . $row_specialiste["id"] . "'>" . $row_specialiste["nom"] . "</a></li>";
                                 }
-                                ?>
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item dropdown-toggle" href="#">Laboratoire</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Laboratoire de biologie médicale</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-
-                <button class="btn btn-default ml-1">RENDEZ-VOUS</button>
-                <button class="btn btn-default ml-1" onclick="window.location.href='profil.php'">PROFIL</button>
+                            }
+                            ?>
+                        </ul>
+                    </li>
+                    <li><li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="#">Laboratoire</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Laboratoire de biologie médicale</a></li>
+                        </ul>
+                </ul>
             </div>
-            <div>
-                <form action="recherche.php" method="POST" class="form-inline">
-                    <input id="searchbar" class="form-control" type="text" name="search" placeholder="RECHERCHE..." style="width: 300px;">
-                    <button type="submit" class="btn btn-default ml-2"><img src="img/loupe.jpg" alt="LOGO" width="30" height="30"></button>
-                </form>
-            </div>
+
+            <button class="btn btn-default ml-3">RENDEZ-VOUS</button>
+            <button class="btn btn-default ml-3" onclick="window.location.href='profil.php'">PROFIL</button>
+            <form action="recherche.php" method="POST" class="form-inline">
+                <input id="searchbar" class="form-control mx-3" type="text" name="search" placeholder="RECHERCHE..." style="width: 15%;">
+                <button type="submit" class="btn btn-default ml-2"><img src="img/loupe.jpg" alt="LOGO" width="30" height="30"></button>
+            </form>
             <?php
             // Vérifier si l'utilisateur est connecté et s'il est admin
             if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 'admin') {
@@ -134,7 +183,7 @@ if (!$result_labo) {
             ?>
         </div>
         <div id="section">
-            <div class="presentation mb-5">
+            <div class="presentation">
                 <h2>Coordonnées du Laboratoire</h2>
                 <table class="table table-striped">
                     <thead>

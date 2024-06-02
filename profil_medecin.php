@@ -145,14 +145,13 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             </div>
             <button class="btn btn-default ml-3" onclick="window.location.href='rendezvous.html'">RENDEZ-VOUS</button>
             <button class="btn btn-default ml-3" onclick="window.location.href='profil.php'">PROFIL</button>
-        </div>
-
-        <div>
             <form action="recherche.php" method="POST" class="form-inline">
                 <input id="searchbar" class="form-control" type="text" name="search" placeholder="RECHERCHE..." style="width: 300px;">
                 <button type="submit" class="btn btn-default ml-2"><img src="img/loupe.jpg" alt="LOGO" width="30" height="30"></button>
             </form>
         </div>
+
+        
         
         <div id="section">
             <h1 style="text-align: center;">Votre médecin</h1>
