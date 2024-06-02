@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CV>
+    <PersonalInformation>
+        <FirstName>Fabrice</FirstName>
+        <LastName>Benamou</LastName>
+        <Title>Dermatologist</Title>
+        <ContactInfo>
+            <Email>fabrice.benamou@medicare.fr</Email>
+            <Phone>+33 6 78 90 12 34</Phone>
+            <Address>
+                <Street>123 Rue de l'Exemple</Street>
+                <Apartment>Apartment 5B</Apartment>
+                <City>Paris</City>
+                <PostalCode>75000</PostalCode>
+                <Country>France</Country>
+            </Address>
+        </ContactInfo>
+    </PersonalInformation>
+
+    <ProfessionalExperience>
+        <Experience>
+            <Position>Dermatologist</Position>
+            <Organization>Paris Dermatology Clinic</Organization>
+            <Location>Paris, France</Location>
+            <StartDate>2015-03-01</StartDate>
+            <EndDate>Present</EndDate>
+            <Description>Specialized in diagnosing and treating skin diseases and disorders.</Description>
+        </Experience>
+        <Experience>
+            <Position>Dermatology Resident</Position>
+            <Organization>Paris University Hospital</Organization>
+            <Location>Paris, France</Location>
+            <StartDate>2011-09-01</StartDate>
+            <EndDate>2015-02-28</EndDate>
+            <Description>Completed dermatology residency program with rotations in various dermatological subspecialties.</Description>
+        </Experience>
+    </ProfessionalExperience>
+
+    <Education>
+        <Degree>
+            <Title>Doctor of Medicine</Title>
+            <Institution>University of Paris</Institution>
+            <Location>Paris, France</Location>
+            <GraduationDate>2011-06-30</GraduationDate>
+        </Degree>
+    </Education>
+</CV>
